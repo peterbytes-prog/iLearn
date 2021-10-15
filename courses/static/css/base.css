@@ -1,0 +1,31 @@
+form{
+  display: flex;
+  flex-direction: column;
+}
+form > p{
+  display: flex;
+  flex-direction: column;
+}
+form > p >label{
+  font-weight: bold;
+  text-align: left;
+}
+form input,form textarea,form select{
+  padding: 0.5em;
+}
+form > p > *:nth-child(2):not(input[type=checkbox]){
+  width:90%;
+  margin: auto;
+}
+form input[type=submit]{
+  width:auto;
+  margin: auto;
+}
+form > p > input[type=checkbox]{
+  margin-left:5%;
+}
+.no-contents-text{
+  display: block;
+  margin: auto;
+  text-align: center;
+}

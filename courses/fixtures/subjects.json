@@ -1,0 +1,1233 @@
+[
+{
+  "model": "courses.subject",
+  "pk": 6,
+  "fields": {
+    "title": "Mathematics",
+    "slug": "mathematics"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 7,
+  "fields": {
+    "title": "Science",
+    "slug": "science"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 8,
+  "fields": {
+    "title": "Programming",
+    "slug": "programming"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 9,
+  "fields": {
+    "title": "Software Training",
+    "slug": "software-training"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 5,
+  "fields": {
+    "owner": 4,
+    "subject": 6,
+    "title": "Algebra",
+    "overview": "In its most general form, algebra is the study of mathematical symbols and the rules for manipulating these symbols; it is a unifying thread of almost all of mathematics.",
+    "slug": "algebra",
+    "created": "2021-10-15T07:53:52.664Z",
+    "students": [
+      3
+    ]
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 6,
+  "fields": {
+    "owner": 4,
+    "subject": 6,
+    "title": "Calculus",
+    "overview": "Calculus, originally called infinitesimal calculus or \"the calculus of infinitesimals\", is the mathematical study of continuous change, in the same way that geometry is the study of shape and algebra",
+    "slug": "calculus",
+    "created": "2021-10-15T07:54:58.296Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 7,
+  "fields": {
+    "owner": 4,
+    "subject": 6,
+    "title": "Statistics",
+    "overview": "Statistics is the study and manipulation of data, including ways to gather, review, analyze, and draw conclusions from data. The two major areas of statistics are descriptive and inferential statistic",
+    "slug": "statistics",
+    "created": "2021-10-15T07:55:59.379Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 8,
+  "fields": {
+    "owner": 5,
+    "subject": 8,
+    "title": "Programming 101",
+    "overview": "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task.",
+    "slug": "programming_101",
+    "created": "2021-10-15T08:33:48.598Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 9,
+  "fields": {
+    "owner": 7,
+    "subject": 8,
+    "title": "Python Programming",
+    "overview": "Python is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with its use of significant indentation.",
+    "slug": "python_programming",
+    "created": "2021-10-15T09:25:55.171Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 10,
+  "fields": {
+    "owner": 7,
+    "subject": 9,
+    "title": "Excel",
+    "overview": "Microsoft Excel is the industry leading spreadsheet software program, a powerful data visualization and analysis tool.",
+    "slug": "excel",
+    "created": "2021-10-15T09:37:30.100Z",
+    "students": []
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 12,
+  "fields": {
+    "course": 5,
+    "title": "Properties of Real Numbers",
+    "description": "In mathematics, a real number is a value of a continuous quantity that can represent a distance along a line (or alternatively, a quantity that can be represented as an infinite decimal expansion).",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 13,
+  "fields": {
+    "course": 5,
+    "title": "Linear Equations",
+    "description": "Linear equations occur frequently in all mathematics and their applications in physics and engineering, partly because non-linear systems are often well approximated by linear equations.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 14,
+  "fields": {
+    "course": 5,
+    "title": "Functions",
+    "description": "In mathematics, a function[note 1] is a binary relation between two sets that associates each element of the first set to exactly one element of the second set. Typical examples are functions from integers to integers, or from the real numbers to real numbers.",
+    "order": 2
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 15,
+  "fields": {
+    "course": 6,
+    "title": "Limits",
+    "description": "In mathematics, a limit is the value that a function (or sequence) approaches as the input (or index) approaches some value.[1] Limits are essential to calculus and mathematical analysis, and are used to define continuity, derivatives, and integrals.\r\n\r\nThe concept of a limit of a sequence is further generalized to the concept of a limit of a topological net, and is closely related to limit and direct limit in category theory.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 16,
+  "fields": {
+    "course": 6,
+    "title": "Derivatives",
+    "description": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 17,
+  "fields": {
+    "course": 6,
+    "title": "Integrals",
+    "description": "In mathematics, an integral assigns numbers to functions in a way that describes displacement, area, volume, and other concepts that arise by combining infinitesimal data.",
+    "order": 2
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 18,
+  "fields": {
+    "course": 7,
+    "title": "Descriptive Statistics",
+    "description": "Descriptive statistics deals with the presentation and collection of data. This is usually the first part of a statistical analysis. It is usually not as simple as it sounds, and the statistician needs to be aware of designing experiments, choosing the right focus group and avoid biases that are so easy to creep into the experiment.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 19,
+  "fields": {
+    "course": 7,
+    "title": "Inferential Statistics",
+    "description": "Inferential statistics, as the name suggests, involves drawing the right conclusions from the statistical analysis that has been performed using descriptive statistics. In the end, it is the inferences that make studies important and this aspect is dealt with in inferential statistics.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 20,
+  "fields": {
+    "course": 8,
+    "title": "Logic",
+    "description": "Logic programming is a programming paradigm which is largely based on formal logic. Any program written in a logic programming language is a set of sentences in logical form, expressing facts and rules about some problem domain. Major logic programming language families include Prolog, answer set programming (ASP) and Datalog.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 21,
+  "fields": {
+    "course": 8,
+    "title": "Coding",
+    "description": "The source code of a program is written in one or more languages that are intelligible to programmers, rather than machine code, which is directly executed by the central processing unit. The purpose of programming is to find a sequence of instructions that will automate the performance of a task (which can be as complex as an operating system) on a computer, often for solving a given problem.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 22,
+  "fields": {
+    "course": 9,
+    "title": "Data Type",
+    "description": "A type system is a logical system comprising a set of rules that assigns a property called a type to the various constructs of a computer program, such as variables, expressions, functions or modules.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 23,
+  "fields": {
+    "course": 9,
+    "title": "Function",
+    "description": "Subroutines may be defined within programs, or separately in libraries that can be used by many programs. In different programming languages, a subroutine may be called a routine, subprogram, function, method, or procedure. Technically, these terms all have different definitions. The generic, umbrella term callable unit is sometimes used.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 24,
+  "fields": {
+    "course": 9,
+    "title": "Module & Library",
+    "description": "A module allows you to logically organize your Python code. Grouping related code into a module makes the code easier to understand and use. A module is a Python object with arbitrarily named attributes that you can bind and reference.",
+    "order": 2
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 25,
+  "fields": {
+    "course": 10,
+    "title": "Master Excels",
+    "description": "Microsoft Excel is a spreadsheet developed by Microsoft for Windows, macOS, Android and iOS. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications (VBA). It has been a very widely applied spreadsheet for these platforms, especially since version 5 in 1993, and it has replaced Lotus 1-2-3 as the industry standard for spreadsheets.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 11,
+  "fields": {
+    "module": 12,
+    "content_type": 13,
+    "object_id": 8,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 12,
+  "fields": {
+    "module": 12,
+    "content_type": 14,
+    "object_id": 4,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 13,
+  "fields": {
+    "module": 12,
+    "content_type": 11,
+    "object_id": 2,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 14,
+  "fields": {
+    "module": 12,
+    "content_type": 10,
+    "object_id": 1,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 15,
+  "fields": {
+    "module": 13,
+    "content_type": 13,
+    "object_id": 9,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 16,
+  "fields": {
+    "module": 13,
+    "content_type": 14,
+    "object_id": 5,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 17,
+  "fields": {
+    "module": 13,
+    "content_type": 11,
+    "object_id": 3,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 18,
+  "fields": {
+    "module": 13,
+    "content_type": 10,
+    "object_id": 2,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 19,
+  "fields": {
+    "module": 14,
+    "content_type": 13,
+    "object_id": 10,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 20,
+  "fields": {
+    "module": 14,
+    "content_type": 14,
+    "object_id": 6,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 21,
+  "fields": {
+    "module": 14,
+    "content_type": 10,
+    "object_id": 3,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 22,
+  "fields": {
+    "module": 14,
+    "content_type": 11,
+    "object_id": 4,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 23,
+  "fields": {
+    "module": 15,
+    "content_type": 13,
+    "object_id": 11,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 24,
+  "fields": {
+    "module": 15,
+    "content_type": 14,
+    "object_id": 7,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 25,
+  "fields": {
+    "module": 15,
+    "content_type": 10,
+    "object_id": 4,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 26,
+  "fields": {
+    "module": 15,
+    "content_type": 11,
+    "object_id": 5,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 27,
+  "fields": {
+    "module": 16,
+    "content_type": 13,
+    "object_id": 12,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 28,
+  "fields": {
+    "module": 16,
+    "content_type": 14,
+    "object_id": 8,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 29,
+  "fields": {
+    "module": 16,
+    "content_type": 11,
+    "object_id": 6,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 30,
+  "fields": {
+    "module": 17,
+    "content_type": 13,
+    "object_id": 13,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 31,
+  "fields": {
+    "module": 17,
+    "content_type": 14,
+    "object_id": 9,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 32,
+  "fields": {
+    "module": 17,
+    "content_type": 11,
+    "object_id": 7,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 33,
+  "fields": {
+    "module": 18,
+    "content_type": 13,
+    "object_id": 14,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 34,
+  "fields": {
+    "module": 18,
+    "content_type": 14,
+    "object_id": 10,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 35,
+  "fields": {
+    "module": 18,
+    "content_type": 10,
+    "object_id": 5,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 36,
+  "fields": {
+    "module": 18,
+    "content_type": 11,
+    "object_id": 8,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 37,
+  "fields": {
+    "module": 19,
+    "content_type": 13,
+    "object_id": 15,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 38,
+  "fields": {
+    "module": 19,
+    "content_type": 10,
+    "object_id": 6,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 39,
+  "fields": {
+    "module": 19,
+    "content_type": 11,
+    "object_id": 9,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 40,
+  "fields": {
+    "module": 20,
+    "content_type": 13,
+    "object_id": 16,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 41,
+  "fields": {
+    "module": 20,
+    "content_type": 14,
+    "object_id": 11,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 42,
+  "fields": {
+    "module": 20,
+    "content_type": 10,
+    "object_id": 7,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 43,
+  "fields": {
+    "module": 21,
+    "content_type": 13,
+    "object_id": 17,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 44,
+  "fields": {
+    "module": 21,
+    "content_type": 13,
+    "object_id": 18,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 45,
+  "fields": {
+    "module": 21,
+    "content_type": 10,
+    "object_id": 8,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 46,
+  "fields": {
+    "module": 22,
+    "content_type": 11,
+    "object_id": 10,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 47,
+  "fields": {
+    "module": 22,
+    "content_type": 10,
+    "object_id": 9,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 48,
+  "fields": {
+    "module": 23,
+    "content_type": 10,
+    "object_id": 10,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 49,
+  "fields": {
+    "module": 23,
+    "content_type": 11,
+    "object_id": 11,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 50,
+  "fields": {
+    "module": 24,
+    "content_type": 10,
+    "object_id": 11,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 51,
+  "fields": {
+    "module": 24,
+    "content_type": 13,
+    "object_id": 19,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 52,
+  "fields": {
+    "module": 24,
+    "content_type": 13,
+    "object_id": 20,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 53,
+  "fields": {
+    "module": 25,
+    "content_type": 10,
+    "object_id": 12,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 54,
+  "fields": {
+    "module": 25,
+    "content_type": 11,
+    "object_id": 12,
+    "order": 1
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "title": "Introduction",
+    "created": "2021-10-14T04:31:48.403Z",
+    "updated": "2021-10-14T04:31:48.403Z",
+    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "title": "Introduction",
+    "created": "2021-10-14T04:33:17.006Z",
+    "updated": "2021-10-14T04:33:17.006Z",
+    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 3,
+  "fields": {
+    "owner": 1,
+    "title": "Introduction",
+    "created": "2021-10-14T04:38:21.051Z",
+    "updated": "2021-10-14T04:38:21.051Z",
+    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 4,
+  "fields": {
+    "owner": 1,
+    "title": "Introduction",
+    "created": "2021-10-14T04:39:54.650Z",
+    "updated": "2021-10-14T04:39:54.650Z",
+    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 5,
+  "fields": {
+    "owner": 1,
+    "title": "Introduction",
+    "created": "2021-10-14T04:41:15.349Z",
+    "updated": "2021-10-14T04:41:15.349Z",
+    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 8,
+  "fields": {
+    "owner": 4,
+    "title": "Introduction to real numbers",
+    "created": "2021-10-15T08:02:16.366Z",
+    "updated": "2021-10-15T08:02:16.366Z",
+    "content": "Any non-zero real number is either negative or positive.\r\nThe sum and the product of two non-negative real numbers is again a non-negative real number, i.e., they are closed under these operations, and form a positive cone, thereby giving rise to a linear order of the real numbers along a number line.\r\nThe real numbers make up an infinite set of numbers that cannot be injectively mapped to the infinite set of natural numbers, i.e., there are uncountably infinitely many real numbers, whereas the natural numbers are called countably infinite. This establishes that in some sense, there are more real numbers than there are elements in any countable set.\r\nThere is a hierarchy of countably infinite subsets of the real numbers, e.g., the integers, the rationals, the algebraic numbers and the computable numbers, each set being a proper subset of the next in the sequence. The complements of all these sets (irrational, transcendental, and non-computable real numbers) in the reals are all uncountably infinite sets.\r\nReal numbers can be used to express measurements of continuous quantities. They may be expressed by decimal representations, most of them having an infinite sequence of digits to the right of the decimal point; these are often represented like 324.823122147..., where the ellipsis (three dots) indicates that there would still be more digits to come. This hints at the fact that we can precisely denote only a few, selected real numbers with finitely many symbols.\r\nMore formally, the real numbers have the two basic properties of being an ordered field, and having the least upper bound property. The first says that real numbers comprise a field, with addition and multiplication as well as division by non-zero numbers, which can be totally ordered on a number line in a way compatible with addition and multiplication. The second says that, if a non-empty set of real numbers has an upper bound, then it has a real least upper bound. The second condition distinguishes the real numbers from the rational numbers: for example, the set of rational numbers whose square is less than 2 is a set with an upper bound (e.g. 1.5) but no (rational) least upper bound: hence the rational numbers do not satisfy the least upper bound property."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 9,
+  "fields": {
+    "owner": 4,
+    "title": "Introduction",
+    "created": "2021-10-15T08:09:18.852Z",
+    "updated": "2021-10-15T08:09:18.852Z",
+    "content": "Linear equations are nothing but yet another subset of \"equations\". Any linear calculations requiring more than one variable can be done with the help of linear equations. The standard form of a linear equation in one variable is of the form ax + b = 0. Here, x is a variable, and a and b are constants. While the standard form of a linear equation in two variables is of the form ax + by = c. Here, x and y are variables, and a, b and c are constants."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 10,
+  "fields": {
+    "owner": 4,
+    "title": "Notes",
+    "created": "2021-10-15T08:11:43.438Z",
+    "updated": "2021-10-15T08:11:43.438Z",
+    "content": "A function is often also called a map or a mapping, but some authors make a distinction between the term \"map\" and \"function\". For example, the term \"map\" is often reserved for a \"function\" with some sort of special structure (e.g. maps of manifolds). In particular map is often used in place of homomorphism for the sake of succinctness (e.g., linear map or map from G to H instead of group homomorphism from G to H). Some authors[25] reserve the word mapping for the case where the structure of the codomain belongs explicitly to the definition of the function.\r\n\r\nSome authors, such as Serge Lang,[26] use \"function\" only to refer to maps for which the codomain is a subset of the real or complex numbers, and use the term mapping for more general functions.\r\n\r\nIn the theory of dynamical systems, a map denotes an evolution function used to create discrete dynamical systems. See also Poincaré map.\r\n\r\nWhichever definition of map is used, related terms like domain, codomain, injective, continuous have the same meaning as for a function."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 11,
+  "fields": {
+    "owner": 4,
+    "title": "Notes",
+    "created": "2021-10-15T08:17:58.887Z",
+    "updated": "2021-10-15T08:17:58.887Z",
+    "content": "Two key problems led to the initial formulation of calculus:\r\n\r\n(1) the tangent problem, or how to determine the slope of a line tangent to a curve at a point;\r\n\r\nand (2) the area problem, or how to determine the area under a curve.\r\n\r\nThe concept of a limit or limiting process, essential to the understanding of calculus, has been around for thousands of years. In fact, early mathematicians used a limiting process to obtain better and better approximations of areas of circles. Yet, the formal definition of a limit—as we know and understand it today—did not appear until the late 19th century. We, therefore, begin our quest to understand limits, as our mathematical ancestors did, by using an intuitive approach.\r\n\r\nWe begin our exploration of limits by taking a look at the graphs of the functions"
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 12,
+  "fields": {
+    "owner": 4,
+    "title": "Introductions",
+    "created": "2021-10-15T08:20:31.535Z",
+    "updated": "2021-10-15T08:20:31.535Z",
+    "content": "The derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable.\r\n\r\nDerivatives can be generalized to functions of several real variables. In this generalization, the derivative is reinterpreted as a linear transformation whose graph is (after an appropriate translation) the best linear approximation to the graph of the original function. The Jacobian matrix is the matrix that represents this linear transformation with respect to the basis given by the choice of independent and dependent variables. It can be calculated in terms of the partial derivatives with respect to the independent variables. For a real-valued function of several variables, the Jacobian matrix reduces to the gradient vector."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 13,
+  "fields": {
+    "owner": 4,
+    "title": "Intro",
+    "created": "2021-10-15T08:22:07.135Z",
+    "updated": "2021-10-15T08:22:07.135Z",
+    "content": "The integrals enumerated here are those termed definite integrals, which can be interpreted formally as the signed area of the region in the plane that is bounded by the graph of a given function between two points in the real line. Conventionally, areas above the horizontal axis of the plane are positive while areas below are negative. Integrals also refer to the concept of an antiderivative, a function whose derivative is the given function. In this case, they are called indefinite integrals. The fundamental theorem of calculus relates definite integrals with differentiation and provides a method to compute the definite integral of a function when its antiderivative is known.\r\n\r\nAlthough methods of calculating areas and volumes dated from ancient Greek mathematics, the principles of integration were formulated independently by Isaac Newton and Gottfried Wilhelm Leibniz in the late 17th century, who thought of the area under a curve as an infinite sum of rectangles of infinitesimal width. Bernhard Riemann later gave a rigorous definition of integrals, which is based on a limiting procedure that approximates the area of a curvilinear region by breaking the region into thin vertical slabs."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 14,
+  "fields": {
+    "owner": 4,
+    "title": "Introductions",
+    "created": "2021-10-15T08:26:28.663Z",
+    "updated": "2021-10-15T08:26:28.664Z",
+    "content": "Different areas of study require different kinds of analysis using descriptive statistics. For example, a physicist studying turbulence in the laboratory needs the average quantities that vary over small intervals of time. The nature of this problem requires that physical quantities be averaged from a host of data collected through the experiment."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 15,
+  "fields": {
+    "owner": 4,
+    "title": "introduction",
+    "created": "2021-10-15T08:29:51.932Z",
+    "updated": "2021-10-15T08:29:51.932Z",
+    "content": "Statistical inference is the process of drawing conclusions from data that are subject to random variation, for example, observational errors or sampling variation.[6] Initial requirements of such a system of procedures for inference and induction are that the system should produce reasonable answers when applied to well-defined situations and that it should be general enough to be applied across a range of situations. Inferential statistics are used to test hypotheses and make estimations using sample data. Whereas descriptive statistics describe a sample, inferential statistics infer predictions about a larger population that the sample represents.\r\n\r\nThe outcome of statistical inference may be an answer to the question \"what should be done next?\", where this might be a decision about making further experiments or surveys, or about drawing a conclusion before implementing some organizational or governmental policy. For the most part, statistical inference makes propositions about populations, using data drawn from the population of interest via some form of random sampling. More generally, data about a random process is obtained from its observed behavior during a finite period of time. Given a parameter or hypothesis about which one wishes to make inference, statistical inference most often uses:\r\n\r\na statistical model of the random process that is supposed to generate the data, which is known when randomization has been used, and\r\na particular realization of the random process; i.e., a set of data."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 16,
+  "fields": {
+    "owner": 5,
+    "title": "History",
+    "created": "2021-10-15T08:36:10.902Z",
+    "updated": "2021-10-15T08:36:10.902Z",
+    "content": "The use of mathematical logic to represent and execute computer programs is also a feature of the lambda calculus, developed by Alonzo Church in the 1930s. However, the first proposal to use the clausal form of logic for representing computer programs was made by Cordell Green. This used an axiomatization of a subset of LISP, together with a representation of an input-output relation, to compute the relation by simulating the execution of the program in LISP. Foster and Elcock's Absys, on the other hand, employed a combination of equations and lambda calculus in an assertional programming language which places no constraints on the order in which operations are performed.\r\nLogic programming in its present form can be traced back to debates in the late 1960s and early 1970s about declarative versus procedural representations of knowledge in artificial intelligence. Advocates of declarative representations were notably working at Stanford, associated with John McCarthy, Bertram Raphael and Cordell Green, and in Edinburgh, with John Alan Robinson (an academic visitor from Syracuse University), Pat Hayes, and Robert Kowalski. Advocates of procedural representations were mainly centered at MIT, under the leadership of Marvin Minsky and Seymour Papert."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 17,
+  "fields": {
+    "owner": 5,
+    "title": "Introduction to Coding",
+    "created": "2021-10-15T08:39:50.601Z",
+    "updated": "2021-10-15T08:39:50.601Z",
+    "content": "Different programming languages support different styles of programming (called programming paradigms). The choice of language used is subject to many considerations, such as company policy, suitability to task, availability of third-party packages, or individual preference. Ideally, the programming language best suited for the task at hand will be selected. Trade-offs from this ideal involve finding enough programmers who know the language to build a team, the availability of compilers for that language, and the efficiency with which programs written in a given language execute. Languages form an approximate spectrum from \"low-level\" to \"high-level\"; \"low-level\" languages are typically more machine-oriented and faster to execute, whereas \"high-level\" languages are more abstract and easier to use but execute less quickly. It is usually easier to code in \"high-level\" languages than in \"low-level\" ones"
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 18,
+  "fields": {
+    "owner": 5,
+    "title": "Best Practices",
+    "created": "2021-10-15T08:40:31.501Z",
+    "updated": "2021-10-15T08:40:31.501Z",
+    "content": "Whatever the approach to development may be, the final program must satisfy some fundamental properties. The following properties are among the most important:[16] [17]\r\n\r\nReliability: how often the results of a program are correct. This depends on conceptual correctness of algorithms and minimization of programming mistakes, such as mistakes in resource management (e.g., buffer overflows and race conditions) and logic errors (such as division by zero or off-by-one errors).\r\nRobustness: how well a program anticipates problems due to errors (not bugs). This includes situations such as incorrect, inappropriate or corrupt data, unavailability of needed resources such as memory, operating system services, and network connections, user error, and unexpected power outages.\r\nUsability: the ergonomics of a program: the ease with which a person can use the program for its intended purpose or in some cases even unanticipated purposes. Such issues can make or break its success even regardless of other issues. This involves a wide range of textual, graphical, and sometimes hardware elements that improve the clarity, intuitiveness, cohesiveness and completeness of a program's user interface.\r\nPortability: the range of computer hardware and operating system platforms on which the source code of a program can be compiled/interpreted and run. This depends on differences in the programming facilities provided by the different platforms, including hardware and operating system resources, expected behavior of the hardware and operating system, and availability of platform-specific compilers (and sometimes libraries) for the language of the source code.\r\nMaintainability: the ease with which a program can be modified by its present or future developers in order to make improvements or to customize, fix bugs and security holes, or adapt it to new environments. Good practices[18] during initial development make the difference in this regard. This quality may not be directly apparent to the end user but it can significantly affect the fate of a program over the long term.\r\nEfficiency/performance: Measure of system resources a program consumes (processor time, memory space, slow devices such as disks, network bandwidth and to some extent even user interaction): the less, the better. This also includes careful management of resources, for example cleaning up temporary files and eliminating memory leaks. This is often discussed under the shadow of a chosen programming language. Although the language certainly affects performance, even slower languages, such as Python, can execute programs instantly from a human perspective. Speed, resource usage, and performance are important for programs that bottleneck the system, but efficient use of programmer time is also important and is related to cost: more hardware may be cheaper."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 19,
+  "fields": {
+    "owner": 7,
+    "title": "Numpy Library",
+    "created": "2021-10-15T09:34:52.975Z",
+    "updated": "2021-10-15T09:34:52.975Z",
+    "content": "NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines, Fourier transforms, and more."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 20,
+  "fields": {
+    "owner": 7,
+    "title": "Pip Module",
+    "created": "2021-10-15T09:35:40.211Z",
+    "updated": "2021-10-15T09:35:40.211Z",
+    "content": "pip is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes."
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 2,
+  "fields": {
+    "owner": 4,
+    "title": "additional resources",
+    "created": "2021-10-15T08:06:28.442Z",
+    "updated": "2021-10-15T08:06:28.443Z",
+    "file": "files/sample.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 3,
+  "fields": {
+    "owner": 4,
+    "title": "additional resources",
+    "created": "2021-10-15T08:09:58.174Z",
+    "updated": "2021-10-15T08:09:58.174Z",
+    "file": "files/sample_0clzeey.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 4,
+  "fields": {
+    "owner": 4,
+    "title": "readings",
+    "created": "2021-10-15T08:13:48.894Z",
+    "updated": "2021-10-15T08:13:48.894Z",
+    "file": "files/sample_XXd42Tb.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 5,
+  "fields": {
+    "owner": 4,
+    "title": "additional material",
+    "created": "2021-10-15T08:19:51.182Z",
+    "updated": "2021-10-15T08:19:51.182Z",
+    "file": "files/sample_XPoTw5j.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 6,
+  "fields": {
+    "owner": 4,
+    "title": "additional material",
+    "created": "2021-10-15T08:21:31.366Z",
+    "updated": "2021-10-15T08:21:31.366Z",
+    "file": "files/sample_0kNACmY.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 7,
+  "fields": {
+    "owner": 4,
+    "title": "additional reading",
+    "created": "2021-10-15T08:22:55.644Z",
+    "updated": "2021-10-15T08:22:55.644Z",
+    "file": "files/sample_Fj78fwd.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 8,
+  "fields": {
+    "owner": 4,
+    "title": "additional resources",
+    "created": "2021-10-15T08:28:28.809Z",
+    "updated": "2021-10-15T08:28:28.809Z",
+    "file": "files/sample_qjsCQ27.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 9,
+  "fields": {
+    "owner": 4,
+    "title": "additional material",
+    "created": "2021-10-15T08:30:40.155Z",
+    "updated": "2021-10-15T08:30:40.155Z",
+    "file": "files/sample_8KNAZNj.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 10,
+  "fields": {
+    "owner": 7,
+    "title": "additional content",
+    "created": "2021-10-15T09:30:40.537Z",
+    "updated": "2021-10-15T09:30:40.537Z",
+    "file": "files/sample_97P7Fxs.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 11,
+  "fields": {
+    "owner": 7,
+    "title": "additional material",
+    "created": "2021-10-15T09:32:53.186Z",
+    "updated": "2021-10-15T09:32:53.186Z",
+    "file": "files/sample_wPWt2oQ.pdf"
+  }
+},
+{
+  "model": "courses.file",
+  "pk": 12,
+  "fields": {
+    "owner": 7,
+    "title": "additional material",
+    "created": "2021-10-15T09:39:30.240Z",
+    "updated": "2021-10-15T09:39:30.240Z",
+    "file": "files/sample_OjL9frR.pdf"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 4,
+  "fields": {
+    "owner": 4,
+    "title": "real number visualization",
+    "created": "2021-10-15T08:03:56.640Z",
+    "updated": "2021-10-15T08:03:56.640Z",
+    "file": "images/real_number.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 5,
+  "fields": {
+    "owner": 4,
+    "title": "visualization",
+    "created": "2021-10-15T08:09:39.183Z",
+    "updated": "2021-10-15T08:09:39.183Z",
+    "file": "images/Linear_Function_Graph.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 6,
+  "fields": {
+    "owner": 4,
+    "title": "graph of a function",
+    "created": "2021-10-15T08:12:35.586Z",
+    "updated": "2021-10-15T08:12:35.587Z",
+    "file": "images/1024px-Function_color_example_3.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 7,
+  "fields": {
+    "owner": 4,
+    "title": "graph of limit",
+    "created": "2021-10-15T08:18:52.140Z",
+    "updated": "2021-10-15T08:18:52.140Z",
+    "file": "images/Limite_01.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 8,
+  "fields": {
+    "owner": 4,
+    "title": "graph of derivative",
+    "created": "2021-10-15T08:21:16.626Z",
+    "updated": "2021-10-15T08:21:16.627Z",
+    "file": "images/Tangent_to_a_curve.svg.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 9,
+  "fields": {
+    "owner": 4,
+    "title": "graph of integral",
+    "created": "2021-10-15T08:22:36.887Z",
+    "updated": "2021-10-15T08:22:36.887Z",
+    "file": "images/Integral_example.svg.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 10,
+  "fields": {
+    "owner": 4,
+    "title": "lineat regression",
+    "created": "2021-10-15T08:27:24.986Z",
+    "updated": "2021-10-15T08:27:24.986Z",
+    "file": "images/Linear_regression.png"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 11,
+  "fields": {
+    "owner": 5,
+    "title": "Logic Gates",
+    "created": "2021-10-15T08:38:13.646Z",
+    "updated": "2021-10-15T08:38:13.646Z",
+    "file": "images/logic_gate.png"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 1,
+  "fields": {
+    "owner": 4,
+    "title": "Tutorial",
+    "created": "2021-10-15T08:07:25.296Z",
+    "updated": "2021-10-15T08:07:25.296Z",
+    "url": "https://www.youtube.com/watch?v=tC7NkH5xwBM"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 2,
+  "fields": {
+    "owner": 4,
+    "title": "video tutorial",
+    "created": "2021-10-15T08:10:39.022Z",
+    "updated": "2021-10-15T08:10:39.022Z",
+    "url": "https://www.youtube.com/watch?v=Ft2_QtXAnh8"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 3,
+  "fields": {
+    "owner": 4,
+    "title": "video lecture",
+    "created": "2021-10-15T08:13:32.907Z",
+    "updated": "2021-10-15T08:13:32.907Z",
+    "url": "https://www.youtube.com/watch?v=kvGsIo1TmsM"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 4,
+  "fields": {
+    "owner": 4,
+    "title": "Video tutorial",
+    "created": "2021-10-15T08:19:30.760Z",
+    "updated": "2021-10-15T08:19:30.760Z",
+    "url": "https://www.youtube.com/watch?v=riXcZT2ICjA"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 5,
+  "fields": {
+    "owner": 4,
+    "title": "video lecture",
+    "created": "2021-10-15T08:28:12.202Z",
+    "updated": "2021-10-15T08:28:12.202Z",
+    "url": "https://www.youtube.com/watch?v=h8EYEJ32oQ8"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 6,
+  "fields": {
+    "owner": 4,
+    "title": "youtube tutorial",
+    "created": "2021-10-15T08:30:13.436Z",
+    "updated": "2021-10-15T08:30:13.436Z",
+    "url": "https://www.youtube.com/watch?v=h8EYEJ32oQ8"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 7,
+  "fields": {
+    "owner": 5,
+    "title": "lecture tutorial",
+    "created": "2021-10-15T08:38:37.744Z",
+    "updated": "2021-10-15T08:38:37.744Z",
+    "url": "https://www.youtube.com/watch?v=BnB2m1nXZ84"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 8,
+  "fields": {
+    "owner": 5,
+    "title": "youtube video lecture",
+    "created": "2021-10-15T08:41:29.860Z",
+    "updated": "2021-10-15T08:41:29.860Z",
+    "url": "https://www.youtube.com/watch?v=FCMxA3m_Imc"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 9,
+  "fields": {
+    "owner": 7,
+    "title": "tutorial",
+    "created": "2021-10-15T09:31:35.263Z",
+    "updated": "2021-10-15T09:31:35.263Z",
+    "url": "https://www.youtube.com/watch?v=W8KRzm-HUcc"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 10,
+  "fields": {
+    "owner": 7,
+    "title": "video tutorial",
+    "created": "2021-10-15T09:32:37.983Z",
+    "updated": "2021-10-15T09:32:37.983Z",
+    "url": "https://www.youtube.com/watch?v=NSbOtYzIQI0"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 11,
+  "fields": {
+    "owner": 7,
+    "title": "Django Module",
+    "created": "2021-10-15T09:33:34.398Z",
+    "updated": "2021-10-15T09:33:34.398Z",
+    "url": "https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 12,
+  "fields": {
+    "owner": 7,
+    "title": "Video Tutorial",
+    "created": "2021-10-15T09:39:14.569Z",
+    "updated": "2021-10-15T09:39:14.569Z",
+    "url": "https://www.youtube.com/watch?v=Vl0H-qTclOg"
+  }
+}
+]

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ object.title }}
+{% endblock %}
+{% block content %}
+  {% with subject=object.subject %}
+    <h1> {{ object.title }}</h1>
+    <div class="module">
+      <h2>Overview</h2>
+      <p>
+        <a href="{% url "courses:course_list_subject" subject.slug %}">{{ subject.title }}</a>.
+        {{ object.modules.count }} modules.
+        Instructor:
+        {{ object.owner.username }}
+      </p>
+      {{ object.overview|linebreaks }}
+      {% if request.user.is_authenticated %}
+        <form class="" action="{% url "students:student_enroll_course" %}" method="post">
+          {{ enroll_form }}
+          {% csrf_token %}
+          <input type="submit" name="" value="Enroll Now">
+        </form>
+      {% else %}
+        <a class="btn btn-secondary border border-dark" href="{% url "students:student_registration" %}">
+          Register to Enroll
+        </a>
+      {% endif %}
+    </div>
+  {% endwith %}
+{% endblock %}

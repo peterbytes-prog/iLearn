@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load course %}
+
+{% block title %}
+  Module {{ module.order|add:1 }}: {{ module.title }}
+{% endblock %}
+{% block content %}
+
+{% with course=module.course %}
+  <h1 class="bg-secondary m-1">Course "{{ course.title }}"</h1>
+  <div class="container row my-2">
+    <div class="contents col-md-3 col-xs-12 bg-light">
+      <h3>Modules</h3>
+      <ul id='modules' class="list-group list-unstyle">
+        {% for m in course.modules.all %}
+          <li data-id="{{ m.id }}"  id="{{ m.id }}" class="{% if m == module %}selected{% endif %} list-group-item">
+            <a href="{% url 'courses:module_content_list' m.id %}">
+              <span>Module
+                <span class="order">{{ m.order|add:1}}</span>
+              </span>
+              <br>
+              {{ m.title }}
+            </a>
+          </li>
+        {% empty %}
+          <li>No Module Yet</li>
+        {% endfor %}
+      </ul>
+      <p>
+        <a href="{% url "courses:course_module_update" course.id %}">Edit modules</a>
+      </p>
+    </div>
+
+    <div class="module col-md-9 col-xs-12">
+      <h2>Module {{ module.order|add:1}}: {{ module.title }}</h2>
+      <p class="h4 text">Module contents:</p>
+      <div id="module-contents">
+        {% for content in module.contents.all %}
+          <div data-id="{{ content.id }}" class="list-group-item m-1">
+            {% with item=content.item %}
+              <p>{{ item }} ({{ item|model_name }})</p>
+              <div  class="d-flex justify-content-end">
+                <a  class="m-1" href="{% url 'courses:module_content_update' module.id item|model_name item.id%}">Edit</a>
+                <span>|</span>
+                <form style=" margin:0; padding:0; border:none; display:inline" action="{% url 'courses:module_content_delete' content.id %}" method="post">
+                  <input style="margin:0; padding:0; border:none; background-color:white" type="submit" name="delete" value="Delete" class="m-1 text-primary" />
+                  {% csrf_token %}
+                </form>
+              </div>
+
+            {% endwith %}
+          </div>
+        {% empty %}
+          <p>This module has no contents yet.</p>
+        {% endfor %}
+      </div>
+      <div class="container ">
+        <p class="h5 text">Add new content:</p>
+        <ul class="text-center list-inline content-types">
+           <li class="list-inline-item btn border">
+             <a href="{% url 'courses:module_content_create' module.id 'text'%}">Text</a>
+           </li>
+           <li class="list-inline-item btn border">
+             <a href="{% url 'courses:module_content_create' module.id 'image'%}">Image</a>
+           </li>
+           <li class="list-inline-item btn border">
+             <a href="{% url 'courses:module_content_create' module.id 'video'%}">Video</a>
+           </li>
+           <li class="list-inline-item btn border">
+             <a href="{% url 'courses:module_content_create' module.id 'file'%}">File</a>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endwith %}
+{% endblock %}
+{% block domready %}
+  $('#modules').sortable(
+  {
+
+    update:function(event,ui)
+      {
+
+        var modules_order = {};
+        $(this).children().each(function(){
+          $(this).find('.order').text($(this).index() + 1);
+          modules_order[$(this).data('id')] = $(this).index();
+        });
+
+        $.ajax({
+          type:'POST',
+          url:'{% url "courses:module_order" %}',
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          data:JSON.stringify(modules_order)
+        });
+
+      }
+
+  });
+
+  $('#module-contents').sortable(
+  {
+      update:function(event,ui){
+        var contents_order = {};
+        $(this).children().each(function(){
+          contents_order[$(this).data('id')] = $(this).index();
+        });
+        console.log(contents_order);
+        $.ajax({
+          type:"POST",
+          url:'{% url "courses:content_order" %}',
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          data:JSON.stringify(contents_order)
+        })
+      }
+   })
+{% endblock %}
