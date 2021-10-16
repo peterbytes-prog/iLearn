@@ -23,5 +23,9 @@ urlpatterns = [
     path("course/<pk>/<module_id>/",
             StudentCourseDetailView.as_view(),
             name='student_course_detail_module'
+        ),
+    path("course/drop/<pk>",
+            StudentCourseDelete.as_view(),
+            name='drop_course'
         )
 ]

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Drop Course
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="h1 bg-secondary my-2 p-2">Sign Up</h1>
+    <div class="container m-2 module bg-light">
+      <p class="h5 py-1">Are are about to drop: {{ course.title }}</p>
+      <form class="" action="" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p>
+          <input class="btn btn-danger" type="submit" name="" value="Confirm Drop">
+        </p>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

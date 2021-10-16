@@ -1,12 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView,FormView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import CourseEnrollForm
+from django.views.generic.base import View
+from .forms import CourseEnrollForm, DropCourseForm
+from django.utils.decorators import method_decorator
+from django.views.generic.base import TemplateResponseMixin, View
 from courses.models import *
+from django import forms
 
 from django.contrib.auth import login, authenticate
 
@@ -28,7 +32,6 @@ class StudentEnrollCourseView(LoginRequiredMixin,FormView):
     def form_valid(self,form):
         self.course = form.cleaned_data['course']
         self.course.students.add(self.request.user)
-        print('form submitted')
         return super().form_valid(form)
     def get_success_url(self):
         return reverse_lazy('students:student_course_detail',args=[self.course.id])
@@ -53,3 +56,16 @@ class StudentCourseDetailView(DetailView):
         else:
             context['module'] = course.modules.all()[0]
         return context
+
+class StudentCourseDelete(LoginRequiredMixin,TemplateResponseMixin, View):
+    template_name='students/student/drop.html'
+    def get(self,request,pk):
+        course = get_object_or_404(Course,id=pk)
+        form = DropCourseForm(data={'course':course.id})
+        return self.render_to_response({'course':course,'form':form})
+    def post(self,request,pk):
+        course = get_object_or_404(Course,id=pk)
+        form = DropCourseForm(data={'course':course.id})
+        if form.is_valid():
+            course.students.remove(request.user)
+        return redirect(reverse_lazy('courses:course_detail',kwargs={'slug':course.slug}))

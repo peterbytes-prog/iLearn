@@ -94,7 +94,6 @@ class ContentCreateUpdateView(TemplateResponseMixin,View):
                                 data = request.POST,
                                 files = request.FILES
                                 )
-        print(form)
         if form.is_valid():
             obj = form.save(commit=False)
             obj.owner = request.user
@@ -140,9 +139,7 @@ class CourseListView(TemplateResponseMixin,View):
         if subject:
             subject = get_object_or_404(Subject,slug=subject)
             courses = courses.filter(subject=subject)
-        print({'subjects':subjects,
-        'subject':subject,
-        'courses':courses})
+
         return self.render_to_response({
             'subjects':subjects,
             'subject':subject,
@@ -156,7 +153,6 @@ class CourseDetailView(DetailView):
         context['enroll_form'] = CourseEnrollForm(initial={'course':self.object})
         return context
     def post(self,request):
-        print('error')
         return None
 
 """

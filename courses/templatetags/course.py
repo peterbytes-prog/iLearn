@@ -41,7 +41,6 @@ def is_current(request,name):
     }
 
     if current_url in nav.get(name,[]):
-        print('current_url',current_url,' : ', nav.get(name,[]))
         return True
     else:
         return False
