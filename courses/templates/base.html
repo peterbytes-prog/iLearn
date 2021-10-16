@@ -1,4 +1,5 @@
 {% load static %}
+{% load course %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,24 +11,26 @@
   <body>
     <div class="">
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">iL</a>
+         <a href="#" class="navbar-brand bg-light border-white text-bold text-dark px-3">iLearn</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link {% if request|is_current:'home' %}active{% endif %}" href="\" >Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Unknown</a>
+              <a class="nav-link {% if request|is_current:'my_courses' %}active{% endif %}" href="{% url "students:student_course_list"%}">My Courses</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Unknown</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Unknown</a>
-            </li>
+            {% if request.user|is_instructor %}
+              <li class="nav-item">
+                <a class="nav-link {% if request|is_current:'my_submitted_courses' %}active{% endif %}" href="{% url 'courses:manage_course_list' %}">My Submited Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request|is_current:'course_create' %}active{% endif %}" href="{% url 'courses:course_create' %}">Create Course</a>
+              </li>
+            {% endif %}
           </ul>
           <ul class="navbar-nav ml-auto">
           {% if request.user.is_authenticated %}
@@ -61,7 +64,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       {% block domready %}
-      
+
       {% endblock %}
     })
   </script>

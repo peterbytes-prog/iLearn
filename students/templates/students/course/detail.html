@@ -6,9 +6,10 @@
 
 {% block content %}
   <h1>{{ module.title }}</h1>
+  <br>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-3 contents">
+      <div class="bg-light col-xs-12 col-md-3 contents">
         <h3>Modules</h3>
         <ul class="modules list-group">
           {% for m in object.modules.all %}

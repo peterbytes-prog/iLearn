@@ -14,13 +14,17 @@
             <p> {{ course.overview }}</p>
           {% endif %}
           <div class="container">
-            <a class="d-block" href="{% url 'courses:course_module_update' course.id %}">Edit Modules</a>
+            <p style="" class="d-flex justify-content-center">
+              <a class="d-block" href="{% url 'courses:course_module_update' course.id %}">Edit Modules </a>
+              {% if course.modules.count > 0%}
+                &nbsp;|&nbsp; <a href="{% url 'courses:module_content_list' course.modules.first.id %}">Manage contents</a>
+              {% endif %}
+            </p>
 
-            {% if course.modules.count > 0%}
-              <a href="{% url 'courses:module_content_list' course.modules.first.id %}">Manage contents</a>
-            {% endif %}
-            <a class="btn btn-secondary" href="{% url 'courses:course_edit' course.id %}">Edit</a>
-            <a class="btn btn-dark" href="{% url 'courses:course_delete' course.id %}">Delete</a>
+            <div class="">
+              <a class="btn btn-secondary" href="{% url 'courses:course_edit' course.id %}">Edit</a>
+              <a class="btn btn-dark" href="{% url 'courses:course_delete' course.id %}">Delete</a>
+            </div>
           </div>
         </div>
       {% empty %}

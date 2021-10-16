@@ -29,3 +29,6 @@ form > p > input[type=checkbox]{
   margin: auto;
   text-align: center;
 }
+.list-group-item:not(.selected){
+  background-color: rgb(250,250,250);
+}
