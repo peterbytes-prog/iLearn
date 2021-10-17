@@ -47,6 +47,7 @@ class StudentCourseDetailView(DetailView):
     template_name = 'students/course/detail.html'
     def get_queryset(self):
         qs = super().get_queryset()
+        #if not in course redirect course info page
         return qs.filter(students__in=[self.request.user])
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
