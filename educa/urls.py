@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_view
 from courses.views import CourseListView
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.authtoken import views as token_views
 import os
 
 urlpatterns = [
@@ -29,7 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('course/', include('courses.urls',namespace='courses')),
     path('students/',include('students.urls',namespace='students')),
-    path('api/',include('courses.api.urls',namespace='api'))
+    path('api/',include('courses.api.urls',namespace='api')),
+    path('api-token-auth/',token_views.obtain_auth_token)
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
