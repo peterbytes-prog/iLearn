@@ -31,7 +31,8 @@ urlpatterns = [
     path('course/', include('courses.urls',namespace='courses')),
     path('students/',include('students.urls',namespace='students')),
     path('api/',include('courses.api.urls',namespace='api')),
-    path('api-token-auth/',token_views.obtain_auth_token)
+    path('api-token-auth/',token_views.obtain_auth_token),
+    path('chat/',include('chat.urls',namespace='chat')),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

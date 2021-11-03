@@ -41,9 +41,7 @@
     "overview": "In its most general form, algebra is the study of mathematical symbols and the rules for manipulating these symbols; it is a unifying thread of almost all of mathematics.",
     "slug": "algebra",
     "created": "2021-10-15T07:53:52.664Z",
-    "students": [
-      3
-    ]
+    "students": []
   }
 },
 {
@@ -108,7 +106,11 @@
     "overview": "Microsoft Excel is the industry leading spreadsheet software program, a powerful data visualization and analysis tool.",
     "slug": "excel",
     "created": "2021-10-15T09:37:30.100Z",
-    "students": []
+    "students": [
+      1,
+      2,
+      3
+    ]
   }
 },
 {

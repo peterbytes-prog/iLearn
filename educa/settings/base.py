@@ -15,8 +15,9 @@ from django.urls import reverse_lazy
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.join(__file__,os.pardir)))
+# print('DIRS:',BASE_DIR1,BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -44,7 +45,9 @@ INSTALLED_APPS = [
     'embed_video',
     'memcache_status',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    "channels",
+    "chat",
 ]
 
 MIDDLEWARE = [
@@ -86,9 +89,17 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND':'channels_redis.core.RedisChannelLayer',
+        'CONFIG':{
+            'hosts':[('127.0.0.1',6379)],
+        }
+    }
+}
 
 WSGI_APPLICATION = 'educa.wsgi.application'
-
+ASGI_APPLICATION = 'educa.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -96,7 +107,7 @@ WSGI_APPLICATION = 'educa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR/'db.sqlite3',
     }
 }
 
@@ -141,6 +152,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
 LOGIN_REDIRECT_URL = reverse_lazy('students:student_course_list')
 
 # Default primary key field type
