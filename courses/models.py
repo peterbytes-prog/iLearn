@@ -4,6 +4,7 @@ from django.contrib.contenttypes.models import ContentType
 from .fields import OrderField
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.template.loader import render_to_string
+from students.models import Student
 # Create your models here.
 class Subject(models.Model):
     title = models.CharField(max_length=200)
@@ -20,7 +21,7 @@ class Course(models.Model):
     overview = models.TextField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
     created = models.DateTimeField(auto_now_add=True)
-    students = models.ManyToManyField(User,related_name='courses_joined',blank=True)# TODO:  change model sttructure later  student model in of itself
+    students = models.ManyToManyField(Student,related_name='courses_joined',blank=True)# TODO:  change model sttructure later  student model in of itself
     class Meta:
         ordering = ['-created']
     def __str__(self):
