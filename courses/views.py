@@ -18,14 +18,14 @@ class OwnerMixin(object):
     """docstring for OwnerMixin."""
     def get_queryset(self,*args,**kwargs):
         qs = super().get_queryset(*args,**kwargs)
-        return qs.filter(owner=self.request.user)
+        return qs.filter(instructor=self.request.user.instructor)
     pass
 class OwnerEditMixing(object):
     """docstring for OwnerEditMixing."""
     def form_valid(self,form):
-        form.instance.owner = self.request.user
+        form.instance.instructor = self.request.user.instructor
         return super().form_valid(form)
-class OwnerCourseMixin(OwnerMixin,LoginRequiredMixin,PermissionRequiredMixin):
+class OwnerCourseMixin(OwnerMixin,LoginRequiredMixin,PermissionRequiredMixin):#,PermissionRequiredMixin
     model = Course
 class OwnerCourseEditMixin(OwnerCourseMixin,OwnerEditMixing):
     template_name = 'courses/manage/course/form.html'
@@ -33,20 +33,23 @@ class OwnerCourseEditMixin(OwnerCourseMixin,OwnerEditMixing):
     success_url = reverse_lazy('courses:manage_course_list')
 class ManageCourseListView(OwnerCourseMixin,ListView):
     template_name = 'courses/manage/course/list.html'
-    permission_required = 'courses.view_course'
+    permission_required = 'courses.can_view_course'
+    def __str__(self):
+        return "manage_course_list"
 class CourseCreateView(OwnerCourseEditMixin,CreateView):
     """docstring for CourseCreateView."""
-    permission_required = 'courses.add_course'
+    permission_required = 'courses.can_add_course'
 class CourseUpdateView(OwnerCourseEditMixin,UpdateView):
     """docstring for CourseUpdateView."""
-    permission_required = 'courses.change_course'
+    permission_required = 'courses.can_change_course'
 class CourseDeleteView(OwnerCourseEditMixin,DeleteView):
     """docstring for CourseDeleteView."""
     template_name = 'courses/manage/course/delete.html'
-    permission_required = 'courses.delete_course'
-class CourseModuleUpdateView(TemplateResponseMixin,View):
+    permission_required = 'courses.can_delete_course'
+class CourseModuleUpdateView(LoginRequiredMixin,PermissionRequiredMixin,TemplateResponseMixin,View):
     """docstring for CourseModuleUpdateView."""
     course = None
+    permission_required = ('courses.can_change_content','courses.can_view_course')
     template_name = 'courses/manage/module/formset.html'
     def dispatch(self,request,pk):
         self.course = get_object_or_404(Course,pk=pk)
@@ -65,7 +68,8 @@ class CourseModuleUpdateView(TemplateResponseMixin,View):
         else:
             return self.render_to_response({'course':self.course,'formset':formset})
     pass
-class ContentCreateUpdateView(TemplateResponseMixin,View):
+class ContentCreateUpdateView(LoginRequiredMixin,PermissionRequiredMixin,TemplateResponseMixin,View):
+    permission_required = ('courses.can_change_content','courses.can_view_course')
     template_name = 'courses/manage/content/form.html'
     model = None
     module = None
@@ -77,13 +81,16 @@ class ContentCreateUpdateView(TemplateResponseMixin,View):
         else:
             return None
     def get_form(self,model,*args,**kwargs):
-        Form = modelform_factory(model,exclude=['owner','order','created','updated'])
+        Form = modelform_factory(model,exclude=['instructor','order','created','updated'])
         return Form(*args,**kwargs)
     def dispatch(self,request,module_id,model_name,id=None):
-        self.module = get_object_or_404(Module,id=module_id,course__owner=request.user)
+        #overiding dispatch influnce mixins
+        if (not request.user.is_authenticated) or (not request.user.has_perms(('courses.can_change_content','courses.can_view_course'))):
+            return super().dispatch(request,module_id,model_name,id)
+        self.module = get_object_or_404(Module,id=module_id,course__instructor=request.user.instructor)
         self.model = self.get_model(model_name)
         if id:
-            obj = get_object_or_404(self.model,id=id,owner=request.user)
+            self.obj = get_object_or_404(self.model,id=id,instructor=request.user.instructor)
         return super().dispatch(request,module_id,model_name,id)
     def get(self,request,module_id,model_name,id=None):
         form = self.get_form(self.model,instance=self.obj)
@@ -96,38 +103,39 @@ class ContentCreateUpdateView(TemplateResponseMixin,View):
                                 )
         if form.is_valid():
             obj = form.save(commit=False)
-            obj.owner = request.user
+            obj.instructor = request.user.instructor
             obj.save()
             if not id:
                 Content.objects.create(module=self.module,item=obj)
             return redirect(reverse_lazy('courses:module_content_list',kwargs={'module_id':self.module.id}))
         return self.render_to_response({'form':form,'object':self.obj})
     pass
-class ContentDeleteView(DeleteView):
+class ContentDeleteView(LoginRequiredMixin,PermissionRequiredMixin,DeleteView):
+    permission_required = ('courses.can_change_content','courses.can_view_course')
     def post(self,request,id):
-        content = get_object_or_404(Content,id=id,module__course__owner=request.user)
+        content = get_object_or_404(Content,id=id,module__course__instructor=request.user.instructor)
         module = content.module
         content.item.delete()
         content.delete()
         return redirect(reverse_lazy('courses:module_content_list',kwargs={'module_id':module.id}))
-class ModuleContentListView(TemplateResponseMixin,View):
+class ModuleContentListView(LoginRequiredMixin,PermissionRequiredMixin,TemplateResponseMixin,View):
     """docstring for ModuleContentListView."""
+    permission_required = ('courses.can_view_course','courses.can_view_content')
     template_name = 'courses/manage/module/content_list.html'
     def get(self,request,module_id):
-        module = get_object_or_404(Module,id=module_id,course__owner=request.user)
+        module = get_object_or_404(Module,id=module_id,course__instructor=request.user.instructor)
         return self.render_to_response({"module":module})
 class ModuleOrderView(CsrfExemptMixin,JsonRequestResponseMixin,View):
     def post(self,request):
         for id,order in self.request_json.items():
-            Module.objects.filter(id=id,course__owner=request.user).update(order=order)
+            Module.objects.filter(id=id,course__instructor=request.user.instructor).update(order=order)
         return self.render_json_response({'saved':'OK'})
     pass
 class ContentOrderView(CsrfExemptMixin,JsonRequestResponseMixin,View):
-
     def post(self, request):
         for id, order in self.request_json.items():
             Content.objects.filter(id=id,
-                       module__course__owner=request.user).update(order=order)
+                       module__course__instructor=request.user.instructor).update(order=order)
         return self.render_json_response({'saved': 'OK'})
 
 class CourseListView(TemplateResponseMixin,View):
@@ -150,6 +158,10 @@ class CourseDetailView(DetailView):
     template_name = 'courses/course/detail.html'
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            if self.object.course_enrollements.students.filter(user=self.request.user):
+                context['is_student'] = True
+                return context
         context['enroll_form'] = CourseEnrollForm(initial={'course':self.object})
         return context
     def post(self,request):

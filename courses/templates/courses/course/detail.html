@@ -17,7 +17,7 @@
           </p>
           {{ object.overview|linebreaks }}
           {% if request.user.is_authenticated %}
-            {% if request.user in object.students.all %}
+            {% if is_student %}
               <div class="d-flex justify-content-center align-items-end">
                 <a href="{% url "students:student_course_detail" object.id  %}" class="btn btn-secondary px-5 border border-white text-light" name="button">Explore</a>
                 <a href="{% url "students:drop_course" object.id %}" class="text-danger mx-2 drop">Drop Course</a>

@@ -1,0 +1,65 @@
+[
+{
+  "model": "students.student",
+  "pk": 1,
+  "fields": {
+    "user": 1
+  }
+},
+{
+  "model": "students.student",
+  "pk": 2,
+  "fields": {
+    "user": 2
+  }
+},
+{
+  "model": "students.student",
+  "pk": 3,
+  "fields": {
+    "user": 3
+  }
+},
+{
+  "model": "students.student",
+  "pk": 4,
+  "fields": {
+    "user": 4
+  }
+},
+{
+  "model": "students.student",
+  "pk": 5,
+  "fields": {
+    "user": 5
+  }
+},
+{
+  "model": "students.student",
+  "pk": 6,
+  "fields": {
+    "user": 6
+  }
+},
+{
+  "model": "students.student",
+  "pk": 7,
+  "fields": {
+    "user": 7
+  }
+},
+{
+  "model": "students.student",
+  "pk": 8,
+  "fields": {
+    "user": 8
+  }
+},
+{
+  "model": "students.student",
+  "pk": 9,
+  "fields": {
+    "user": 9
+  }
+}
+]

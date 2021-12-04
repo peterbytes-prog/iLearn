@@ -10,14 +10,11 @@ class OrderField(models.PositiveIntegerField):
             # no current value
             try:
                 qs = self.model.objects.all()
-                print(" 1 ",[i for i in qs])
                 if self.for_fields:
                     # filter by objects with the same field values
                     # for the fields in "for_fields"
                     query = { field: getattr(model_instance, field) for field in self.for_fields }
-                    print(" 2 ",query)
                     qs = qs.filter(**query)
-                    print(" 3 ",[i for i in qs])
                 # get the order of the last item
                 last_item = qs.latest(self.attname)
                 value = last_item.order + 1

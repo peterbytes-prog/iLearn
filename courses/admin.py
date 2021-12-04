@@ -2,7 +2,9 @@ from django.contrib import admin
 from .models import *
 
 admin.site.index_template = 'memcache_status/admin_index.html'
-
+admin.site.register(Instructor)
+admin.site.register(Assignment)
+admin.site.register(Enrollment)
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
     list_display = ['title','slug']

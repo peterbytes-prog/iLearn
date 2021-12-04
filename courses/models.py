@@ -1,11 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group,Permission
 from django.contrib.contenttypes.models import ContentType
 from .fields import OrderField
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.template.loader import render_to_string
 from students.models import Student
 # Create your models here.
+
 class Subject(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
@@ -14,14 +15,33 @@ class Subject(models.Model):
     def __str__(self):
         return self.title
 
+class Assignment(models.Model):
+    instructor = models.ForeignKey('Instructor', related_name='assignments_created', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    overview = models.TextField(max_length=200)
+    slug = models.SlugField(max_length=200,unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    weight = models.DecimalField(max_digits=3, decimal_places=2)
+    content =models.TextField(max_length=200, blank=True)
+    enrollment = models.ForeignKey('Enrollment',related_name='assignments', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.title
+class Enrollment(models.Model):
+    students = models.ManyToManyField(Student,related_name='enrollments',blank=True)# TODO:  change model sttructure later  student model in of itself
+    created  = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    course = models.OneToOneField('Course',on_delete=models.CASCADE, related_name='course_enrollements')
+    def get_grade(self):
+        pass
+    def __str__(self):
+        return f"Enrollment For: {self.course}"
 class Course(models.Model):
-    owner = models.ForeignKey(User, related_name='courses_created', on_delete=models.CASCADE)
+    instructor = models.ForeignKey('Instructor', related_name='courses_created', on_delete=models.CASCADE)
     subject  = models.ForeignKey(Subject, related_name='courses', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     overview = models.TextField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
     created = models.DateTimeField(auto_now_add=True)
-    students = models.ManyToManyField(Student,related_name='courses_joined',blank=True)# TODO:  change model sttructure later  student model in of itself
     class Meta:
         ordering = ['-created']
     def __str__(self):
@@ -56,7 +76,7 @@ class Content(models.Model):
         ordering = ['order']
 
 class ItemBase(models.Model):
-    owner = models.ForeignKey(User,on_delete=models.CASCADE,related_name="%(class)s_related")
+    instructor = models.ForeignKey('Instructor',on_delete=models.CASCADE,related_name="%(class)s_related")
     title = models.CharField(max_length=250)
     created  = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -82,3 +102,79 @@ class Video(ItemBase):
     pass
 
 #
+class Instructor(models.Model):
+    user = models.OneToOneField(User,related_name='instructor',on_delete=models.CASCADE)
+    def save(self,*args,**kwargs):
+
+        instructors, created = Group.objects.get_or_create(name = "instructors")
+        if created:
+            permissions_list = {
+                'Course':[
+                    ('can_add_course',"Can add course"),
+                    ('can_change_course',"Can change course"),
+                    ('can_delete_course',"Can delete course"),
+                    ('can_view_course',"Can view course")
+                ],
+                'Content':[
+                    ('can_add_content',"Can add content"),
+                    ('can_change_content',"Can change content"),
+                    ('can_delete_content',"Can delete content"),
+                    ('can_view_content',"Can view content")
+                ],
+                'File':[
+                    ('can_add_file',"Can add file"),
+                    ('can_change_file',"Can change file"),
+                    ('can_delete_file',"Can delete file"),
+                    ('can_view_file',"Can view file")
+                ],
+                'Image':[
+                    ('can_add_image',"Can add image"),
+                    ('can_change_image',"Can change image"),
+                    ('can_delete_image',"Can delete image"),
+                    ('can_view_image',"Can view image")
+                ],
+                'Text':[
+                    ('can_add_text',"Can add text"),
+                    ('can_change_text',"Can change text"),
+                    ('can_delete_text',"Can delete text"),
+                    ('can_view_text',"Can view text")
+                ],
+                'Video':[
+                    ('can_add_video',"Can add video"),
+                    ('can_change_video',"Can change video"),
+                    ('can_delete_video',"Can delete video"),
+                    ('can_view_video',"Can view video")
+                ]
+            }
+            for model in permissions_list:
+                if model == 'Video':
+                    ct = ContentType.objects.get_for_model(Video)
+                elif model == 'Text':
+                    ct = ContentType.objects.get_for_model(Text)
+                elif model == 'File':
+                    ct = ContentType.objects.get_for_model(File)
+                elif model == 'Image':
+                    ct = ContentType.objects.get_for_model(Image)
+                elif model == 'Text':
+                    ct = ContentType.objects.get_for_model(Text)
+                elif model == 'Content':
+                    ct = ContentType.objects.get_for_model(Content)
+                elif model == 'Course':
+                    ct = ContentType.objects.get_for_model(Course)
+                for perm in permissions_list[model]:
+                    permission = Permission.objects.create(
+                        codename=perm[0],
+                        name=perm[1],
+                        content_type=ct
+                        )
+                    instructors.permissions.add(permission)
+        self.user.groups.add(instructors)
+        self.user.is_staff = True
+        self.user.save()
+        super().save(*args,**kwargs)
+        pass
+
+    def __str__(self):
+        return f"Instructor: {self.user.username}"
+
+    pass

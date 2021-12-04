@@ -1,7 +1,15 @@
 [
 {
   "model": "courses.subject",
-  "pk": 6,
+  "pk": 1,
+  "fields": {
+    "title": "Computer Science",
+    "slug": "computer-science"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 2,
   "fields": {
     "title": "Mathematics",
     "slug": "mathematics"
@@ -9,117 +17,348 @@
 },
 {
   "model": "courses.subject",
+  "pk": 3,
+  "fields": {
+    "title": "History",
+    "slug": "history"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 4,
+  "fields": {
+    "title": "Language",
+    "slug": "language"
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 1,
+  "fields": {
+    "created": "2021-12-04T06:13:59.822Z",
+    "updated": "2021-12-04T06:13:59.822Z",
+    "course": 1,
+    "students": [
+      9
+    ]
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 2,
+  "fields": {
+    "created": "2021-12-04T06:38:36.412Z",
+    "updated": "2021-12-04T06:38:36.412Z",
+    "course": 2,
+    "students": []
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 3,
+  "fields": {
+    "created": "2021-12-04T06:52:04.657Z",
+    "updated": "2021-12-04T06:52:04.657Z",
+    "course": 3,
+    "students": [
+      8,
+      9
+    ]
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 4,
+  "fields": {
+    "created": "2021-12-04T07:05:26.817Z",
+    "updated": "2021-12-04T07:05:26.817Z",
+    "course": 4,
+    "students": [
+      9
+    ]
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 5,
+  "fields": {
+    "created": "2021-12-04T07:11:38.245Z",
+    "updated": "2021-12-04T07:11:38.245Z",
+    "course": 5,
+    "students": []
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 6,
+  "fields": {
+    "created": "2021-12-04T09:41:53.139Z",
+    "updated": "2021-12-04T09:41:53.139Z",
+    "course": 6,
+    "students": [
+      8
+    ]
+  }
+},
+{
+  "model": "courses.enrollment",
   "pk": 7,
   "fields": {
-    "title": "Science",
-    "slug": "science"
+    "created": "2021-12-04T10:08:33.857Z",
+    "updated": "2021-12-04T10:08:33.857Z",
+    "course": 7,
+    "students": [
+      8
+    ]
   }
 },
 {
-  "model": "courses.subject",
+  "model": "courses.enrollment",
   "pk": 8,
   "fields": {
-    "title": "Programming",
-    "slug": "programming"
+    "created": "2021-12-04T10:23:06.978Z",
+    "updated": "2021-12-04T10:23:06.978Z",
+    "course": 8,
+    "students": [
+      7
+    ]
   }
 },
 {
-  "model": "courses.subject",
+  "model": "courses.enrollment",
   "pk": 9,
   "fields": {
-    "title": "Software Training",
-    "slug": "software-training"
+    "created": "2021-12-04T10:41:48.818Z",
+    "updated": "2021-12-04T10:41:48.818Z",
+    "course": 9,
+    "students": []
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 1,
+  "fields": {
+    "instructor": 2,
+    "subject": 2,
+    "title": "Linear Algebra 101",
+    "overview": "Linear algebra is also used in most sciences and fields of engineering, because it allows modeling many natural phenomena, and computing efficiently with such models.",
+    "slug": "linear-algebra-101",
+    "created": "2021-12-04T06:13:59.815Z"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 2,
+  "fields": {
+    "instructor": 2,
+    "subject": 2,
+    "title": "General Calculus",
+    "overview": "In mathematics education, calculus denotes courses of elementary mathematical analysis, which are mainly devoted to the study of functions and limits. The word calculus (plural calculi) is a Latin.",
+    "slug": "general-calculus",
+    "created": "2021-12-04T06:38:36.405Z"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 3,
+  "fields": {
+    "instructor": 2,
+    "subject": 1,
+    "title": "Machine Learning  Introduction",
+    "overview": "Machine learning (ML) is the study of computer algorithms that can improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence.",
+    "slug": "machine-learning-introduction",
+    "created": "2021-12-04T06:52:04.645Z"
+  }
+},
+{
+  "model": "courses.course",
+  "pk": 4,
+  "fields": {
+    "instructor": 3,
+    "subject": 2,
+    "title": "Math 101",
+    "overview": "Whether you’re leaving a tip at a restaurant or figuring out just how much those stylish shoes are on sale, you can’t get away from percentages. While there are numerous percentage calculators online.",
+    "slug": "math-101",
+    "created": "2021-12-04T07:05:26.811Z"
   }
 },
 {
   "model": "courses.course",
   "pk": 5,
   "fields": {
-    "owner": 4,
-    "subject": 6,
-    "title": "Algebra",
-    "overview": "In its most general form, algebra is the study of mathematical symbols and the rules for manipulating these symbols; it is a unifying thread of almost all of mathematics.",
-    "slug": "algebra",
-    "created": "2021-10-15T07:53:52.664Z",
-    "students": []
+    "instructor": 3,
+    "subject": 2,
+    "title": "Geometry",
+    "overview": "Geometry (from the Ancient Greek: γεωμετρία; geo- \"earth\", -metron \"measurement\") is, with arithmetic, one of the oldest branches of mathematics.",
+    "slug": "geometry",
+    "created": "2021-12-04T07:11:38.235Z"
   }
 },
 {
   "model": "courses.course",
   "pk": 6,
   "fields": {
-    "owner": 4,
-    "subject": 6,
-    "title": "Calculus",
-    "overview": "Calculus, originally called infinitesimal calculus or \"the calculus of infinitesimals\", is the mathematical study of continuous change, in the same way that geometry is the study of shape and algebra",
-    "slug": "calculus",
-    "created": "2021-10-15T07:54:58.296Z",
-    "students": []
+    "instructor": 3,
+    "subject": 2,
+    "title": "Statistics Fundamental",
+    "overview": "Statistics is the discipline that concerns the collection, organization, analysis, interpretation, and presentation of data. In applying statistics to a scientific, industrial, or social probability.",
+    "slug": "statistics-fundamental",
+    "created": "2021-12-04T09:41:53.124Z"
   }
 },
 {
   "model": "courses.course",
   "pk": 7,
   "fields": {
-    "owner": 4,
-    "subject": 6,
-    "title": "Statistics",
-    "overview": "Statistics is the study and manipulation of data, including ways to gather, review, analyze, and draw conclusions from data. The two major areas of statistics are descriptive and inferential statistic",
-    "slug": "statistics",
-    "created": "2021-10-15T07:55:59.379Z",
-    "students": []
+    "instructor": 1,
+    "subject": 3,
+    "title": "Internet History",
+    "overview": "The Internet (or internet) is the global system of interconnected computer networks that uses the Internet protocol suite (TCP/IP) to communicate between networks and devices.",
+    "slug": "internet-history",
+    "created": "2021-12-04T10:08:33.844Z"
   }
 },
 {
   "model": "courses.course",
   "pk": 8,
   "fields": {
-    "owner": 5,
-    "subject": 8,
-    "title": "Programming 101",
-    "overview": "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task.",
-    "slug": "programming_101",
-    "created": "2021-10-15T08:33:48.598Z",
-    "students": []
+    "instructor": 4,
+    "subject": 4,
+    "title": "Cartoon and Anime Design",
+    "overview": "A cartoon is a type of illustration that is typically drawn, sometimes animated, in an unrealistic or semi-realistic style.",
+    "slug": "cartoon-and-anime-design",
+    "created": "2021-12-04T10:23:06.966Z"
   }
 },
 {
   "model": "courses.course",
   "pk": 9,
   "fields": {
-    "owner": 7,
-    "subject": 8,
-    "title": "Python Programming",
+    "instructor": 5,
+    "subject": 1,
+    "title": "Introduction To Python",
     "overview": "Python is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with its use of significant indentation.",
-    "slug": "python_programming",
-    "created": "2021-10-15T09:25:55.171Z",
-    "students": []
+    "slug": "introduction-to-python",
+    "created": "2021-12-04T10:41:48.805Z"
   }
 },
 {
-  "model": "courses.course",
+  "model": "courses.module",
+  "pk": 1,
+  "fields": {
+    "course": 1,
+    "title": "Vectors and Spaces",
+    "description": "Until the 19th century, linear algebra was introduced through systems of linear equations and matrices. In modern mathematics, the presentation through vector spaces is generally preferred, since it is more synthetic, more general (not limited to the finite-dimensional case), and conceptually simpler, although more abstract.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 2,
+  "fields": {
+    "course": 1,
+    "title": "Matrices",
+    "description": "Matrices allow explicit manipulation of finite-dimensional vector spaces and linear maps. Their theory is thus an essential part of linear algebra.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 3,
+  "fields": {
+    "course": 2,
+    "title": "Limits",
+    "description": "Calculus is usually developed by working with very small quantities. Historically, the first method of doing so was by infinitesimals. These are objects which can be treated like real numbers but which are, in some sense, \"infinitely small\". For example, an infinitesimal number could be greater than 0, but less than any number in the sequence 1, 1/2, 1/3, ... and thus less than any positive real number. From this point of view, calculus is a collection of techniques for manipulating infinitesimals. The symbols {\\displaystyle dx}dx and {\\displaystyle dy}dy were taken to be infinitesimal, and the derivative {\\displaystyle dy/dx}dy/dx was simply their ratio.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 4,
+  "fields": {
+    "course": 2,
+    "title": "Differential Calculus",
+    "description": "Differential calculus is the study of the definition, properties, and applications of the derivative of a function. The process of finding the derivative is called differentiation. Given a function and a point in the domain, the derivative at that point is a way of encoding the small-scale behavior of the function near that point",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 5,
+  "fields": {
+    "course": 3,
+    "title": "Artificial intelligence",
+    "description": "As a scientific endeavor, machine learning grew out of the quest for artificial intelligence. In the early days of AI as an academic discipline, some researchers were interested in having machines learn from data. They attempted to approach the problem with various symbolic methods, as well as what was then termed \"neural networks\"; these were mostly perceptrons and other models that were later found to be reinventions of the generalized linear models of statistics. Probabilistic reasoning was also employed, especially in automated medical diagnosis.",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 6,
+  "fields": {
+    "course": 3,
+    "title": "Data mining",
+    "description": "Machine learning and data mining often employ the same methods and overlap significantly, but while machine learning focuses on prediction, based on known properties learned from the training data, data mining focuses on the discovery of (previously) unknown properties in the data (this is the analysis step of knowledge discovery in databases). Data mining uses many machine learning methods, but with different goals; on the other hand, machine learning also employs data mining methods as \"unsupervised learning\" or as a preprocessing step to improve learner accuracy. Much of the confusion between these two research communities (which do often have separate conferences and separate journals, ECML PKDD being a major exception) comes from the basic assumptions they work with: in machine learning, performance is usually evaluated with respect to the ability to reproduce known knowledge, while in knowledge discovery and data mining (KDD) the key task is the discovery of previously unknown knowledge. Evaluated with respect to known knowledge, an uninformed (unsupervised) method will easily be outperformed by other supervised methods, while in a typical KDD task, supervised methods cannot be used due to the unavailability of training data.",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 7,
+  "fields": {
+    "course": 3,
+    "title": "Statistics",
+    "description": "Machine learning and statistics are closely related fields in terms of methods, but distinct in their principal goal: statistics draws population inferences from a sample, while machine learning finds generalizable predictive patterns.According to Michael I. Jordan, the ideas of machine learning, from methodological principles to theoretical tools, have had a long pre-history in statistics.He also suggested the term data science as a placeholder to call the overall field.\r\nLeo Breiman distinguished two statistical modeling paradigms: data model and algorithmic model wherein \"algorithmic model\" means more or less the machine learning algorithms like Random forest.\r\nSome statisticians have adopted methods from machine learning, leading to a combined field that they call statistical learning.",
+    "order": 2
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 8,
+  "fields": {
+    "course": 4,
+    "title": "Counting",
+    "description": "Counting is the process of determining the number of elements of a finite set of objects, i.e., determining the size of a set. ... Counting was primarily used by ancient cultures to keep track of social and economic data such as the number of group members, prey animals, property, or debts (that is, accountancy).",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 9,
+  "fields": {
+    "course": 4,
+    "title": "Probability",
+    "description": "Probability is the branch of mathematics concerning numerical descriptions of how likely an event is to occur, or how likely it is that a proposition is true. The probability of an event is a number between 0 and 1, where, roughly speaking, 0 indicates impossibility of the event and 1 indicates certainty.[note 1][1][2] The higher the probability of an event, the more likely it is that the event will occur. A simple example is the tossing of a fair (unbiased) coin. Since the coin is fair, the two outcomes (\"heads\" and \"tails\") are both equally probable; the probability of \"heads\" equals the probability of \"tails\"; and since no other outcomes are possible, the probability of either \"heads\" or \"tails\" is 1/2 (which could also be written as 0.5 or 50%).",
+    "order": 1
+  }
+},
+{
+  "model": "courses.module",
   "pk": 10,
   "fields": {
-    "owner": 7,
-    "subject": 9,
-    "title": "Excel",
-    "overview": "Microsoft Excel is the industry leading spreadsheet software program, a powerful data visualization and analysis tool.",
-    "slug": "excel",
-    "created": "2021-10-15T09:37:30.100Z",
-    "students": [
-      1,
-      2,
-      3
-    ]
+    "course": 5,
+    "title": "Introduction",
+    "description": "Points are generally considered fundamental objects for building geometry.\r\nEuclid described a line as \"breadthless length\" which \"lies equally with respect to the points on itself\".\r\nA plane is a flat, two-dimensional surface that extends infinitely far.\r\nEuclid defines a plane angle as the inclination to each other, in a plane, of two lines which meet each other, and do not lie straight with respect to each other.[44] In modern terms, an angle is the figure formed by two rays, called the sides of the angle, sharing a common endpoint, called the vertex of the angle.[53]",
+    "order": 0
+  }
+},
+{
+  "model": "courses.module",
+  "pk": 11,
+  "fields": {
+    "course": 5,
+    "title": "Length, area, and volume",
+    "description": "Length, area, and volume describe the size or extent of an object in one dimension, two dimension, and three dimensions respectively.\r\nIn Euclidean geometry and analytic geometry, the length of a line segment can often be calculated by the Pythagorean theorem.\r\nArea and volume can be defined as fundamental quantities separate from length, or they can be described and calculated in terms of lengths in a plane or 3-dimensional space.Mathematicians have found many explicit formulas for area and formulas for volume of various geometric objects. In calculus, area and volume can be defined in terms of integrals, such as the Riemann integralor the Lebesgue integral.",
+    "order": 1
   }
 },
 {
   "model": "courses.module",
   "pk": 12,
   "fields": {
-    "course": 5,
-    "title": "Properties of Real Numbers",
-    "description": "In mathematics, a real number is a value of a continuous quantity that can represent a distance along a line (or alternatively, a quantity that can be represented as an infinite decimal expansion).",
+    "course": 6,
+    "title": "Inferential Statistics",
+    "description": "A descriptive statistic (in the count noun sense) is a summary statistic that quantitatively describes or summarizes features of a collection of information,[44] while descriptive statistics in the mass noun sense is the process of using and analyzing those statistics. Descriptive statistics is distinguished from inferential statistics (or inductive statistics), in that descriptive statistics aims to summarize a sample, rather than use the data to learn about the population that the sample of data is thought to represent.",
     "order": 0
   }
 },
@@ -127,9 +366,9 @@
   "model": "courses.module",
   "pk": 13,
   "fields": {
-    "course": 5,
-    "title": "Linear Equations",
-    "description": "Linear equations occur frequently in all mathematics and their applications in physics and engineering, partly because non-linear systems are often well approximated by linear equations.",
+    "course": 6,
+    "title": "Descriptive  Statistics",
+    "description": "Statistical inference is the process of using data analysis to deduce properties of an underlying probability distribution.[45] Inferential statistical analysis infers properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data set is sampled from a larger population. Inferential statistics can be contrasted with descriptive statistics. Descriptive statistics is solely concerned with properties of the observed data, and it does not rest on the assumption that the data come from a larger population.",
     "order": 1
   }
 },
@@ -137,49 +376,49 @@
   "model": "courses.module",
   "pk": 14,
   "fields": {
-    "course": 5,
-    "title": "Functions",
-    "description": "In mathematics, a function[note 1] is a binary relation between two sets that associates each element of the first set to exactly one element of the second set. Typical examples are functions from integers to integers, or from the real numbers to real numbers.",
-    "order": 2
+    "course": 7,
+    "title": "World Wide Web",
+    "description": "The World Wide Web is a global collection of documents, images, multimedia, applications, and other resources, logically interrelated by hyperlinks and referenced with Uniform Resource Identifiers (URIs), which provide a global system of named references. URIs symbolically identify services, web servers, databases, and the documents and resources that they can provide.",
+    "order": 0
   }
 },
 {
   "model": "courses.module",
   "pk": 15,
   "fields": {
-    "course": 6,
-    "title": "Limits",
-    "description": "In mathematics, a limit is the value that a function (or sequence) approaches as the input (or index) approaches some value.[1] Limits are essential to calculus and mathematical analysis, and are used to define continuity, derivatives, and integrals.\r\n\r\nThe concept of a limit of a sequence is further generalized to the concept of a limit of a topological net, and is closely related to limit and direct limit in category theory.",
-    "order": 0
+    "course": 7,
+    "title": "Data Transfer",
+    "description": "File sharing is an example of transferring large amounts of data across the Internet. A computer file can be emailed to customers, colleagues and friends as an attachment. It can be uploaded to a website or File Transfer Protocol (FTP) server for easy download by others. It can be put into a \"shared location\" or onto a file server for instant use by colleagues.",
+    "order": 1
   }
 },
 {
   "model": "courses.module",
   "pk": 16,
   "fields": {
-    "course": 6,
-    "title": "Derivatives",
-    "description": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.",
-    "order": 1
+    "course": 8,
+    "title": "Introduction & History",
+    "description": "Political cartoons are like illustrated editorial that serve visual commentaries on political events. They offer subtle criticism which are cleverly quoted with humour and satire to the extent that the criticized does not get embittered.",
+    "order": 0
   }
 },
 {
   "model": "courses.module",
   "pk": 17,
   "fields": {
-    "course": 6,
-    "title": "Integrals",
-    "description": "In mathematics, an integral assigns numbers to functions in a way that describes displacement, area, volume, and other concepts that arise by combining infinitesimal data.",
-    "order": 2
+    "course": 8,
+    "title": "Animation",
+    "description": "Because of the stylistic similarities between comic strips and early animated movies, cartoon came to refer to animation, and the word cartoon is currently used in reference to both animated cartoons and gag cartoons.",
+    "order": 1
   }
 },
 {
   "model": "courses.module",
   "pk": 18,
   "fields": {
-    "course": 7,
-    "title": "Descriptive Statistics",
-    "description": "Descriptive statistics deals with the presentation and collection of data. This is usually the first part of a statistical analysis. It is usually not as simple as it sounds, and the statistician needs to be aware of designing experiments, choosing the right focus group and avoid biases that are so easy to creep into the experiment.",
+    "course": 9,
+    "title": "Expression",
+    "description": "Some Python expressions are similar to those found in languages such as C and Java, while some are not",
     "order": 0
   }
 },
@@ -187,69 +426,109 @@
   "model": "courses.module",
   "pk": 19,
   "fields": {
-    "course": 7,
-    "title": "Inferential Statistics",
-    "description": "Inferential statistics, as the name suggests, involves drawing the right conclusions from the statistical analysis that has been performed using descriptive statistics. In the end, it is the inferences that make studies important and this aspect is dealt with in inferential statistics.",
+    "course": 9,
+    "title": "Methods",
+    "description": "Methods on objects are functions attached to the object's class; the syntax instance.method(argument) is, for normal methods and functions, syntactic sugar for Class.method(instance, argument).",
     "order": 1
   }
 },
 {
-  "model": "courses.module",
-  "pk": 20,
+  "model": "courses.content",
+  "pk": 1,
   "fields": {
-    "course": 8,
-    "title": "Logic",
-    "description": "Logic programming is a programming paradigm which is largely based on formal logic. Any program written in a logic programming language is a set of sentences in logical form, expressing facts and rules about some problem domain. Major logic programming language families include Prolog, answer set programming (ASP) and Datalog.",
-    "order": 0
-  }
-},
-{
-  "model": "courses.module",
-  "pk": 21,
-  "fields": {
-    "course": 8,
-    "title": "Coding",
-    "description": "The source code of a program is written in one or more languages that are intelligible to programmers, rather than machine code, which is directly executed by the central processing unit. The purpose of programming is to find a sequence of instructions that will automate the performance of a task (which can be as complex as an operating system) on a computer, often for solving a given problem.",
+    "module": 1,
+    "content_type": 11,
+    "object_id": 1,
     "order": 1
   }
 },
 {
-  "model": "courses.module",
-  "pk": 22,
+  "model": "courses.content",
+  "pk": 2,
   "fields": {
-    "course": 9,
-    "title": "Data Type",
-    "description": "A type system is a logical system comprising a set of rules that assigns a property called a type to the various constructs of a computer program, such as variables, expressions, functions or modules.",
-    "order": 0
-  }
-},
-{
-  "model": "courses.module",
-  "pk": 23,
-  "fields": {
-    "course": 9,
-    "title": "Function",
-    "description": "Subroutines may be defined within programs, or separately in libraries that can be used by many programs. In different programming languages, a subroutine may be called a routine, subprogram, function, method, or procedure. Technically, these terms all have different definitions. The generic, umbrella term callable unit is sometimes used.",
-    "order": 1
-  }
-},
-{
-  "model": "courses.module",
-  "pk": 24,
-  "fields": {
-    "course": 9,
-    "title": "Module & Library",
-    "description": "A module allows you to logically organize your Python code. Grouping related code into a module makes the code easier to understand and use. A module is a Python object with arbitrarily named attributes that you can bind and reference.",
+    "module": 1,
+    "content_type": 11,
+    "object_id": 2,
     "order": 2
   }
 },
 {
-  "model": "courses.module",
-  "pk": 25,
+  "model": "courses.content",
+  "pk": 3,
   "fields": {
-    "course": 10,
-    "title": "Master Excels",
-    "description": "Microsoft Excel is a spreadsheet developed by Microsoft for Windows, macOS, Android and iOS. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications (VBA). It has been a very widely applied spreadsheet for these platforms, especially since version 5 in 1993, and it has replaced Lotus 1-2-3 as the industry standard for spreadsheets.",
+    "module": 1,
+    "content_type": 13,
+    "object_id": 1,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 4,
+  "fields": {
+    "module": 1,
+    "content_type": 13,
+    "object_id": 2,
+    "order": 4
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 5,
+  "fields": {
+    "module": 1,
+    "content_type": 10,
+    "object_id": 1,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 6,
+  "fields": {
+    "module": 2,
+    "content_type": 11,
+    "object_id": 3,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 7,
+  "fields": {
+    "module": 2,
+    "content_type": 13,
+    "object_id": 3,
+    "order": 3
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 8,
+  "fields": {
+    "module": 2,
+    "content_type": 10,
+    "object_id": 2,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 9,
+  "fields": {
+    "module": 2,
+    "content_type": 14,
+    "object_id": 1,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 10,
+  "fields": {
+    "module": 3,
+    "content_type": 11,
+    "object_id": 4,
     "order": 0
   }
 },
@@ -257,189 +536,189 @@
   "model": "courses.content",
   "pk": 11,
   "fields": {
-    "module": 12,
+    "module": 3,
     "content_type": 13,
-    "object_id": 8,
-    "order": 0
+    "object_id": 4,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 12,
   "fields": {
-    "module": 12,
-    "content_type": 14,
-    "object_id": 4,
-    "order": 1
+    "module": 3,
+    "content_type": 10,
+    "object_id": 3,
+    "order": 2
   }
 },
 {
   "model": "courses.content",
   "pk": 13,
   "fields": {
-    "module": 12,
-    "content_type": 11,
-    "object_id": 2,
-    "order": 2
+    "module": 3,
+    "content_type": 10,
+    "object_id": 4,
+    "order": 3
   }
 },
 {
   "model": "courses.content",
   "pk": 14,
   "fields": {
-    "module": 12,
-    "content_type": 10,
-    "object_id": 1,
-    "order": 3
+    "module": 4,
+    "content_type": 11,
+    "object_id": 5,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 15,
   "fields": {
-    "module": 13,
+    "module": 4,
     "content_type": 13,
-    "object_id": 9,
-    "order": 0
+    "object_id": 5,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 16,
   "fields": {
-    "module": 13,
-    "content_type": 14,
+    "module": 4,
+    "content_type": 10,
     "object_id": 5,
-    "order": 1
+    "order": 2
   }
 },
 {
   "model": "courses.content",
   "pk": 17,
   "fields": {
-    "module": 13,
-    "content_type": 11,
-    "object_id": 3,
-    "order": 2
+    "module": 4,
+    "content_type": 10,
+    "object_id": 6,
+    "order": 3
   }
 },
 {
   "model": "courses.content",
   "pk": 18,
   "fields": {
-    "module": 13,
-    "content_type": 10,
-    "object_id": 2,
-    "order": 3
+    "module": 5,
+    "content_type": 11,
+    "object_id": 6,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 19,
   "fields": {
-    "module": 14,
-    "content_type": 13,
-    "object_id": 10,
-    "order": 0
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 20,
-  "fields": {
-    "module": 14,
-    "content_type": 14,
-    "object_id": 6,
-    "order": 1
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 21,
-  "fields": {
-    "module": 14,
+    "module": 5,
     "content_type": 10,
-    "object_id": 3,
-    "order": 2
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 22,
-  "fields": {
-    "module": 14,
-    "content_type": 11,
-    "object_id": 4,
-    "order": 3
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 23,
-  "fields": {
-    "module": 15,
-    "content_type": 13,
-    "object_id": 11,
-    "order": 0
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 24,
-  "fields": {
-    "module": 15,
-    "content_type": 14,
     "object_id": 7,
     "order": 1
   }
 },
 {
   "model": "courses.content",
-  "pk": 25,
+  "pk": 20,
   "fields": {
-    "module": 15,
-    "content_type": 10,
-    "object_id": 4,
-    "order": 2
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 26,
-  "fields": {
-    "module": 15,
+    "module": 6,
     "content_type": 11,
-    "object_id": 5,
-    "order": 3
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 27,
-  "fields": {
-    "module": 16,
-    "content_type": 13,
-    "object_id": 12,
+    "object_id": 7,
     "order": 0
   }
 },
 {
   "model": "courses.content",
-  "pk": 28,
+  "pk": 21,
   "fields": {
-    "module": 16,
-    "content_type": 14,
+    "module": 6,
+    "content_type": 10,
     "object_id": 8,
     "order": 1
   }
 },
 {
   "model": "courses.content",
+  "pk": 22,
+  "fields": {
+    "module": 7,
+    "content_type": 11,
+    "object_id": 8,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 23,
+  "fields": {
+    "module": 7,
+    "content_type": 13,
+    "object_id": 6,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 24,
+  "fields": {
+    "module": 7,
+    "content_type": 10,
+    "object_id": 9,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 25,
+  "fields": {
+    "module": 8,
+    "content_type": 11,
+    "object_id": 9,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 26,
+  "fields": {
+    "module": 8,
+    "content_type": 13,
+    "object_id": 7,
+    "order": 2
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 27,
+  "fields": {
+    "module": 8,
+    "content_type": 10,
+    "object_id": 10,
+    "order": 1
+  }
+},
+{
+  "model": "courses.content",
+  "pk": 28,
+  "fields": {
+    "module": 9,
+    "content_type": 11,
+    "object_id": 10,
+    "order": 0
+  }
+},
+{
+  "model": "courses.content",
   "pk": 29,
   "fields": {
-    "module": 16,
-    "content_type": 11,
-    "object_id": 6,
+    "module": 9,
+    "content_type": 13,
+    "object_id": 8,
     "order": 2
   }
 },
@@ -447,29 +726,29 @@
   "model": "courses.content",
   "pk": 30,
   "fields": {
-    "module": 17,
-    "content_type": 13,
-    "object_id": 13,
-    "order": 0
+    "module": 9,
+    "content_type": 10,
+    "object_id": 11,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 31,
   "fields": {
-    "module": 17,
-    "content_type": 14,
-    "object_id": 9,
-    "order": 1
+    "module": 12,
+    "content_type": 11,
+    "object_id": 11,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 32,
   "fields": {
-    "module": 17,
+    "module": 12,
     "content_type": 11,
-    "object_id": 7,
+    "object_id": 12,
     "order": 2
   }
 },
@@ -477,19 +756,19 @@
   "model": "courses.content",
   "pk": 33,
   "fields": {
-    "module": 18,
+    "module": 12,
     "content_type": 13,
-    "object_id": 14,
-    "order": 0
+    "object_id": 9,
+    "order": 3
   }
 },
 {
   "model": "courses.content",
   "pk": 34,
   "fields": {
-    "module": 18,
-    "content_type": 14,
-    "object_id": 10,
+    "module": 12,
+    "content_type": 10,
+    "object_id": 12,
     "order": 1
   }
 },
@@ -497,29 +776,29 @@
   "model": "courses.content",
   "pk": 35,
   "fields": {
-    "module": 18,
-    "content_type": 10,
-    "object_id": 5,
-    "order": 2
+    "module": 13,
+    "content_type": 11,
+    "object_id": 13,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 36,
   "fields": {
-    "module": 18,
-    "content_type": 11,
-    "object_id": 8,
-    "order": 3
+    "module": 13,
+    "content_type": 10,
+    "object_id": 13,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 37,
   "fields": {
-    "module": 19,
-    "content_type": 13,
-    "object_id": 15,
+    "module": 14,
+    "content_type": 11,
+    "object_id": 14,
     "order": 0
   }
 },
@@ -527,28 +806,28 @@
   "model": "courses.content",
   "pk": 38,
   "fields": {
-    "module": 19,
-    "content_type": 10,
-    "object_id": 6,
-    "order": 1
+    "module": 15,
+    "content_type": 11,
+    "object_id": 15,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 39,
   "fields": {
-    "module": 19,
-    "content_type": 11,
-    "object_id": 9,
-    "order": 2
+    "module": 14,
+    "content_type": 13,
+    "object_id": 10,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 40,
   "fields": {
-    "module": 20,
-    "content_type": 13,
+    "module": 16,
+    "content_type": 11,
     "object_id": 16,
     "order": 0
   }
@@ -557,8 +836,8 @@
   "model": "courses.content",
   "pk": 41,
   "fields": {
-    "module": 20,
-    "content_type": 14,
+    "module": 16,
+    "content_type": 13,
     "object_id": 11,
     "order": 1
   }
@@ -567,9 +846,9 @@
   "model": "courses.content",
   "pk": 42,
   "fields": {
-    "module": 20,
+    "module": 16,
     "content_type": 10,
-    "object_id": 7,
+    "object_id": 14,
     "order": 2
   }
 },
@@ -577,8 +856,8 @@
   "model": "courses.content",
   "pk": 43,
   "fields": {
-    "module": 21,
-    "content_type": 13,
+    "module": 17,
+    "content_type": 11,
     "object_id": 17,
     "order": 0
   }
@@ -587,9 +866,9 @@
   "model": "courses.content",
   "pk": 44,
   "fields": {
-    "module": 21,
-    "content_type": 13,
-    "object_id": 18,
+    "module": 17,
+    "content_type": 10,
+    "object_id": 15,
     "order": 1
   }
 },
@@ -597,639 +876,624 @@
   "model": "courses.content",
   "pk": 45,
   "fields": {
-    "module": 21,
-    "content_type": 10,
-    "object_id": 8,
-    "order": 2
+    "module": 18,
+    "content_type": 11,
+    "object_id": 18,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 46,
   "fields": {
-    "module": 22,
-    "content_type": 11,
-    "object_id": 10,
-    "order": 0
+    "module": 18,
+    "content_type": 10,
+    "object_id": 16,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 47,
   "fields": {
-    "module": 22,
-    "content_type": 10,
-    "object_id": 9,
-    "order": 1
+    "module": 19,
+    "content_type": 11,
+    "object_id": 19,
+    "order": 0
   }
 },
 {
   "model": "courses.content",
   "pk": 48,
   "fields": {
-    "module": 23,
+    "module": 19,
     "content_type": 10,
-    "object_id": 10,
-    "order": 0
+    "object_id": 17,
+    "order": 1
   }
 },
 {
   "model": "courses.content",
   "pk": 49,
   "fields": {
-    "module": 23,
-    "content_type": 11,
-    "object_id": 11,
-    "order": 1
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 50,
-  "fields": {
-    "module": 24,
-    "content_type": 10,
-    "object_id": 11,
-    "order": 0
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 51,
-  "fields": {
-    "module": 24,
+    "module": 19,
     "content_type": 13,
-    "object_id": 19,
-    "order": 1
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 52,
-  "fields": {
-    "module": 24,
-    "content_type": 13,
-    "object_id": 20,
+    "object_id": 12,
     "order": 2
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 53,
-  "fields": {
-    "module": 25,
-    "content_type": 10,
-    "object_id": 12,
-    "order": 0
-  }
-},
-{
-  "model": "courses.content",
-  "pk": 54,
-  "fields": {
-    "module": 25,
-    "content_type": 11,
-    "object_id": 12,
-    "order": 1
   }
 },
 {
   "model": "courses.text",
   "pk": 1,
   "fields": {
-    "owner": 1,
-    "title": "Introduction",
-    "created": "2021-10-14T04:31:48.403Z",
-    "updated": "2021-10-14T04:31:48.403Z",
-    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+    "instructor": 2,
+    "title": "Linear maps",
+    "created": "2021-12-04T06:23:31.625Z",
+    "updated": "2021-12-04T06:23:31.625Z",
+    "content": "Linear maps are mappings between vector spaces that preserve the vector-space structure. Given two vector spaces V and W over a field F, a linear map (also called, in some contexts, linear transformation or linear mapping) is a map\r\n\r\n{\\displaystyle T:V\\to W}T:V\\to W\r\nthat is compatible with addition and scalar multiplication, that is\r\n\r\n{\\displaystyle T(\\mathbf {u} +\\mathbf {v} )=T(\\mathbf {u} )+T(\\mathbf {v} ),\\quad T(a\\mathbf {v} )=aT(\\mathbf {v} )}{\\displaystyle T(\\mathbf {u} +\\mathbf {v} )=T(\\mathbf {u} )+T(\\mathbf {v} ),\\quad T(a\\mathbf {v} )=aT(\\mathbf {v} )}\r\nfor any vectors u,v in V and scalar a in F.\r\n\r\nThis implies that for any vectors u, v in V and scalars a, b in F, one has\r\n\r\n{\\displaystyle T(a\\mathbf {u} +b\\mathbf {v} )=T(a\\mathbf {u} )+T(b\\mathbf {v} )=aT(\\mathbf {u} )+bT(\\mathbf {v} )}{\\displaystyle T(a\\mathbf {u} +b\\mathbf {v} )=T(a\\mathbf {u} )+T(b\\mathbf {v} )=aT(\\mathbf {u} )+bT(\\mathbf {v} )}\r\nWhen V = W are the same vector space, a linear map {\\displaystyle T:V\\to V}{\\displaystyle T:V\\to V} is also known as a linear operator on V.\r\n\r\nA bijective linear map between two vector spaces (that is, every vector from the second space is associated with exactly one in the first) is an isomorphism. Because an isomorphism preserves linear structure, two isomorphic vector spaces are \"essentially the same\" from the linear algebra point of view, in the sense that they cannot be distinguished by using vector space properties. An essential question in linear algebra is testing whether a linear map is an isomorphism or not, and, if it is not an isomorphism, finding its range (or image) and the set of elements that are mapped to the zero vector, called the kernel of the map. All these questions can be solved by using Gaussian elimination or some variant of this algorithm."
   }
 },
 {
   "model": "courses.text",
   "pk": 2,
   "fields": {
-    "owner": 1,
-    "title": "Introduction",
-    "created": "2021-10-14T04:33:17.006Z",
-    "updated": "2021-10-14T04:33:17.006Z",
-    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+    "instructor": 2,
+    "title": "Subspaces, span, and basis",
+    "created": "2021-12-04T06:23:54.100Z",
+    "updated": "2021-12-04T06:23:54.100Z",
+    "content": "The study of those subsets of vector spaces that are in themselves vector spaces under the induced operations is fundamental, similarly as for many mathematical structures. These subsets are called linear subspaces. More precisely, a linear subspace of a vector space V over a field F is a subset W of V such that u + v and au are in W, for every u, v in W, and every a in F. (These conditions suffice for implying that W is a vector space.)\r\n\r\nFor example, given a linear map {\\displaystyle T:V\\to W}T:V\\to W, the image T(V) of V, and the inverse image T−1(0) of 0 (called kernel or null space), are linear subspaces of W and V, respectively.\r\n\r\nAnother important way of forming a subspace is to consider linear combinations of a set S of vectors: the set of all sums\r\n\r\n{\\displaystyle a_{1}\\mathbf {v} _{1}+a_{2}\\mathbf {v} _{2}+\\cdots +a_{k}\\mathbf {v} _{k},}{\\displaystyle a_{1}\\mathbf {v} _{1}+a_{2}\\mathbf {v} _{2}+\\cdots +a_{k}\\mathbf {v} _{k},}\r\nwhere v1, v2, ..., vk are in S, and a1, a2, ..., ak are in F form a linear subspace called the span of S. The span of S is also the intersection of all linear subspaces containing S. In other words, it is the smallest (for the inclusion relation) linear subspace containing S.\r\n\r\nA set of vectors is linearly independent if none is in the span of the others. Equivalently, a set S of vectors is linearly independent if the only way to express the zero vector as a linear combination of elements of S is to take zero for every coefficient {\\displaystyle a_{i}.}a_i.\r\n\r\nA set of vectors that spans a vector space is called a spanning set or generating set. If a spanning set S is linearly dependent (that is not linearly independent), then some element w of S is in the span of the other elements of S, and the span would remain the same if one remove w from S. One may continue to remove elements of S until getting a linearly independent spanning set. Such a linearly independent set that spans a vector space V is called a basis of V. The importance of bases lies in the fact that they are simultaneously minimal generating sets and maximal independent sets. More precisely, if S is a linearly independent set, and T is a spanning set such that {\\displaystyle S\\subseteq T,}{\\displaystyle S\\subseteq T,} then there is a basis B such that {\\displaystyle S\\subseteq B\\subseteq T.}{\\displaystyle S\\subseteq B\\subseteq T.}\r\n\r\nAny two bases of a vector space V have the same cardinality, which is called the dimension of V; this is the dimension theorem for vector spaces. Moreover, two vector spaces over the same field F are isomorphic if and only if they have the same dimension.[8]\r\n\r\nIf any basis of V (and therefore every basis) has a finite number of elements, V is a finite-dimensional vector space. If U is a subspace of V, then dim U ≤ dim V. In the case where V is finite-dimensional, the equality of the dimensions implies U = V."
   }
 },
 {
   "model": "courses.text",
   "pk": 3,
   "fields": {
-    "owner": 1,
-    "title": "Introduction",
-    "created": "2021-10-14T04:38:21.051Z",
-    "updated": "2021-10-14T04:38:21.051Z",
-    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+    "instructor": 2,
+    "title": "Matrices Intro",
+    "created": "2021-12-04T06:29:30.356Z",
+    "updated": "2021-12-04T06:29:30.356Z",
+    "content": "In mathematics, a matrix (plural matrices) is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns, which is used to represent a mathematical object or a property of such an object.\r\n\r\nFor example,\r\nis a matrix with two rows and three columns; one say often a \"two by three matrix\", a \"2×3-matrix\", or a matrix of dimension 2×3.\r\nWithout further specifications, matrices represent linear maps, and allow explicit computations in linear algebra. Therefore, the study of matrices is a large part of linear algebra, and most properties and operations of abstract linear algebra can be expressed in terms of matrices. For example, matrix multiplication represents composition of linear maps.\r\n\r\nNot all matrices are related to linear algebra. This is, in particular, the case in graph theory, of incidence matrices, and adjacency matrices.[1] This article focuses on matrices related to linear algebra, and, unless otherwise specified, all matrices represent linear maps or may be viewed as such.\r\n\r\nSquare matrices, matrices with the same number of rows and columns, play a major role in matrix theory. Square matrices of a given dimension form a noncommutative ring, which is one of the most common examples of a noncommutative ring. The determinant of a square matrix is a number associated to the matrix, which is fundamental for the study of a square matrix; for example, a square matrix is invertible if and only if it has a nonzero determinant, and the eigenvalues of a square matrix are the roots of a polynomial determinant.\r\n\r\nIn geometry, matrices are widely used for specifying and representing geometric transformations (for example rotations) and coordinate changes. In numerical analysis, many computational problems are solved by reducing them to a matrix computation, and this involves often to compute with matrices of huge dimension. Matrices are used in most areas of mathematics and most scientific fields, either directly, or through their use in geometry and numerical analysis."
   }
 },
 {
   "model": "courses.text",
   "pk": 4,
   "fields": {
-    "owner": 1,
-    "title": "Introduction",
-    "created": "2021-10-14T04:39:54.650Z",
-    "updated": "2021-10-14T04:39:54.650Z",
-    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+    "instructor": 2,
+    "title": "Introduction To Limit",
+    "created": "2021-12-04T06:41:38.916Z",
+    "updated": "2021-12-04T06:41:38.916Z",
+    "content": "Calculus is usually developed by working with very small quantities. Historically, the first method of doing so was by infinitesimals. These are objects which can be treated like real numbers but which are, in some sense, \"infinitely small\". For example, an infinitesimal number could be greater than 0, but less than any number in the sequence 1, 1/2, 1/3, ... and thus less than any positive real number. From this point of view, calculus is a collection of techniques for manipulating infinitesimals. The symbols {\\displaystyle dx}dx and {\\displaystyle dy}dy were taken to be infinitesimal, and the derivative {\\displaystyle dy/dx}dy/dx was simply their ratio.\r\n\r\nThe infinitesimal approach fell out of favor in the 19th century because it was difficult to make the notion of an infinitesimal precise. However, the concept was revived in the 20th century with the introduction of non-standard analysis and smooth infinitesimal analysis, which provided solid foundations for the manipulation of infinitesimals.\r\n\r\nIn the late 19th century, infinitesimals were replaced within academia by the epsilon, delta approach to limits. Limits describe the value of a function at a certain input in terms of its values at nearby inputs. They capture small-scale behavior in the context of the real number system. In this treatment, calculus is a collection of techniques for manipulating certain limits. Infinitesimals get replaced by very small numbers, and the infinitely small behavior of the function is found by taking the limiting behavior for smaller and smaller numbers. Limits were thought to provide a more rigorous foundation for calculus, and for this reason they became the standard approach during the twentieth century."
   }
 },
 {
   "model": "courses.text",
   "pk": 5,
   "fields": {
-    "owner": 1,
+    "instructor": 2,
     "title": "Introduction",
-    "created": "2021-10-14T04:41:15.349Z",
-    "updated": "2021-10-14T04:41:15.349Z",
-    "content": "In mathematics, the derivative of a function of a real variable measures the sensitivity to change of the function value (output value) with respect to a change in its argument (input value). Derivatives are a fundamental tool of calculus. For example, the derivative of the position of a moving object with respect to time is the object's velocity: this measures how quickly the position of the object changes when time advances.\r\n\r\nThe derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable."
+    "created": "2021-12-04T06:47:10.472Z",
+    "updated": "2021-12-04T06:47:10.472Z",
+    "content": "Differential calculus is the study of the definition, properties, and applications of the derivative of a function. The process of finding the derivative is called differentiation. Given a function and a point in the domain, the derivative at that point is a way of encoding the small-scale behavior of the function near that point. By finding the derivative of a function at every point in its domain, it is possible to produce a new function, called the derivative function or just the derivative of the original function. In formal terms, the derivative is a linear operator which takes a function as its input and produces a second function as its output. This is more abstract than many of the processes studied in elementary algebra, where functions usually input a number and output another number. For example, if the doubling function is given the input three, then it outputs six, and if the squaring function is given the input three, then it outputs nine. The derivative, however, can take the squaring function as an input. This means that the derivative takes all the information of the squaring function—such as that two is sent to four, three is sent to nine, four is sent to sixteen, and so on—and uses this information to produce another function. The function produced by deriving the squaring function turns out to be the doubling function."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 6,
+  "fields": {
+    "instructor": 2,
+    "title": "Introduction Note",
+    "created": "2021-12-04T06:56:40.698Z",
+    "updated": "2021-12-04T06:56:40.698Z",
+    "content": "As a scientific endeavor, machine learning grew out of the quest for artificial intelligence. In the early days of AI as an academic discipline, some researchers were interested in having machines learn from data. They attempted to approach the problem with various symbolic methods, as well as what was then termed \"neural networks\"; these were mostly perceptrons and other models that were later found to be reinventions of the generalized linear models of statistics.[23] Probabilistic reasoning was also employed, especially in automated medical diagnosis.[24]: 488 \r\n\r\nHowever, an increasing emphasis on the logical, knowledge-based approach caused a rift between AI and machine learning. Probabilistic systems were plagued by theoretical and practical problems of data acquisition and representation.[24]: 488  By 1980, expert systems had come to dominate AI, and statistics was out of favor.[25] Work on symbolic/knowledge-based learning did continue within AI, leading to inductive logic programming, but the more statistical line of research was now outside the field of AI proper, in pattern recognition and information retrieval.[24]: 708–710, 755  Neural networks research had been abandoned by AI and computer science around the same time. This line, too, was continued outside the AI/CS field, as \"connectionism\", by researchers from other disciplines including Hopfield, Rumelhart and Hinton. Their main success came in the mid-1980s with the reinvention of backpropagation.[24]: 25 \r\n\r\nMachine learning (ML), reorganized as a separate field, started to flourish in the 1990s. The field changed its goal from achieving artificial intelligence to tackling solvable problems of a practical nature. It shifted focus away from the symbolic approaches it had inherited from AI, and toward methods and models borrowed from statistics and probability theory.\r\n\r\nThe difference between ML and AI is frequently misunderstood. ML learns and predicts based on passive observations, whereas AI implies an agent interacting with the environment to learn and take actions that maximize its chance of successfully achieving its goals.[26]\r\n\r\nAs of 2020, many sources continue to assert that ML remains a subfield of AI.[27][28][25] Others have the view that not all ML is part of AI, but only an 'intelligent subset' of ML should be considered AI."
+  }
+},
+{
+  "model": "courses.text",
+  "pk": 7,
+  "fields": {
+    "instructor": 2,
+    "title": "Introductions",
+    "created": "2021-12-04T06:59:53.979Z",
+    "updated": "2021-12-04T06:59:53.979Z",
+    "content": "Machine learning and data mining often employ the same methods and overlap significantly, but while machine learning focuses on prediction, based on known properties learned from the training data, data mining focuses on the discovery of (previously) unknown properties in the data (this is the analysis step of knowledge discovery in databases). Data mining uses many machine learning methods, but with different goals; on the other hand, machine learning also employs data mining methods as \"unsupervised learning\" or as a preprocessing step to improve learner accuracy. Much of the confusion between these two research communities (which do often have separate conferences and separate journals, ECML PKDD being a major exception) comes from the basic assumptions they work with: in machine learning, performance is usually evaluated with respect to the ability to reproduce known knowledge, while in knowledge discovery and data mining (KDD) the key task is the discovery of previously unknown knowledge. Evaluated with respect to known knowledge, an uninformed (unsupervised) method will easily be outperformed by other supervised methods, while in a typical KDD task, supervised methods cannot be used due to the unavailability of training data.\r\n\r\nOptimization\r\nMachine learning also has intimate ties to optimization: many learning problems are formulated as minimization of some loss function on a training set of examples. Loss functions express the discrepancy between the predictions of the model being trained and the actual problem instances (for example, in classification, one wants to assign a label to instances, and models are trained to correctly predict the pre-assigned labels of a set of examples)."
   }
 },
 {
   "model": "courses.text",
   "pk": 8,
   "fields": {
-    "owner": 4,
-    "title": "Introduction to real numbers",
-    "created": "2021-10-15T08:02:16.366Z",
-    "updated": "2021-10-15T08:02:16.366Z",
-    "content": "Any non-zero real number is either negative or positive.\r\nThe sum and the product of two non-negative real numbers is again a non-negative real number, i.e., they are closed under these operations, and form a positive cone, thereby giving rise to a linear order of the real numbers along a number line.\r\nThe real numbers make up an infinite set of numbers that cannot be injectively mapped to the infinite set of natural numbers, i.e., there are uncountably infinitely many real numbers, whereas the natural numbers are called countably infinite. This establishes that in some sense, there are more real numbers than there are elements in any countable set.\r\nThere is a hierarchy of countably infinite subsets of the real numbers, e.g., the integers, the rationals, the algebraic numbers and the computable numbers, each set being a proper subset of the next in the sequence. The complements of all these sets (irrational, transcendental, and non-computable real numbers) in the reals are all uncountably infinite sets.\r\nReal numbers can be used to express measurements of continuous quantities. They may be expressed by decimal representations, most of them having an infinite sequence of digits to the right of the decimal point; these are often represented like 324.823122147..., where the ellipsis (three dots) indicates that there would still be more digits to come. This hints at the fact that we can precisely denote only a few, selected real numbers with finitely many symbols.\r\nMore formally, the real numbers have the two basic properties of being an ordered field, and having the least upper bound property. The first says that real numbers comprise a field, with addition and multiplication as well as division by non-zero numbers, which can be totally ordered on a number line in a way compatible with addition and multiplication. The second says that, if a non-empty set of real numbers has an upper bound, then it has a real least upper bound. The second condition distinguishes the real numbers from the rational numbers: for example, the set of rational numbers whose square is less than 2 is a set with an upper bound (e.g. 1.5) but no (rational) least upper bound: hence the rational numbers do not satisfy the least upper bound property."
+    "instructor": 2,
+    "title": "Introduction Note",
+    "created": "2021-12-04T07:02:03.488Z",
+    "updated": "2021-12-04T07:02:03.488Z",
+    "content": "Machine learning and statistics are closely related fields in terms of methods, but distinct in their principal goal: statistics draws population inferences from a sample, while machine learning finds generalizable predictive patterns.[32] According to Michael I. Jordan, the ideas of machine learning, from methodological principles to theoretical tools, have had a long pre-history in statistics.[33] He also suggested the term data science as a placeholder to call the overall field.[33]\r\nLeo Breiman distinguished two statistical modeling paradigms: data model and algorithmic model,[27] wherein \"algorithmic model\" means more or less the machine learning algorithms like Random forest.\r\nSome statisticians have adopted methods from machine learning, leading to a combined field that they call statistical learning.[28].\r\nStatistical learning theory is a framework for machine learning drawing from the fields of statistics and functional analysis.[1] [2][3] Statistical learning theory deals with the problem of finding a predictive function based on data. Statistical learning theory has led to successful applications in fields such as computer vision, speech recognition, and bioinformatics"
   }
 },
 {
   "model": "courses.text",
   "pk": 9,
   "fields": {
-    "owner": 4,
+    "instructor": 3,
     "title": "Introduction",
-    "created": "2021-10-15T08:09:18.852Z",
-    "updated": "2021-10-15T08:09:18.852Z",
-    "content": "Linear equations are nothing but yet another subset of \"equations\". Any linear calculations requiring more than one variable can be done with the help of linear equations. The standard form of a linear equation in one variable is of the form ax + b = 0. Here, x is a variable, and a and b are constants. While the standard form of a linear equation in two variables is of the form ax + by = c. Here, x and y are variables, and a, b and c are constants."
+    "created": "2021-12-04T07:06:54.304Z",
+    "updated": "2021-12-04T07:06:54.304Z",
+    "content": "Counting is the process of determining the number of elements of a finite set of objects, i.e., determining the size of a set. The traditional way of counting consists of continually increasing a (mental or spoken) counter by a unit for every element of the set, in some order, while marking (or displacing) those elements to avoid visiting the same element more than once, until no unmarked elements are left; if the counter was set to one after the first object, the value after visiting the final object gives the desired number of elements. The related term enumeration refers to uniquely identifying the elements of a finite (combinatorial) set or infinite set by assigning a number to each element.\r\n\r\nCounting sometimes involves numbers other than one; for example, when counting money, counting out change, \"counting by twos\" (2, 4, 6, 8, 10, 12, ...), or \"counting by fives\" (5, 10, 15, 20, 25, ...).\r\n\r\nThere is archaeological evidence suggesting that humans have been counting for at least 50,000 years.[1] Counting was primarily used by ancient cultures to keep track of social and economic data such as the number of group members, prey animals, property, or debts (that is, accountancy). Notched bones were also found in the Border Caves in South Africa that may suggest that the concept of counting was known to humans as far back as 44,000 BCE.[2] The development of counting led to the development of mathematical notation, numeral systems, and writing."
   }
 },
 {
   "model": "courses.text",
   "pk": 10,
   "fields": {
-    "owner": 4,
-    "title": "Notes",
-    "created": "2021-10-15T08:11:43.438Z",
-    "updated": "2021-10-15T08:11:43.438Z",
-    "content": "A function is often also called a map or a mapping, but some authors make a distinction between the term \"map\" and \"function\". For example, the term \"map\" is often reserved for a \"function\" with some sort of special structure (e.g. maps of manifolds). In particular map is often used in place of homomorphism for the sake of succinctness (e.g., linear map or map from G to H instead of group homomorphism from G to H). Some authors[25] reserve the word mapping for the case where the structure of the codomain belongs explicitly to the definition of the function.\r\n\r\nSome authors, such as Serge Lang,[26] use \"function\" only to refer to maps for which the codomain is a subset of the real or complex numbers, and use the term mapping for more general functions.\r\n\r\nIn the theory of dynamical systems, a map denotes an evolution function used to create discrete dynamical systems. See also Poincaré map.\r\n\r\nWhichever definition of map is used, related terms like domain, codomain, injective, continuous have the same meaning as for a function."
+    "instructor": 3,
+    "title": "Introduction Note",
+    "created": "2021-12-04T07:08:36.750Z",
+    "updated": "2021-12-04T07:08:36.750Z",
+    "content": "Probability is the branch of mathematics concerning numerical descriptions of how likely an event is to occur, or how likely it is that a proposition is true. The probability of an event is a number between 0 and 1, where, roughly speaking, 0 indicates impossibility of the event and 1 indicates certainty.[note 1][1][2] The higher the probability of an event, the more likely it is that the event will occur. A simple example is the tossing of a fair (unbiased) coin. Since the coin is fair, the two outcomes (\"heads\" and \"tails\") are both equally probable; the probability of \"heads\" equals the probability of \"tails\"; and since no other outcomes are possible, the probability of either \"heads\" or \"tails\" is 1/2 (which could also be written as 0.5 or 50%).\r\nThese concepts have been given an axiomatic mathematical formalization in probability theory, which is used widely in areas of study such as statistics, mathematics, science, finance, gambling, artificial intelligence, machine learning, computer science, game theory, and philosophy to, for example, draw inferences about the expected frequency of events. Probability theory is also used to describe the underlying mechanics and regularities of complex systems."
   }
 },
 {
   "model": "courses.text",
   "pk": 11,
   "fields": {
-    "owner": 4,
-    "title": "Notes",
-    "created": "2021-10-15T08:17:58.887Z",
-    "updated": "2021-10-15T08:17:58.887Z",
-    "content": "Two key problems led to the initial formulation of calculus:\r\n\r\n(1) the tangent problem, or how to determine the slope of a line tangent to a curve at a point;\r\n\r\nand (2) the area problem, or how to determine the area under a curve.\r\n\r\nThe concept of a limit or limiting process, essential to the understanding of calculus, has been around for thousands of years. In fact, early mathematicians used a limiting process to obtain better and better approximations of areas of circles. Yet, the formal definition of a limit—as we know and understand it today—did not appear until the late 19th century. We, therefore, begin our quest to understand limits, as our mathematical ancestors did, by using an intuitive approach.\r\n\r\nWe begin our exploration of limits by taking a look at the graphs of the functions"
+    "instructor": 3,
+    "title": "Introduction",
+    "created": "2021-12-04T09:44:08.035Z",
+    "updated": "2021-12-04T09:44:08.035Z",
+    "content": "Descriptive statistics provide simple summaries about the sample and about the observations that have been made. Such summaries may be either quantitative, i.e. summary statistics, or visual, i.e. simple-to-understand graphs. These summaries may either form the basis of the initial description of the data as part of a more extensive statistical analysis, or they may be sufficient in and of themselves for a particular investigation.\r\nFor example, the shooting percentage in basketball is a descriptive statistic that summarizes the performance of a player or a team. This number is the number of shots made divided by the number of shots taken. For example, a player who shoots 33% is making approximately one shot in every three. The percentage summarizes or describes multiple discrete events. Consider also the grade point average. This single number describes the general performance of a student across the range of their course experiences.\r\nThe use of descriptive and summary statistics has an extensive history and, indeed, the simple tabulation of populations and of economic data was the first way the topic of statistics appeared. More recently, a collection of summarisation techniques has been formulated under the heading of exploratory data analysis: an example of such a technique is the box plot.\r\nIn the business world, descriptive statistics provides a useful summary of many types of data. For example, investors and brokers may use a historical account of return behaviour by performing empirical and analytical analyses on their investments in order to make better investing decisions in the future."
   }
 },
 {
   "model": "courses.text",
   "pk": 12,
   "fields": {
-    "owner": 4,
-    "title": "Introductions",
-    "created": "2021-10-15T08:20:31.535Z",
-    "updated": "2021-10-15T08:20:31.535Z",
-    "content": "The derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the \"instantaneous rate of change\", the ratio of the instantaneous change in the dependent variable to that of the independent variable.\r\n\r\nDerivatives can be generalized to functions of several real variables. In this generalization, the derivative is reinterpreted as a linear transformation whose graph is (after an appropriate translation) the best linear approximation to the graph of the original function. The Jacobian matrix is the matrix that represents this linear transformation with respect to the basis given by the choice of independent and dependent variables. It can be calculated in terms of the partial derivatives with respect to the independent variables. For a real-valued function of several variables, the Jacobian matrix reduces to the gradient vector."
+    "instructor": 3,
+    "title": "Univariate analysis",
+    "created": "2021-12-04T09:49:09.352Z",
+    "updated": "2021-12-04T09:49:09.352Z",
+    "content": "Univariate analysis involves describing the distribution of a single variable, including its central tendency (including the mean, median, and mode) and dispersion (including the range and quartiles of the data-set, and measures of spread such as the variance and standard deviation). The shape of the distribution may also be described via indices such as skewness and kurtosis. Characteristics of a variable's distribution may also be depicted in graphical or tabular format, including histograms and stem-and-leaf display."
   }
 },
 {
   "model": "courses.text",
   "pk": 13,
   "fields": {
-    "owner": 4,
+    "instructor": 3,
     "title": "Intro",
-    "created": "2021-10-15T08:22:07.135Z",
-    "updated": "2021-10-15T08:22:07.135Z",
-    "content": "The integrals enumerated here are those termed definite integrals, which can be interpreted formally as the signed area of the region in the plane that is bounded by the graph of a given function between two points in the real line. Conventionally, areas above the horizontal axis of the plane are positive while areas below are negative. Integrals also refer to the concept of an antiderivative, a function whose derivative is the given function. In this case, they are called indefinite integrals. The fundamental theorem of calculus relates definite integrals with differentiation and provides a method to compute the definite integral of a function when its antiderivative is known.\r\n\r\nAlthough methods of calculating areas and volumes dated from ancient Greek mathematics, the principles of integration were formulated independently by Isaac Newton and Gottfried Wilhelm Leibniz in the late 17th century, who thought of the area under a curve as an infinite sum of rectangles of infinitesimal width. Bernhard Riemann later gave a rigorous definition of integrals, which is based on a limiting procedure that approximates the area of a curvilinear region by breaking the region into thin vertical slabs."
+    "created": "2021-12-04T09:56:40.006Z",
+    "updated": "2021-12-04T09:56:40.006Z",
+    "content": "Descriptive statistics provide simple summaries about the sample and about the observations that have been made. Such summaries may be either quantitative, i.e. summary statistics, or visual, i.e. simple-to-understand graphs. These summaries may either form the basis of the initial description of the data as part of a more extensive statistical analysis, or they may be sufficient in and of themselves for a particular investigation.\r\nFor example, the shooting percentage in basketball is a descriptive statistic that summarizes the performance of a player or a team. This number is the number of shots made divided by the number of shots taken. For example, a player who shoots 33% is making approximately one shot in every three. The percentage summarizes or describes multiple discrete events. Consider also the grade point average. This single number describes the general performance of a student across the range of their course experiences.\r\nThe use of descriptive and summary statistics has an extensive history and, indeed, the simple tabulation of populations and of economic data was the first way the topic of statistics appeared. More recently, a collection of summarisation techniques has been formulated under the heading of exploratory data analysis: an example of such a technique is the box plot.\r\nIn the business world, descriptive statistics provides a useful summary of many types of data. For example, investors and brokers may use a historical account of return behaviour by performing empirical and analytical analyses on their investments in order to make better investing decisions in the future."
   }
 },
 {
   "model": "courses.text",
   "pk": 14,
   "fields": {
-    "owner": 4,
-    "title": "Introductions",
-    "created": "2021-10-15T08:26:28.663Z",
-    "updated": "2021-10-15T08:26:28.664Z",
-    "content": "Different areas of study require different kinds of analysis using descriptive statistics. For example, a physicist studying turbulence in the laboratory needs the average quantities that vary over small intervals of time. The nature of this problem requires that physical quantities be averaged from a host of data collected through the experiment."
+    "instructor": 1,
+    "title": "Introductory",
+    "created": "2021-12-04T10:16:47.113Z",
+    "updated": "2021-12-04T10:16:47.113Z",
+    "content": "The World Wide Web is a global collection of documents, images, multimedia, applications, and other resources, logically interrelated by hyperlinks and referenced with Uniform Resource Identifiers (URIs), which provide a global system of named references. URIs symbolically identify services, web servers, databases, and the documents and resources that they can provide. Hypertext Transfer Protocol (HTTP) is the main access protocol of the World Wide Web. Web services also use HTTP for communication between software systems for information transfer, sharing and exchanging business data and logistic and is one of many languages or protocols that can be used for communication on the Internet.[77]\r\n\r\nWorld Wide Web browser software, such as Microsoft's Internet Explorer/Edge, Mozilla Firefox, Opera, Apple's Safari, and Google Chrome, lets users navigate from one web page to another via the hyperlinks embedded in the documents. These documents may also contain any combination of computer data, including graphics, sounds, text, video, multimedia and interactive content that runs while the user is interacting with the page. Client-side software can include animations, games, office applications and scientific demonstrations. Through keyword-driven Internet research using search engines like Yahoo!, Bing and Google, users worldwide have easy, instant access to a vast and diverse amount of online information. Compared to printed media, books, encyclopedias and traditional libraries, the World Wide Web has enabled the decentralization of information on a large scale.\r\n\r\nThe Web has enabled individuals and organizations to publish ideas and information to a potentially large audience online at greatly reduced expense and time delay. Publishing a web page, a blog, or building a website involves little initial cost and many cost-free services are available. However, publishing and maintaining large, professional web sites with attractive, diverse and up-to-date information is still a difficult and expensive proposition. Many individuals and some companies and groups use web logs or blogs, which are largely used as easily updatable online diaries. Some commercial organizations encourage staff to communicate advice in their areas of specialization in the hope that visitors will be impressed by the expert knowledge and free information, and be attracted to the corporation as a result."
   }
 },
 {
   "model": "courses.text",
   "pk": 15,
   "fields": {
-    "owner": 4,
-    "title": "introduction",
-    "created": "2021-10-15T08:29:51.932Z",
-    "updated": "2021-10-15T08:29:51.932Z",
-    "content": "Statistical inference is the process of drawing conclusions from data that are subject to random variation, for example, observational errors or sampling variation.[6] Initial requirements of such a system of procedures for inference and induction are that the system should produce reasonable answers when applied to well-defined situations and that it should be general enough to be applied across a range of situations. Inferential statistics are used to test hypotheses and make estimations using sample data. Whereas descriptive statistics describe a sample, inferential statistics infer predictions about a larger population that the sample represents.\r\n\r\nThe outcome of statistical inference may be an answer to the question \"what should be done next?\", where this might be a decision about making further experiments or surveys, or about drawing a conclusion before implementing some organizational or governmental policy. For the most part, statistical inference makes propositions about populations, using data drawn from the population of interest via some form of random sampling. More generally, data about a random process is obtained from its observed behavior during a finite period of time. Given a parameter or hypothesis about which one wishes to make inference, statistical inference most often uses:\r\n\r\na statistical model of the random process that is supposed to generate the data, which is known when randomization has been used, and\r\na particular realization of the random process; i.e., a set of data."
+    "instructor": 1,
+    "title": "Intro-Note",
+    "created": "2021-12-04T10:17:27.063Z",
+    "updated": "2021-12-04T10:17:27.063Z",
+    "content": "File sharing is an example of transferring large amounts of data across the Internet. A computer file can be emailed to customers, colleagues and friends as an attachment. It can be uploaded to a website or File Transfer Protocol (FTP) server for easy download by others. It can be put into a \"shared location\" or onto a file server for instant use by colleagues. The load of bulk downloads to many users can be eased by the use of \"mirror\" servers or peer-to-peer networks. In any of these cases, access to the file may be controlled by user authentication, the transit of the file over the Internet may be obscured by encryption, and money may change hands for access to the file. The price can be paid by the remote charging of funds from, for example, a credit card whose details are also passed—usually fully encrypted—across the Internet. The origin and authenticity of the file received may be checked by digital signatures or by MD5 or other message digests. These simple features of the Internet, over a worldwide basis, are changing the production, sale, and distribution of anything that can be reduced to a computer file for transmission. This includes all manner of print publications, software products, news, music, film, video, photography, graphics and the other arts. This in turn has caused seismic shifts in each of the existing industries that previously controlled the production and distribution of these products.\r\n\r\nStreaming media is the real-time delivery of digital media for the immediate consumption or enjoyment by end users. Many radio and television broadcasters provide Internet feeds of their live audio and video productions. They may also allow time-shift viewing or listening such as Preview, Classic Clips and Listen Again features. These providers have been joined by a range of pure Internet \"broadcasters\" who never had on-air licenses. This means that an Internet-connected device, such as a computer or something more specific, can be used to access on-line media in much the same way as was previously possible only with a television or radio receiver. The range of available types of content is much wider, from specialized technical webcasts to on-demand popular multimedia services. Podcasting is a variation on this theme, where—usually audio—material is downloaded and played back on a computer or shifted to a portable media player to be listened to on the move. These techniques using simple equipment allow anybody, with little censorship or licensing control, to broadcast audio-visual material worldwide.\r\n\r\nDigital media streaming increases the demand for network bandwidth. For example, standard image quality needs 1 Mbit/s link speed for SD 480p, HD 720p quality requires 2.5 Mbit/s, and the top-of-the-line HDX quality needs 4.5 Mbit/s for 1080p.[82]\r\n\r\nWebcams are a low-cost extension of this phenomenon. While some webcams can give full-frame-rate video, the picture either is usually small or updates slowly. Internet users can watch animals around an African waterhole, ships in the Panama Canal, traffic at a local roundabout or monitor their own premises, live and in real time. Video chat rooms and video conferencing are also popular with many uses being found for personal webcams, with and without two-way sound. YouTube was founded on 15 February 2005 and is now the leading website for free streaming video with more than two billion users.[83] It uses an HTML5 based web player by default to stream and show video files.[84] Registered users may upload an unlimited amount of video and build their own personal profile. YouTube claims that its users watch hundreds of millions, and upload hundreds of thousands of videos daily."
   }
 },
 {
   "model": "courses.text",
   "pk": 16,
   "fields": {
-    "owner": 5,
-    "title": "History",
-    "created": "2021-10-15T08:36:10.902Z",
-    "updated": "2021-10-15T08:36:10.902Z",
-    "content": "The use of mathematical logic to represent and execute computer programs is also a feature of the lambda calculus, developed by Alonzo Church in the 1930s. However, the first proposal to use the clausal form of logic for representing computer programs was made by Cordell Green. This used an axiomatization of a subset of LISP, together with a representation of an input-output relation, to compute the relation by simulating the execution of the program in LISP. Foster and Elcock's Absys, on the other hand, employed a combination of equations and lambda calculus in an assertional programming language which places no constraints on the order in which operations are performed.\r\nLogic programming in its present form can be traced back to debates in the late 1960s and early 1970s about declarative versus procedural representations of knowledge in artificial intelligence. Advocates of declarative representations were notably working at Stanford, associated with John McCarthy, Bertram Raphael and Cordell Green, and in Edinburgh, with John Alan Robinson (an academic visitor from Syracuse University), Pat Hayes, and Robert Kowalski. Advocates of procedural representations were mainly centered at MIT, under the leadership of Marvin Minsky and Seymour Papert."
+    "instructor": 4,
+    "title": "Politics and History",
+    "created": "2021-12-04T10:26:17.971Z",
+    "updated": "2021-12-04T10:26:17.971Z",
+    "content": "The pictorial satire of William Hogarth is regarded as a precursor to the development of political cartoons in 18th century England.[9] George Townshend produced some of the first overtly political cartoons and caricatures in the 1750s.[9][10] The medium began to develop in the latter part of the 18th century under the direction of its great exponents, James Gillray and Thomas Rowlandson, both from London. Gillray explored the use of the medium for lampooning and caricature, and has been referred to as the father of the political cartoon.[11] By calling the king, prime ministers and generals to account for their behaviour, many of Gillray's satires were directed against George III, depicting him as a pretentious buffoon, while the bulk of his work was dedicated to ridiculing the ambitions of revolutionary France and Napoleon.[11] George Cruikshank became the leading cartoonist in the period following Gillray, from 1815 until the 1840s. His career was renowned for his social caricatures of English life for popular publications."
   }
 },
 {
   "model": "courses.text",
   "pk": 17,
   "fields": {
-    "owner": 5,
-    "title": "Introduction to Coding",
-    "created": "2021-10-15T08:39:50.601Z",
-    "updated": "2021-10-15T08:39:50.601Z",
-    "content": "Different programming languages support different styles of programming (called programming paradigms). The choice of language used is subject to many considerations, such as company policy, suitability to task, availability of third-party packages, or individual preference. Ideally, the programming language best suited for the task at hand will be selected. Trade-offs from this ideal involve finding enough programmers who know the language to build a team, the availability of compilers for that language, and the efficiency with which programs written in a given language execute. Languages form an approximate spectrum from \"low-level\" to \"high-level\"; \"low-level\" languages are typically more machine-oriented and faster to execute, whereas \"high-level\" languages are more abstract and easier to use but execute less quickly. It is usually easier to code in \"high-level\" languages than in \"low-level\" ones"
+    "instructor": 4,
+    "title": "introduction",
+    "created": "2021-12-04T10:29:48.428Z",
+    "updated": "2021-12-04T10:29:48.428Z",
+    "content": "Because of the stylistic similarities between comic strips and early animated movies, cartoon came to refer to animation, and the word cartoon is currently used in reference to both animated cartoons and gag cartoons.[18] While animation designates any style of illustrated images seen in rapid succession to give the impression of movement, the word \"cartoon\" is most often used as a descriptor for television programs and short films aimed at children, possibly featuring anthropomorphized animals,[19] superheroes, the adventures of child protagonists or related themes.\r\n\r\nIn the 1980s, cartoon was shortened to toon, referring to characters in animated productions. This term was popularized in 1988 by the combined live-action/animated film Who Framed Roger Rabbit, followed in 1990 by the animated TV series Tiny Toon Adventures."
   }
 },
 {
   "model": "courses.text",
   "pk": 18,
   "fields": {
-    "owner": 5,
-    "title": "Best Practices",
-    "created": "2021-10-15T08:40:31.501Z",
-    "updated": "2021-10-15T08:40:31.501Z",
-    "content": "Whatever the approach to development may be, the final program must satisfy some fundamental properties. The following properties are among the most important:[16] [17]\r\n\r\nReliability: how often the results of a program are correct. This depends on conceptual correctness of algorithms and minimization of programming mistakes, such as mistakes in resource management (e.g., buffer overflows and race conditions) and logic errors (such as division by zero or off-by-one errors).\r\nRobustness: how well a program anticipates problems due to errors (not bugs). This includes situations such as incorrect, inappropriate or corrupt data, unavailability of needed resources such as memory, operating system services, and network connections, user error, and unexpected power outages.\r\nUsability: the ergonomics of a program: the ease with which a person can use the program for its intended purpose or in some cases even unanticipated purposes. Such issues can make or break its success even regardless of other issues. This involves a wide range of textual, graphical, and sometimes hardware elements that improve the clarity, intuitiveness, cohesiveness and completeness of a program's user interface.\r\nPortability: the range of computer hardware and operating system platforms on which the source code of a program can be compiled/interpreted and run. This depends on differences in the programming facilities provided by the different platforms, including hardware and operating system resources, expected behavior of the hardware and operating system, and availability of platform-specific compilers (and sometimes libraries) for the language of the source code.\r\nMaintainability: the ease with which a program can be modified by its present or future developers in order to make improvements or to customize, fix bugs and security holes, or adapt it to new environments. Good practices[18] during initial development make the difference in this regard. This quality may not be directly apparent to the end user but it can significantly affect the fate of a program over the long term.\r\nEfficiency/performance: Measure of system resources a program consumes (processor time, memory space, slow devices such as disks, network bandwidth and to some extent even user interaction): the less, the better. This also includes careful management of resources, for example cleaning up temporary files and eliminating memory leaks. This is often discussed under the shadow of a chosen programming language. Although the language certainly affects performance, even slower languages, such as Python, can execute programs instantly from a human perspective. Speed, resource usage, and performance are important for programs that bottleneck the system, but efficient use of programmer time is also important and is related to cost: more hardware may be cheaper."
+    "instructor": 5,
+    "title": "Introduction",
+    "created": "2021-12-04T10:45:34.763Z",
+    "updated": "2021-12-04T10:45:34.763Z",
+    "content": "Some Python expressions are similar to those found in languages such as C and Java, while some are not:\r\n\r\nAddition, subtraction, and multiplication are the same, but the behavior of division differs. There are two types of divisions in Python. They are floor division (or integer division) // and floating-point/division.[86] Python also uses the ** operator for exponentiation.\r\nFrom Python 3.5, the new @ infix operator was introduced. It is intended to be used by libraries such as NumPy for matrix multiplication.[87][88]\r\nFrom Python 3.8, the syntax :=, called the 'walrus operator' was introduced. It assigns values to variables as part of a larger expression.[89]\r\nIn Python, == compares by value, versus Java, which compares numerics by value[90] and objects by reference.[91] (Value comparisons in Java on objects can be performed with the equals() method.) Python's is operator may be used to compare object identities (comparison by reference). In Python, comparisons may be chained, for example a <= b <= c.\r\nPython uses the words and, or, not for its boolean operators rather than the symbolic &&, ||, ! used in Java and C.\r\nPython has a type of expression termed a list comprehension as well as a more general expression termed a generator expression.[64]\r\nAnonymous functions are implemented using lambda expressions; however, these are limited in that the body can only be one expression.\r\nConditional expressions in Python are written as x if c else y[92] (different in order of operands from the c ? x : y operator common to many other languages).\r\nPython makes a distinction between lists and tuples. Lists are written as [1, 2, 3], are mutable, and cannot be used as the keys of dictionaries (dictionary keys must be immutable in Python). Tuples are written as (1, 2, 3), are immutable and thus can be used as the keys of dictionaries, provided all elements of the tuple are immutable. The + operator can be used to concatenate two tuples, which does not directly modify their contents, but rather produces a new tuple containing the elements of both provided tuples. Thus, given the variable t initially equal to (1, 2, 3), executing t = t + (4, 5) first evaluates t + (4, 5), which yields (1, 2, 3, 4, 5), which is then assigned back to t, thereby effectively \"modifying the contents\" of t, while conforming to the immutable nature of tuple objects. Parentheses are optional for tuples in unambiguous contexts.[93]\r\nPython features sequence unpacking wherein multiple expressions, each evaluating to anything that can be assigned to (a variable, a writable property, etc.), are associated in an identical manner to that forming tuple literals and, as a whole, are put on the left-hand side of the equal sign in an assignment statement. The statement expects an iterable object on the right-hand side of the equal sign that produces the same number of values as the provided writable expressions when iterated through and will iterate through it, assigning each of the produced values to the corresponding expression on the left.[94]\r\nPython has a \"string format\" operator %. This functions analogously to printf format strings in C, e.g. \"spam=%s eggs=%d\" % (\"blah\", 2) evaluates to \"spam=blah eggs=2\". In Python 3 and 2.6+, this was supplemented by the format() method of the str class, e.g. \"spam={0} eggs={1}\".format(\"blah\", 2). Python 3.6 added \"f-strings\": blah = \"blah\"; eggs = 2; f'spam={blah} eggs={eggs}'.[95]\r\nStrings in Python can be concatenated, by \"adding\" them (same operator as for adding integers and floats). E.g. \"spam\" + \"eggs\" returns \"spameggs\". Even if your strings contain numbers, they are still added as strings rather than integers. E.g. \"2\" + \"2\" returns \"22\".\r\nPython has various kinds of string literals:\r\nStrings delimited by single or double quote marks. Unlike in Unix shells, Perl and Perl-influenced languages, single quote marks and double quote marks function identically. Both kinds of string use the backslash (\\) as an escape character. String interpolation became available in Python 3.6 as \"formatted string literals\".[95]\r\nTriple-quoted strings, which begin and end with a series of three single or double quote marks. They may span multiple lines and function like here documents in shells, Perl and Ruby.\r\nRaw string varieties, denoted by prefixing the string literal with an r. Escape sequences are not interpreted; hence raw strings are useful where literal backslashes are common, such as regular expressions and Windows-style paths. Compare \"@-quoting\" in C#.\r\nPython has array index and array slicing expressions on lists, denoted as a[key], a[start:stop] or a[start:stop:step]. Indexes are zero-based, and negative indexes are relative to the end. Slices take elements from the start index up to, but not including, the stop index. The third slice parameter, called step or stride, allows elements to be skipped and reversed. Slice indexes may be omitted, for example a[:] returns a copy of the entire list. Each element of a slice is a shallow copy.\r\nIn Python, a distinction between expressions and statements is rigidly enforced, in contrast to languages such as Common Lisp, Scheme, or Ruby. This leads to duplicating some functionality. For example:\r\n\r\nList comprehensions vs. for-loops\r\nConditional expressions vs. if blocks\r\nThe eval() vs. exec() built-in functions (in Python 2, exec is a statement); the former is for expressions, the latter is for statements.\r\nStatements cannot be a part of an expression, so list and other comprehensions or lambda expressions, all being expressions, cannot contain statements. A particular case of this is that an assignment statement such as a = 1 cannot form part of the conditional expression of a conditional statement. This has the advantage of avoiding a classic C error of mistaking an assignment operator = for an equality operator == in conditions: if (c = 1) { ... } is syntactically valid (but probably unintended) C code but if c = 1: ... causes a syntax error in Python."
   }
 },
 {
   "model": "courses.text",
   "pk": 19,
   "fields": {
-    "owner": 7,
-    "title": "Numpy Library",
-    "created": "2021-10-15T09:34:52.975Z",
-    "updated": "2021-10-15T09:34:52.975Z",
-    "content": "NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines, Fourier transforms, and more."
-  }
-},
-{
-  "model": "courses.text",
-  "pk": 20,
-  "fields": {
-    "owner": 7,
-    "title": "Pip Module",
-    "created": "2021-10-15T09:35:40.211Z",
-    "updated": "2021-10-15T09:35:40.211Z",
-    "content": "pip is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes."
+    "instructor": 5,
+    "title": "Built in Methods",
+    "created": "2021-12-04T10:47:01.274Z",
+    "updated": "2021-12-04T10:47:01.274Z",
+    "content": "Methods on objects are functions attached to the object's class; the syntax instance.method(argument) is, for normal methods and functions, syntactic sugar for Class.method(instance, argument). Python methods have an explicit self parameter to access instance data, in contrast to the implicit self (or this) in some other object-oriented programming languages (e.g., C++, Java, Objective-C, or Ruby).[96] Apart from this, Python also provides methods, often called dunder methods (due to their names beginning and ending with double-underscores), to allow user-defined classes to modify how they are handled by native operations such as length, comparison, in arithmetic operations, type conversion, and many more."
   }
 },
 {
   "model": "courses.file",
+  "pk": 1,
+  "fields": {
+    "instructor": 2,
+    "title": "Notes",
+    "created": "2021-12-04T06:33:23.909Z",
+    "updated": "2021-12-04T06:33:23.910Z",
+    "file": "files/matrices-1_pdf.pdf"
+  }
+},
+{
+  "model": "courses.image",
+  "pk": 1,
+  "fields": {
+    "instructor": 2,
+    "title": "Vector Space Resource1",
+    "created": "2021-12-04T06:26:40.557Z",
+    "updated": "2021-12-04T06:26:40.557Z",
+    "file": "images/vector_space.png"
+  }
+},
+{
+  "model": "courses.image",
   "pk": 2,
   "fields": {
-    "owner": 4,
-    "title": "additional resources",
-    "created": "2021-10-15T08:06:28.442Z",
-    "updated": "2021-10-15T08:06:28.443Z",
-    "file": "files/sample.pdf"
+    "instructor": 2,
+    "title": "Vector spaces Resources 2",
+    "created": "2021-12-04T06:27:03.877Z",
+    "updated": "2021-12-04T06:27:03.877Z",
+    "file": "images/vector_spaces_2.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 3,
   "fields": {
-    "owner": 4,
-    "title": "additional resources",
-    "created": "2021-10-15T08:09:58.174Z",
-    "updated": "2021-10-15T08:09:58.174Z",
-    "file": "files/sample_0clzeey.pdf"
+    "instructor": 2,
+    "title": "Additional Resources",
+    "created": "2021-12-04T06:30:26.579Z",
+    "updated": "2021-12-04T06:30:26.579Z",
+    "file": "images/matrixers.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 4,
   "fields": {
-    "owner": 4,
-    "title": "readings",
-    "created": "2021-10-15T08:13:48.894Z",
-    "updated": "2021-10-15T08:13:48.894Z",
-    "file": "files/sample_XXd42Tb.pdf"
+    "instructor": 2,
+    "title": "Resources",
+    "created": "2021-12-04T06:43:05.025Z",
+    "updated": "2021-12-04T06:43:05.025Z",
+    "file": "images/limit_1.jpeg"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 5,
   "fields": {
-    "owner": 4,
-    "title": "additional material",
-    "created": "2021-10-15T08:19:51.182Z",
-    "updated": "2021-10-15T08:19:51.182Z",
-    "file": "files/sample_XPoTw5j.pdf"
+    "instructor": 2,
+    "title": "Resources",
+    "created": "2021-12-04T06:47:44.128Z",
+    "updated": "2021-12-04T06:47:44.128Z",
+    "file": "images/Tangent_line_to_a_curve.svg.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 6,
   "fields": {
-    "owner": 4,
-    "title": "additional material",
-    "created": "2021-10-15T08:21:31.366Z",
-    "updated": "2021-10-15T08:21:31.366Z",
-    "file": "files/sample_0kNACmY.pdf"
+    "instructor": 2,
+    "title": "Resources",
+    "created": "2021-12-04T07:02:18.993Z",
+    "updated": "2021-12-04T07:02:18.993Z",
+    "file": "images/statics_ml.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 7,
   "fields": {
-    "owner": 4,
-    "title": "additional reading",
-    "created": "2021-10-15T08:22:55.644Z",
-    "updated": "2021-10-15T08:22:55.644Z",
-    "file": "files/sample_Fj78fwd.pdf"
+    "instructor": 3,
+    "title": "Resources",
+    "created": "2021-12-04T07:07:20.434Z",
+    "updated": "2021-12-04T07:07:20.434Z",
+    "file": "images/counting.jpeg"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 8,
   "fields": {
-    "owner": 4,
-    "title": "additional resources",
-    "created": "2021-10-15T08:28:28.809Z",
-    "updated": "2021-10-15T08:28:28.809Z",
-    "file": "files/sample_qjsCQ27.pdf"
+    "instructor": 3,
+    "title": "Resources",
+    "created": "2021-12-04T07:09:03.978Z",
+    "updated": "2021-12-04T07:09:03.978Z",
+    "file": "images/prob.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 9,
   "fields": {
-    "owner": 4,
-    "title": "additional material",
-    "created": "2021-10-15T08:30:40.155Z",
-    "updated": "2021-10-15T08:30:40.155Z",
-    "file": "files/sample_8KNAZNj.pdf"
+    "instructor": 3,
+    "title": "Resources",
+    "created": "2021-12-04T09:50:18.217Z",
+    "updated": "2021-12-04T09:50:18.217Z",
+    "file": "images/inferential_stat.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 10,
   "fields": {
-    "owner": 7,
-    "title": "additional content",
-    "created": "2021-10-15T09:30:40.537Z",
-    "updated": "2021-10-15T09:30:40.537Z",
-    "file": "files/sample_97P7Fxs.pdf"
+    "instructor": 1,
+    "title": "Atlast",
+    "created": "2021-12-04T10:19:37.080Z",
+    "updated": "2021-12-04T10:19:37.080Z",
+    "file": "images/World_Map_of_Web_Index_2014.png"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 11,
   "fields": {
-    "owner": 7,
-    "title": "additional material",
-    "created": "2021-10-15T09:32:53.186Z",
-    "updated": "2021-10-15T09:32:53.186Z",
-    "file": "files/sample_wPWt2oQ.pdf"
+    "instructor": 4,
+    "title": "resource item",
+    "created": "2021-12-04T10:26:49.656Z",
+    "updated": "2021-12-04T10:26:49.656Z",
+    "file": "images/500px-Tammany_Ring_Nast_crop.jpeg"
   }
 },
 {
-  "model": "courses.file",
+  "model": "courses.image",
   "pk": 12,
   "fields": {
-    "owner": 7,
-    "title": "additional material",
-    "created": "2021-10-15T09:39:30.240Z",
-    "updated": "2021-10-15T09:39:30.240Z",
-    "file": "files/sample_OjL9frR.pdf"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 4,
-  "fields": {
-    "owner": 4,
-    "title": "real number visualization",
-    "created": "2021-10-15T08:03:56.640Z",
-    "updated": "2021-10-15T08:03:56.640Z",
-    "file": "images/real_number.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 5,
-  "fields": {
-    "owner": 4,
-    "title": "visualization",
-    "created": "2021-10-15T08:09:39.183Z",
-    "updated": "2021-10-15T08:09:39.183Z",
-    "file": "images/Linear_Function_Graph.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 6,
-  "fields": {
-    "owner": 4,
-    "title": "graph of a function",
-    "created": "2021-10-15T08:12:35.586Z",
-    "updated": "2021-10-15T08:12:35.587Z",
-    "file": "images/1024px-Function_color_example_3.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 7,
-  "fields": {
-    "owner": 4,
-    "title": "graph of limit",
-    "created": "2021-10-15T08:18:52.140Z",
-    "updated": "2021-10-15T08:18:52.140Z",
-    "file": "images/Limite_01.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 8,
-  "fields": {
-    "owner": 4,
-    "title": "graph of derivative",
-    "created": "2021-10-15T08:21:16.626Z",
-    "updated": "2021-10-15T08:21:16.627Z",
-    "file": "images/Tangent_to_a_curve.svg.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 9,
-  "fields": {
-    "owner": 4,
-    "title": "graph of integral",
-    "created": "2021-10-15T08:22:36.887Z",
-    "updated": "2021-10-15T08:22:36.887Z",
-    "file": "images/Integral_example.svg.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 10,
-  "fields": {
-    "owner": 4,
-    "title": "lineat regression",
-    "created": "2021-10-15T08:27:24.986Z",
-    "updated": "2021-10-15T08:27:24.986Z",
-    "file": "images/Linear_regression.png"
-  }
-},
-{
-  "model": "courses.image",
-  "pk": 11,
-  "fields": {
-    "owner": 5,
-    "title": "Logic Gates",
-    "created": "2021-10-15T08:38:13.646Z",
-    "updated": "2021-10-15T08:38:13.646Z",
-    "file": "images/logic_gate.png"
+    "instructor": 5,
+    "title": "Resource",
+    "created": "2021-12-04T10:49:33.335Z",
+    "updated": "2021-12-04T10:49:33.335Z",
+    "file": "images/pythons.png"
   }
 },
 {
   "model": "courses.video",
   "pk": 1,
   "fields": {
-    "owner": 4,
-    "title": "Tutorial",
-    "created": "2021-10-15T08:07:25.296Z",
-    "updated": "2021-10-15T08:07:25.296Z",
-    "url": "https://www.youtube.com/watch?v=tC7NkH5xwBM"
+    "instructor": 2,
+    "title": "Lecture",
+    "created": "2021-12-04T06:27:53.499Z",
+    "updated": "2021-12-04T06:27:53.499Z",
+    "url": "https://www.youtube.com/watch?v=XDvSsDsLVLs"
   }
 },
 {
   "model": "courses.video",
   "pk": 2,
   "fields": {
-    "owner": 4,
-    "title": "video tutorial",
-    "created": "2021-10-15T08:10:39.022Z",
-    "updated": "2021-10-15T08:10:39.022Z",
-    "url": "https://www.youtube.com/watch?v=Ft2_QtXAnh8"
+    "instructor": 2,
+    "title": "Lectures",
+    "created": "2021-12-04T06:31:04.647Z",
+    "updated": "2021-12-04T06:31:04.648Z",
+    "url": "https://www.youtube.com/watch?v=rowWM-MijXU"
   }
 },
 {
   "model": "courses.video",
   "pk": 3,
   "fields": {
-    "owner": 4,
-    "title": "video lecture",
-    "created": "2021-10-15T08:13:32.907Z",
-    "updated": "2021-10-15T08:13:32.907Z",
-    "url": "https://www.youtube.com/watch?v=kvGsIo1TmsM"
+    "instructor": 2,
+    "title": "Lecture Part One",
+    "created": "2021-12-04T06:43:43.629Z",
+    "updated": "2021-12-04T06:43:43.629Z",
+    "url": "https://www.youtube.com/watch?v=YNstP0ESndU"
   }
 },
 {
   "model": "courses.video",
   "pk": 4,
   "fields": {
-    "owner": 4,
-    "title": "Video tutorial",
-    "created": "2021-10-15T08:19:30.760Z",
-    "updated": "2021-10-15T08:19:30.760Z",
-    "url": "https://www.youtube.com/watch?v=riXcZT2ICjA"
+    "instructor": 2,
+    "title": "Lecture Part Two",
+    "created": "2021-12-04T06:44:53.692Z",
+    "updated": "2021-12-04T06:44:53.692Z",
+    "url": "https://www.youtube.com/watch?v=NmLljBAg82o"
   }
 },
 {
   "model": "courses.video",
   "pk": 5,
   "fields": {
-    "owner": 4,
-    "title": "video lecture",
-    "created": "2021-10-15T08:28:12.202Z",
-    "updated": "2021-10-15T08:28:12.202Z",
-    "url": "https://www.youtube.com/watch?v=h8EYEJ32oQ8"
+    "instructor": 2,
+    "title": "Lecture Part One",
+    "created": "2021-12-04T06:48:17.046Z",
+    "updated": "2021-12-04T06:48:17.046Z",
+    "url": "https://www.youtube.com/watch?v=C5RI5eLzVfo"
   }
 },
 {
   "model": "courses.video",
   "pk": 6,
   "fields": {
-    "owner": 4,
-    "title": "youtube tutorial",
-    "created": "2021-10-15T08:30:13.436Z",
-    "updated": "2021-10-15T08:30:13.436Z",
-    "url": "https://www.youtube.com/watch?v=h8EYEJ32oQ8"
+    "instructor": 2,
+    "title": "Lecture Part Two",
+    "created": "2021-12-04T06:48:56.112Z",
+    "updated": "2021-12-04T06:48:56.113Z",
+    "url": "https://www.youtube.com/watch?v=u7dhn-hBHzQ"
   }
 },
 {
   "model": "courses.video",
   "pk": 7,
   "fields": {
-    "owner": 5,
-    "title": "lecture tutorial",
-    "created": "2021-10-15T08:38:37.744Z",
-    "updated": "2021-10-15T08:38:37.744Z",
-    "url": "https://www.youtube.com/watch?v=BnB2m1nXZ84"
+    "instructor": 2,
+    "title": "Lecture",
+    "created": "2021-12-04T06:59:30.603Z",
+    "updated": "2021-12-04T06:59:30.603Z",
+    "url": "https://www.youtube.com/watch?v=ad79nYk2kegaa"
   }
 },
 {
   "model": "courses.video",
   "pk": 8,
   "fields": {
-    "owner": 5,
-    "title": "youtube video lecture",
-    "created": "2021-10-15T08:41:29.860Z",
-    "updated": "2021-10-15T08:41:29.860Z",
-    "url": "https://www.youtube.com/watch?v=FCMxA3m_Imc"
+    "instructor": 2,
+    "title": "Lecture",
+    "created": "2021-12-04T07:00:27.858Z",
+    "updated": "2021-12-04T07:00:27.858Z",
+    "url": "https://www.youtube.com/watch?v=ukzFI9rgwfUa"
   }
 },
 {
   "model": "courses.video",
   "pk": 9,
   "fields": {
-    "owner": 7,
-    "title": "tutorial",
-    "created": "2021-10-15T09:31:35.263Z",
-    "updated": "2021-10-15T09:31:35.263Z",
-    "url": "https://www.youtube.com/watch?v=W8KRzm-HUcc"
+    "instructor": 2,
+    "title": "Lecture",
+    "created": "2021-12-04T07:03:00.207Z",
+    "updated": "2021-12-04T07:03:00.207Z",
+    "url": "https://www.youtube.com/watch?v=EuBBz3bI-aA"
   }
 },
 {
   "model": "courses.video",
   "pk": 10,
   "fields": {
-    "owner": 7,
-    "title": "video tutorial",
-    "created": "2021-10-15T09:32:37.983Z",
-    "updated": "2021-10-15T09:32:37.983Z",
-    "url": "https://www.youtube.com/watch?v=NSbOtYzIQI0"
+    "instructor": 3,
+    "title": "Lecture",
+    "created": "2021-12-04T07:08:01.829Z",
+    "updated": "2021-12-04T07:08:01.829Z",
+    "url": "https://www.youtube.com/watch?v=0TgLtF3PMOc"
   }
 },
 {
   "model": "courses.video",
   "pk": 11,
   "fields": {
-    "owner": 7,
-    "title": "Django Module",
-    "created": "2021-10-15T09:33:34.398Z",
-    "updated": "2021-10-15T09:33:34.398Z",
-    "url": "https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p"
+    "instructor": 3,
+    "title": "Lecture",
+    "created": "2021-12-04T07:09:30.225Z",
+    "updated": "2021-12-04T07:09:30.225Z",
+    "url": "https://www.youtube.com/watch?v=SkidyDQuupA"
   }
 },
 {
   "model": "courses.video",
   "pk": 12,
   "fields": {
-    "owner": 7,
-    "title": "Video Tutorial",
-    "created": "2021-10-15T09:39:14.569Z",
-    "updated": "2021-10-15T09:39:14.569Z",
-    "url": "https://www.youtube.com/watch?v=Vl0H-qTclOg"
+    "instructor": 3,
+    "title": "Lecture",
+    "created": "2021-12-04T09:51:24.898Z",
+    "updated": "2021-12-04T09:51:24.898Z",
+    "url": "https://www.youtube.com/watch?v=VHYOuWu9jQI"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 13,
+  "fields": {
+    "instructor": 3,
+    "title": "Lecture",
+    "created": "2021-12-04T09:57:21.671Z",
+    "updated": "2021-12-04T09:57:21.672Z",
+    "url": "https://www.youtube.com/watch?v=8Iklj-lf1fY"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 14,
+  "fields": {
+    "instructor": 4,
+    "title": "Lecture",
+    "created": "2021-12-04T10:28:18.635Z",
+    "updated": "2021-12-04T10:28:18.635Z",
+    "url": "https://www.youtube.com/watch?v=oOOHtjXZq-E"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 15,
+  "fields": {
+    "instructor": 4,
+    "title": "example",
+    "created": "2021-12-04T10:31:44.684Z",
+    "updated": "2021-12-04T10:31:44.684Z",
+    "url": "https://www.youtube.com/watch?v=vV0mj43AI3E"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 16,
+  "fields": {
+    "instructor": 5,
+    "title": "Lecture",
+    "created": "2021-12-04T10:46:22.999Z",
+    "updated": "2021-12-04T10:46:22.999Z",
+    "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&vl=en"
+  }
+},
+{
+  "model": "courses.video",
+  "pk": 17,
+  "fields": {
+    "instructor": 5,
+    "title": "Tutorial",
+    "created": "2021-12-04T10:48:54.013Z",
+    "updated": "2021-12-04T10:48:54.013Z",
+    "url": "https://www.youtube.com/watch?v=JeznW_7DlB0"
+  }
+},
+{
+  "model": "courses.instructor",
+  "pk": 1,
+  "fields": {
+    "user": 3
+  }
+},
+{
+  "model": "courses.instructor",
+  "pk": 2,
+  "fields": {
+    "user": 5
+  }
+},
+{
+  "model": "courses.instructor",
+  "pk": 3,
+  "fields": {
+    "user": 2
+  }
+},
+{
+  "model": "courses.instructor",
+  "pk": 4,
+  "fields": {
+    "user": 4
+  }
+},
+{
+  "model": "courses.instructor",
+  "pk": 5,
+  "fields": {
+    "user": 6
   }
 }
 ]

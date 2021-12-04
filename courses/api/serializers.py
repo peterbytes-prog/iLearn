@@ -3,6 +3,7 @@ from rest_framework import serializers
 from ..models import *
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
+from students.models import Student
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -76,6 +77,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id',
                     "username",
+                    'password',
                     "email",
                     "first_name",
                     "last_name",
@@ -84,5 +86,4 @@ class UserDetailSerializer(serializers.ModelSerializer):
         user = User.objects.create(username=validated_data['username'])
         user.set_password(validated_data['password'])
         user.save()
-        Token.objects.create(user=user)
         return user
