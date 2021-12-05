@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ object.user.username }}
+{% endblock %}
+{% block content %}
+  <h1>Welcome {% if not is_owner %}to{% else %}back{% endif %} {{ object.user.username }} {% if not is_owner %}Profile{% endif %}</h1>
+  <div class="row pb-3">
+    <div class="bg-light col-xs-12 col-md-3 contents">
+      <div class="">
+        <img src="{{object.photo.url}}" alt="..." class="img-thumbnail">
+      </div>
+
+      <br>
+      <h4>Role(s)</h4>
+      <div class="">
+        {% if object.user.instructor %}
+          <p>Instructor</p>
+        {% endif %}
+        <p>Student</p>
+      </div>
+      <br>
+      <h3>Enrollments</h3>
+      <ul class="modules list-group">
+        {% for enrollment in object.enrollments.all %}
+          <li class="list-group-item">
+            <a href='{% url "courses:course_detail" enrollment.course.slug %}'>
+              <span>
+                {{ enrollment.course.title }}
+              </span>
+            </a>
+          </li>
+        {% empty %}
+          <li class="list-group-item">No Current Enrollments.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="bg-light col-xs-12 col-md-9 contents">
+      <div class="container">
+        <h3>Profile</h3>
+        {% if is_owner %}
+          <form class="" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ student_form.as_p }}
+          <div class="text-right">
+            <button type="submit" class='btn btn-secondary' name="button">Update Profile</button>
+          </div>
+          </form>
+        {%else%}
+          <dl class="row">
+            <dt class="col-sm-12">Username:</dt>
+            <dd class="col-sm-11 offset-sm-1">{{object.user.username}}</dd>
+            <dt class="col-sm-12">Fullname:</dt>
+            <dd class="col-sm-11 offset-sm-1">{% if object.user.get_full_name %}{{object.user.get_full_name}}{% else %}N/A{%endif%}</dd>
+            <dt class="col-sm-12">Gender:</dt>
+            <dd class="col-sm-11 offset-sm-1">{% if object.gender %}{{object.gender}}{% else %}N/A{%endif%}</dd>
+            <dt class="col-sm-12">Email address:</dt>
+            <dd class="col-sm-11 offset-sm-1">{% if object.user.email %}{{object.user.email}}{% else %}N/A{%endif%}</dd>
+            <dt class="col-sm-12">Date of birth:</dt>
+            <dd class="col-sm-11 offset-sm-1">{% if object.date_of_birth %}{{object.date_of_birth}}{% else %}N/A{%endif%}</dd>
+          </dl>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+{% endblock %}

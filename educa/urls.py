@@ -27,6 +27,7 @@ urlpatterns = [
     # path('accounts/logout/',auth_view.LogoutView.as_view(),name='logout'),
     path('',CourseListView.as_view(),name='course_list'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('profile/', include('account.urls',namespace='profile')),
     path('admin/', admin.site.urls),
     path('course/', include('courses.urls',namespace='courses')),
     path('students/',include('students.urls',namespace='students')),

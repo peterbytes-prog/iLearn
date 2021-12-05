@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'account.apps.AccountConfig',
     'embed_video',
     'memcache_status',
     'rest_framework',
     'rest_framework.authtoken',
     "channels",
     "chat",
+
 ]
 
 MIDDLEWARE = [
@@ -155,6 +157,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 LOGIN_REDIRECT_URL = reverse_lazy('students:student_course_list')
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -31,7 +31,7 @@
             {% endif %}
           {% else %}
             <div class="text-center">
-              <a class="btn btn-light border border-dark" href="{% url "students:student_registration" %}">
+              <a class="btn btn-light border border-dark" href="{% url "login" %}?next={{request.path}}">
                 Register to Enroll
               </a>
             </div>
