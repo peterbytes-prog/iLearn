@@ -23,8 +23,12 @@
     <div class="">
       <h2>Course Info</h2>
       <form class="" action="" method="post" enctype="multipart/form-data">
-        {{ form.as_p }}
-        {% csrf_token %}
+        <div class="container">
+          {{ form.media }}
+          {{ form.as_p }}
+          {% csrf_token %}
+        </div>
+
         <p><input type="submit" class='bg-btn-theme-one text-white' value="Save content"></p>
       </form>
     </div>

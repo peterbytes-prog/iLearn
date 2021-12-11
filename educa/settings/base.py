@@ -50,9 +50,15 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     "channels",
     "chat",
+    "ckeditor",
 
 ]
 
+CKEDITOR_CONFIGS = {
+    'default':{
+        'width':'100%',
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

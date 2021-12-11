@@ -92,7 +92,7 @@ form:not(.student_test_form) p input[type=checkbox]{
 }
 .question_pt{
   font-size:0.7em;
-  margin: 0;
+  margin: 0 3px;
   padding: 0;
 }
 .assignement_date_span{
@@ -137,4 +137,57 @@ form:not(.student_test_form) p input[type=checkbox]{
 #chat .message.other{
   background-color: rgba(203, 195, 227,0.2);
   margin-right:auto;
+}
+.django-ckeditor-widget{
+  width:90%;
+  margin-left:5%;
+}
+.editored-content{
+}
+.choice-container{
+  display:flex;
+  flex-direction:row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.choice-inner-text-container{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+
+}
+
+.editored-content{
+ padding:0;
+}
+.editored-content *{
+  vertical-align:top;
+}
+p:empty{
+  display:none;
+}
+.choices-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.full-width-divisor{
+  width: 90%;
+}
+.btn-container{
+  text-align: center;
+  display: flex;
+}
+.btn-container{
+  text-align: center;
+  display: flex;
+}
+.btn{
+  font-weight: bolder;
+  color:white;
+}
+.btn-container>*{
+  width: 90%;
+  flex: 1;
 }

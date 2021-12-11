@@ -3,6 +3,7 @@ import datetime
 from courses.models import *
 from courses.fields import OrderField
 from django.template.loader import render_to_string
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Assignment(models.Model):
@@ -61,7 +62,7 @@ class Attempt(models.Model):
 class Question(models.Model):
     assignment = models.ForeignKey('Assignment',related_name='assignment_questions',on_delete=models.CASCADE)
     order = OrderField(blank=True, for_fields=['assignment'])
-    question = models.TextField()
+    question = RichTextField()
     multiple = models.BooleanField(default=False,help_text='allow selecting multiple choices?')
     def __str__(self):
         return f"Assignment: {self.assignment.title}, question {self.order}"
@@ -97,7 +98,7 @@ class ChoiceBase(models.Model):
         return render_to_string(f"assignments/manage/choice/{self._meta.model_name}.html",{'item':self,'selected':selected,'review':review,'instructor':False})
 
 class TextChoice(ChoiceBase):
-    content = models.TextField()
+    content = RichTextField()
 
 class AttemptChoice(models.Model):
     choice = models.ForeignKey(TextChoice,on_delete=models.CASCADE)

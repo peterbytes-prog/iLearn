@@ -1,4 +1,8 @@
-<p>
-  <input type="{% if item.question.multiple %}checkbox{% else %}radio{%endif%}" name="{{item.question.pk}}" value="{{item.pk}}" {{selected}}  {% if review %}disabled{%endif%}/>
-  {{ item.content }}{% if instructor %} <span class="question_pt">({{item.point}}pt)</span>{% endif %}
-</p>
+<div class="choice-container">
+  <input type="{% if item.question.multiple %}checkbox{% else %}radio{%endif%}" name="{{item.question.pk}}" value="{{item.pk}}" {{selected}}  {% if review %}disabled{%endif%} />
+  <div class="container choice-inner-text-container">
+    <div class="editored-content">
+      {{ item.content|safe }}
+    </div>{% if instructor %} <span class="question_pt">({{item.point}}pt)</span>{% endif %}
+  </div>
+</div>

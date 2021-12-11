@@ -119,6 +119,8 @@ class QuestionCreateUpdateDetailView(CourseAssignmentManageMixins,TemplateRespon
                 return self.render_to_response({'question_form':question_form,'choice_formset':choice_formset,'object':self.question})
         else:
             return self.render_to_response({'question_form':question_form,'choice_formset':choice_formset,'object':self.question})
+        if request.POST.get('next'):
+            return redirect(reverse_lazy('courses:assignments:assignment_question_create',args=[self.course.pk,self.assignment.pk]))
         return redirect(reverse_lazy('courses:assignments:course_a_assignment_question_list',args=[self.course.pk,self.assignment.pk]))
 
 

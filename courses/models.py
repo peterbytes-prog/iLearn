@@ -97,8 +97,8 @@ class ItemBase(models.Model):
     pass
 
 class Text(ItemBase):
-    # content = RichTextField(blank=True,null=True)
-    content = models.TextField()
+    content = RichTextField(blank=True,null=True)
+    # content = models.TextField()
     pass
 class File(ItemBase):
     file = models.FileField(upload_to='files')

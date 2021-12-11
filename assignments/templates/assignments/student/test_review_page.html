@@ -54,14 +54,20 @@
                             <p>{{question.order}})</p>
                           </div>
                           <div class="col-sm-10">
-                            <p>
-                              {{question.question}}
-                            </p>
+                            <div class="editored-content">
+                              {{question.question|safe}}
+                            </div>
                             <div data-id="{{ question.id }}" class="m-1">
                               {% for choice in question.question_choices.all%}
+                                {% if forloop.first %}
+                                    <hr class="full-width-divisor">
+                                {% endif %}
                                 {% with item=choice %}
                                   <p>{{ item|render_choice:object }}</p>
                                 {% endwith %}
+                                {% if not forloop.last %}
+                                    <hr class="full-width-divisor">
+                                {% endif %}
                               {% empty %}
                                 <p>No Choice Yet</p>
                               {% endfor %}
