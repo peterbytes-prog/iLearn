@@ -22,7 +22,7 @@ class Subject(models.Model):
     def save(self,*args,**kwargs):
         ins = super().save(*args,**kwargs)
         img = pImage.open(self.photo.path)
-        img = img.resize((1000,1500))#pininterest ref
+        img.thumbnail((500,500))#pininterest ref
         img.save(self.photo.path)
 
 class Enrollment(models.Model):
@@ -53,7 +53,7 @@ class Course(models.Model):
     def save(self,*args,**kwargs):
         ins = super().save(*args,**kwargs)
         img = pImage.open(self.photo.path)
-        img = img.resize((1000,1500))#pininterest ref
+        img.thumbnail((500,500))#pininterest ref
         img.save(self.photo.path)
 
 class Module(models.Model):

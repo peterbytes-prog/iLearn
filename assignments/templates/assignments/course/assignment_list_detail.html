@@ -4,11 +4,12 @@
 {% block title %}
   Assignment {{ assignment.title }}
 {% endblock %}
-{% block content %}
 {% block page_title %}
   <h2 class="m-1">Course "{{ course.title }}"</h2>
 {% endblock %}
-{% with course=course %}
+{% block content %}
+
+
   <br>
   <div class="container row my-2">
     <div class="contents col-md-3 col-xs-12 bg-light">
@@ -99,16 +100,6 @@
                       <p>No Choice Yet</p>
                     {% endfor %}
                   </div>
-                  {% comment %}
-                    <div  class="d-flex justify-content-end">
-                      <a  class="m-1" href="{% url 'courses:assignments:assignment_question_update' question.id %}">Edit</a>
-                      <span>|</span>
-                      <form style=" margin:0; padding:0; border:none; display:inline" action="{% url 'courses:assignments:assignment_question_delete' question.id %}" method="post">
-                        <input style="margin:0; padding:0; border:none; background-color:white" type="submit" name="delete" value="Delete" class="m-1 text-primary" />
-                        {% csrf_token %}
-                      </form>
-                    </div>
-                  {% endcomment %}
                 </div>
                 <div class="col-sm-1 p-0 m-0">
                   <p class='question_pt'>{{question.total_point}}pt</p>
@@ -142,7 +133,5 @@
       </div>
     </div>
   </div>
-{% endwith %}
-{% endblock %}
-{% block domready %}
+
 {% endblock %}

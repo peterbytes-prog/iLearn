@@ -9,13 +9,23 @@
 {% endblock %}
 
 {% block page_title %}
-<h2>
-  {% if subject %}
-    {{ subject.title }} courses
-  {% else %}
-    All courses
-  {% endif %}
-</h2>
+
+<div class="jumbotron text-white jumbotron-image shadow" style="background-image: url({% if subject %}{{subject.photo.url}}{% else %} '/media/subjects/subjects_icon.png'{% endif %});">
+  <div style="background-color:rgba(0,0,0,0.7);" class="container">
+    <h1 class="">
+      {% if subject %}
+        {{ subject.title }} courses
+      {% else %}
+        All courses
+      {% endif %}
+    </h1>
+    <p class="">
+      {{subject.description}}
+    </p>
+  </div>
+</div>
+
+
 {% endblock %}
 
 {% block content %}
@@ -40,32 +50,50 @@
       {% for course in courses %}
         {% with subject=course.subject %}
           <div class="container p-1">
-            <div class="card">
-              <h3 class="card-header bg-secondary-theme-one text-dark">
-                <a class="text-light" href="{% url "courses:course_detail"  course.slug %}">
-                  {{ course.title }}
-                </a>
-              </h3>
-              <div class="card-body">
-                <dl class="row">
-                  <dt class="col-4">Subject</dt>
-                  <dd class="col-8">
-                    <a href="{% url "courses:course_list_subject" subject.slug %}">{{ subject }}</a>.
-                  </dd>
-                  <dt class="col-4">Modules</dt>
-                  <dd class="col-8">{{ course.total_modules }} modules.</dd>
-                  <dt class="col-4">Instructor</dt>
-                  <dd class="col-8">{{course.instructor.user|get_name}}
-                  </dd>
-                </dl>
-                <div class="text-right">
-                  <a class="card-link bg-btn-theme-one btn border border-dark mr-auto" href="{% url "courses:course_detail"  course.slug %}">Explore</a>
+            <div class="card-group">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="full-card-title col-sm-12">
+                    <h3 class="card-header bg-secondary-theme-one text-dark">
+                      <a class="text-light" href="{% url "courses:course_detail"  course.slug %}">
+                        {{ course.title }}
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="card-img-container col-md-4">
+                    <img src="{{course.photo.url}}" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <dl class="row">
+                        <dt class="col-4">Subject</dt>
+                        <dd class="col-8">
+                          <a href="{% url "courses:course_list_subject" subject.slug %}">{{ subject }}</a>.
+                        </dd>
+                        <dt class="col-4">Modules</dt>
+                        <dd class="col-8">{{ course.total_modules }} modules.</dd>
+                        <dt class="col-4">Instructor</dt>
+                        <dd class="col-8">{{course.instructor.user|get_name}}
+                        </dd>
+                      </dl>
+                      <div class="text-right">
+                        <a class="card-link bg-btn-theme-one btn border border-dark mr-auto" href="{% url "courses:course_detail"  course.slug %}">Explore</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         {% endwith %}
+      {% empty %}
+        <ul class='list-group '>
+          <li class="list-group-item text-info">
+            No Course In this Subject Yet
+          </li>
+        </ul>
       {% endfor %}
+
     </div>
   </div>
 

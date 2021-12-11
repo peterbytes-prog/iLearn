@@ -1,0 +1,7 @@
+[
+  {"model": "courses.instructor", "pk": 1, "fields": {"user": 6, "feature": true}},
+  {"model": "courses.instructor", "pk": 2, "fields": {"user": 5, "feature": true}},
+  {"model": "courses.instructor", "pk": 3, "fields": {"user": 3, "feature": true}},
+  {"model": "courses.instructor", "pk": 4, "fields": {"user": 2, "feature": true}},
+  {"model": "courses.instructor", "pk": 5, "fields": {"user": 4, "feature": false}},
+]

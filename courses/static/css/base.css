@@ -191,3 +191,27 @@ p:empty{
   width: 90%;
   flex: 1;
 }
+.card{
+
+}
+.card-img{
+  max-height: 15em;
+}
+.card-img-container{
+  background-color: grey;
+  display: flex;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  background-color: black;
+}
+.card-img-container img{
+  display: block;
+  margin: auto;
+  align-self: center;
+  border-bottom: 1px solid black;
+}
+.jumbotron-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
