@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark-theme-one">
          <a href="#" class="navbar-brand bg-light border-white text-bold text-dark px-3">iLearn</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,14 +34,14 @@
           </ul>
           <ul class="navbar-nav ml-auto">
           {% if request.user.is_authenticated %}
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Logout<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link {% if request|is_current:'profile-detail' %}active{% endif %}"  href="{% url 'profile:profile-detail' request.user.student.pk %}">Profile</a>
             </li>
           {% else %}
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login/Sign Up <span class="sr-only">(current)</span></a>
             </li>
           {% endif %}
@@ -49,10 +49,18 @@
         </div>
       </nav>
     </div>
-
+    <div class="container-fluid page_title">
+      <div class="container">
+        {% block page_title %}
+        {% endblock %}
+      </div>
+    </div>
     <main class="container">
+      <div class="d-flex page_breadcrumb">
+        {% block page_breadcrumb %}
+        {% endblock %}
+      </div>
       {% block content %}
-        Body
       {% endblock %}
     </main>
   </body>

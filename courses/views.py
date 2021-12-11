@@ -29,7 +29,7 @@ class OwnerCourseMixin(OwnerMixin,LoginRequiredMixin,PermissionRequiredMixin):#,
     model = Course
 class OwnerCourseEditMixin(OwnerCourseMixin,OwnerEditMixing):
     template_name = 'courses/manage/course/form.html'
-    fields = ['subject','title','slug','overview']
+    fields = ['subject','title','slug','overview','photo']
     success_url = reverse_lazy('courses:manage_course_list')
 class ManageCourseListView(OwnerCourseMixin,ListView):
     template_name = 'courses/manage/course/list.html'
@@ -159,7 +159,7 @@ class CourseDetailView(DetailView):
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated:
-            if self.object.course_enrollements.students.filter(user=self.request.user):
+            if self.object.course_enrollements.filter(student__user=self.request.user):
                 context['is_student'] = True
                 return context
         context['enroll_form'] = CourseEnrollForm(initial={'course':self.object})

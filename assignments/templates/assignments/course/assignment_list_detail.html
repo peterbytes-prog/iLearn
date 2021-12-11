@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load course %}
+
+{% block title %}
+  Assignment {{ assignment.title }}
+{% endblock %}
+{% block content %}
+{% block page_title %}
+  <h2 class="m-1">Course "{{ course.title }}"</h2>
+{% endblock %}
+{% with course=course %}
+  <br>
+  <div class="container row my-2">
+    <div class="contents col-md-3 col-xs-12 bg-light">
+      <h4>Assignments</h4>
+      <ul id='modules' class="list-group list-unstyle">
+        {% for asn in course.assignments.all %}
+          <li data-id="{{ asn.id }}"  id="{{ asn.id }}" class="{% if asn == assignment %}selected{% endif %} list-group-item">
+            <a href="{% url 'courses:assignments:course_a_assignment_question_list' course.id asn.id %}">
+              {{ asn.title }}
+            </a>
+          </li>
+        {% empty %}
+          <li>No Assignment Yet</li>
+        {% endfor %}
+      </ul>
+      <p>
+        <a href="{% url "courses:assignments:course_assignment_update" course.id %}">Edit Assignments</a>
+      </p>
+    </div>
+    <div class="module col-md-9 col-xs-12">
+      <h4>{{ assignment.title }}</h4>
+      <div class="">
+        <div class="px-2">
+          <h6>Overview</h6>
+          <p class="px-2">
+            {{ assignment.overview }}
+          </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+              <h6>Opens:
+                <span class="assignement_date_span">
+                {% if assignment.opens %}
+                  {{assingment.opens}}
+                {% else %}
+                  N/A
+                {% endif%}
+                </span>
+                  to
+                <span class="assignement_date_span">
+                {% if assignment.closes %}
+                  {{assingment.closes}}
+                {% else %}
+                  N/A
+                {% endif%}
+                </span>
+              </h6>
+            </div>
+
+            <h6 class="col-sm-6 text-left">
+              <p>Duration:&nbsp;&nbsp;{{assignment.time_limit}}s</p>
+            </h6>
+            <h6 class="col-sm-6 text-right">
+              <p>Weight:&nbsp;&nbsp;{{assignment.weight}}%</p>
+            </h6>
+            <h6 class="col-sm-12 text-right">
+              <p>Total:&nbsp;&nbsp;&nbsp;/{{assignment.get_total}}</p>
+            </h6>
+
+        </div>
+
+      </div>
+      <p class="h5 text">Assignment Question(s):</p>
+      <div id="module-contents">
+        <ul class="list-group">
+          {% for question in assignment.assignment_questions.all %}
+            <li class="list-group-item bg-white my-1">
+              <div class="row">
+                <div class="question_numbers_container col-sm-1">
+                  <p>{{question.order}})</p>
+                </div>
+                <div class="col-sm-10">
+                  <p>
+                    {{question.question}}
+                  </p>
+                  <div data-id="{{ question.id }}" class="m-1">
+                    {% for choice in question.question_choices.all%}
+                      {% with item=choice %}
+                        <p>{{ item.render_intructor }}</p>
+                      {% endwith %}
+                    {% empty %}
+                      <p>No Choice Yet</p>
+                    {% endfor %}
+                  </div>
+                  {% comment %}
+                    <div  class="d-flex justify-content-end">
+                      <a  class="m-1" href="{% url 'courses:assignments:assignment_question_update' question.id %}">Edit</a>
+                      <span>|</span>
+                      <form style=" margin:0; padding:0; border:none; display:inline" action="{% url 'courses:assignments:assignment_question_delete' question.id %}" method="post">
+                        <input style="margin:0; padding:0; border:none; background-color:white" type="submit" name="delete" value="Delete" class="m-1 text-primary" />
+                        {% csrf_token %}
+                      </form>
+                    </div>
+                  {% endcomment %}
+                </div>
+                <div class="col-sm-1 p-0 m-0">
+                  <p class='question_pt'>{{question.total_point}}pt</p>
+                </div>
+
+                <div class="col-sm-12">
+                  <form class="d-flex flex-row justify-content-end" action="#" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_q" value="{{question.id}}">
+                    <a class="btn btn-warning mx-1" href="{% url 'courses:assignments:assignment_question_update' course.id assignment.id question.id %}">Edit</a>
+                    <button type="submit" class='btn btn-danger mx-1' name="button">Delete</button>
+                  </form>
+
+                </div>
+              </div>
+            </li>
+          {% empty %}
+            <li class="list-group-item">
+              <p>This Course has no assignment yet.</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="container ">
+        <p class="h5 text">Add new question:</p>
+        <ul class="text-center list-inline content-types">
+           <li class="list-inline-item btn border">
+             <a href="{% url 'courses:assignments:assignment_question_create' course.id assignment.id %}">+Question</a>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endwith %}
+{% endblock %}
+{% block domready %}
+{% endblock %}

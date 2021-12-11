@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if object %}
+    Edit Question
+  {% else %}
+    Add new Question
+  {% endif %}
+{% endblock %}
+
+{% block page_title %}
+  <h2>
+    {% if object %}
+      Edit Question
+    {% else %}
+      Add new Question
+    {% endif %}
+  </h2>
+{% endblock %}
+
+{% block content %}
+  <div class="">
+
+    <div class="">
+      <h2>Question Info</h2>
+      <form class="" action="" method="post" enctype="multipart/form-data">
+        {{ question_form.as_p }}
+        <hr style="width:100%; display:block; border:1px solid grey;"/>
+        <div class="">
+          <h3>Choice Info</h3>
+          <div class="">
+            <ul class="list-group">
+              {% for form in choice_formset%}
+                <li class="list-group-item">{{ form.as_p }}</li>
+              {%endfor%}
+            </ul>
+            {{ choice_formset.management_form }}
+          </div>
+        </div>
+        {% csrf_token %}
+        <div class="d-flex justify-content-center">
+          <input class="btn btn-light border-secondary m-1" type="submit" value="Save and add another">
+          <input class="btn btn-light border-secondary m-1" type="submit" value="Save">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

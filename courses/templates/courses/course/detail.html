@@ -2,10 +2,14 @@
 {% block title %}
   {{ object.title }}
 {% endblock %}
+
+{% block page_title %}
+  <h2 class='card-header bg-secondary-theme-one text-light'> {{ object.title }}</h2>
+{% endblock %}
+
 {% block content %}
   {% with subject=object.subject %}
     <div class="card">
-      <h1 class='card-header bg-secondary text-light'> {{ object.title }}</h1>
       <div class="module card-body">
         <h2 class="card-title">Overview</h2>
         <div class="card-text">
@@ -13,25 +17,25 @@
             <a href="{% url "courses:course_list_subject" subject.slug %}">{{ subject.title }}</a>.
             {{ object.modules.count }} modules.
             Instructor:
-            {{ object.owner.get_full_name }}
+            {{ object.instructor.user.get_full_name }}
           </p>
           {{ object.overview|linebreaks }}
           {% if request.user.is_authenticated %}
             {% if is_student %}
               <div class="d-flex justify-content-center align-items-end">
-                <a href="{% url "students:student_course_detail" object.id  %}" class="btn btn-secondary px-5 border border-white text-light" name="button">Explore</a>
+                <a href="{% url "students:student_course_detail" object.id  %}" class="btn bg-btn-theme-one px-5 border" name="button">Explore</a>
                 <a href="{% url "students:drop_course" object.id %}" class="text-danger mx-2 drop">Drop Course</a>
               </div>
             {% else %}
             <form class="" action="{% url "students:student_enroll_course" %}" method="post">
               {{ enroll_form }}
               {% csrf_token %}
-              <input type="submit" name="" value="Enroll Now">
+              <input type="submit" name="" class='bg-btn-theme-one' value="Enroll Now">
             </form>
             {% endif %}
           {% else %}
             <div class="text-center">
-              <a class="btn btn-light border border-dark" href="{% url "login" %}?next={{request.path}}">
+              <a class="btn bg-btn-theme-one border text-white" href="{% url "login" %}?next={{request.path}}">
                 Register to Enroll
               </a>
             </div>

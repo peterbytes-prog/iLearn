@@ -17,12 +17,15 @@ class ChatConsumer(WebsocketConsumer):
         async_to_sync(self.channel_layer.group_discard)(self.room_group_name,self.channel_name)
         pass
     def receive(self,text_data):
-        print('recived')
+        text_data_json = json.loads(text_data)
+        message = text_data_json['message']
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
         async_to_sync(self.channel_layer.group_send)(self.room_group_name,{
             'type':'chat_message',
             'message':message,
+            'profile_photo':f"{self.user.student.photo.url}",
+            'profile_link':f"{self.user.student.get_absolute_url()}",
             'user':self.user.username,
             'datetime':datetime.now().isoformat(),
         })

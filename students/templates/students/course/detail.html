@@ -1,16 +1,20 @@
 {% extends "base.html" %}
-
+{% load course %}
 {% block title %}
   {{ object.title }}
 {% endblock %}
 
+{% block page_title %}
+  <h2>{{ object.title }}</h2>
+{% endblock %}
+
 {% block content %}
-  <h1>{{ module.title }}</h1>
+  <h3>{{ module.title }}</h3>
   <br>
   <div class="container">
     <div class="row">
       <div class="bg-light col-xs-12 col-md-3 contents">
-        <h3>Modules</h3>
+        <h5>Modules</h5>
         <ul class="modules list-group">
           {% for m in object.modules.all %}
             <li data-id={{ m.id }} class="{% if m == module %}selected{% endif %} list-group-item">
@@ -26,19 +30,209 @@
             <li>No modules yet.</li>
           {% endfor %}
         </ul>
+        <div class="my-2">
+          <h5>Activities</h5>
+          <li class="list-group-item">
+            <a href='{% url "chat:course_chat_room" object.id %}'>
+              <span>
+                Chat Room
+              </span>
+            </a>
+          </li>
+        </div>
+        <br>
+        <h5>Assignment</h5>
+        <ul class="modules list-group">
+          {% for asn in object.assignments.all %}
+            <li data-id={{ asn.id }} class="{% if asn == assignment %}selected{% endif %} list-group-item">
+              <a href="{% url "students:student_course_a_assignment_detail" object.id asn.id %}">
+                <span>
+                  {{ asn.title }}
+                </span>
+              </a>
+            </li>
+          {% empty %}
+            <li>No Assignment yet.</li>
+          {% endfor %}
+        </ul>
+        <br>
+        <a class="mt-1" data-toggle="collapse" href="#collapseStudent" role="button" aria-expanded="false" aria-controls="collapseStudent">
+          <h5>
+            Students
+            <span>&#8597;</span>
+          </h5>
+        </a>
+        <div class="collapse" id="collapseStudent">
+          <ul class="modules list-group">
+            {% for student in object.enrollments.all %}
+
+              <li data-id={{ student.id }} class="list-group-item">
+                <div class="d-flex user_li">
+                  <img class="user-img-coin" src="{{student.photo.url}}" alt="">
+                  <a href="{% url "profile:profile-detail" student.id %}">
+                    {{student.user|get_name}}
+                  </a>
+                </div>
+
+              </li>
+            {% empty %}
+              <li>No Student</li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
+
       <div class="col-xs-12 col-md-9 module">
-        {% for content in module.contents.all %}
-          {% with item=content.item %}
-            <h2>{{ item.title }}</h2>
-            {{ item.render }}
-          {% endwith %}
-        {% empty %}
-          <p class="no-contents-text text-info">No content in {{module.title}} yet.</p>
-        {% endfor %}
+        {% if page == 'assignment' %}
+            {% if assignment %}
+              <h4>{{ assignment.title }}</h4>
+              <div class="">
+                <div class="px-2">
+                  <h6>Overview</h6>
+                  <p class="px-2">
+                    {{ assignment.overview }}
+                  </p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                      <h6>Opens:
+                        <span class="assignement_date_span">
+                        {% if assignment.opens %}
+                          {{assingment.opens}}
+                        {% else %}
+                          N/A
+                        {% endif%}
+                        </span>
+                          to
+                        <span class="assignement_date_span">
+                        {% if assignment.closes %}
+                          {{assingment.closes}}
+                        {% else %}
+                          N/A
+                        {% endif%}
+                        </span>
+                      </h6>
+                    </div>
+
+                    <h6 class="col-sm-6 text-left">
+                      <p>Duration:&nbsp;&nbsp;{{assignment.time_limit}}s</p>
+                    </h6>
+                    <h6 class="col-sm-6 text-right">
+                      <p>Weight:&nbsp;&nbsp;{{assignment.weight}}%</p>
+                    </h6>
+                    <h6 class="col-sm-12 text-right">
+                      <p>Total:&nbsp;&nbsp;&nbsp;{% if attempted_highest %}{{attempted_highest.get_grade.total }}{% endif %}/{{assignment.get_total}}</p>
+                    </h6>
+                    <div class="col-sm-12 text-center d-flex justify-content-end">
+                      {% if assignment.get_total > 0 %}
+                        {% if attempted %}
+                            <div class="dropdown mx-1">
+                              <a class="btn bg-btn-theme-one dropdown-toggle" href="#" role="button" id="dropdownAttemptLink" data-toggle="dropdown" aria-expanded="false">
+                                Review Attempt
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownAttemptLink">
+                                {% for attempt in attempted %}
+                                    <a class="dropdown-item" href="{% url 'courses:assignments:test_review_page' object.pk  assignment.pk attempt.pk %}"><b>{{attempt}}</b> {{attempt.get_grade.total}}/{{assignment.get_total}}</a>
+                                {% endfor %}
+                              </div>
+                            </div>
+                        {% endif %}
+                        <div class="mx-1">
+                          <a class="btn bg-btn-theme-two" href="{% url 'courses:assignments:test_page' object.pk  assignment.pk %}">Start Assignment</a>
+                        </div>
+                      {% else %}
+                        <p class='text-info'>This Assignment Have no Content</p>
+                      {% endif %}
+
+                    </div>
+
+
+                </div>
+
+              </div>
+            {% else %}
+              <p class="no-contents-text text-info">No Assignments yet.</p>
+            {% endif %}
+        {% elif page == 'module' %}
+            {% for content in module.contents.all %}
+              {% with item=content.item %}
+                <h2>{{ item.title }}</h2>
+                {{ item.render }}
+              {% endwith %}
+            {% empty %}
+              <p class="no-contents-text text-info">No content in {{module.title}} yet.</p>
+            {% endfor %}
+        {% elif page == 'chat' %}
+          <h4>"{{ object.title }}" Chat Room </h4>
+          <div class="container chats border">
+            <div class="p-1" id='chat'>
+
+            </div>
+            <div class="row p-1 bg-dark-theme-one" id='chat-input'>
+              <textarea class="col-12" id='chat-message-input' type="text" name="chat-message-input" value="" rows="3"></textarea>
+              <div class="col-12 text-center">
+                <input class="btn border px-5" id="chat-message-submit" type="submit" name="" value="Send">
+              </div>
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
 
   </div>
+{% endblock %}
+{% block domready %}
+  //var url = "wss://"+window.location.host+"/ws/chat/room/"+'{{ course.id }}/'; use only for deployment stage
+  var url = "ws://"+window.location.host+"/ws/chat/room/"+'{{ course.id }}/';
+  console.log(url);
+  var chatSocket = new WebSocket(url);
 
+  chatSocket.onmessage = function(e){
+    var data = JSON.parse(e.data);
+
+    var message = data.message;
+    var user = data.user;
+    var dateOptions = {
+      hour:'numeric',
+      minute:'numeric',
+      hour12:true
+    };
+    var datetime = new Date(data['datetime']).toLocaleString('en',dateOptions);
+    var isMe = data.user == '{{ request.user }}';
+    var source = isMe? 'me':'other';
+    var name = isMe? 'Me': data.user;
+    var chat = $('#chat');
+    chat.append(`<div class="message ${source}">
+      <img src="${data.profile_photo}" alt="">
+      <div class="message-body">
+        <div class="">
+          <a href="${data.profile_link}"><strong>${name}</strong></a>
+          <span class='date'> @${datetime}</span>
+        </div>
+        <br>
+        ${message}
+      </div>
+    </div>`);
+    chat.scrollTop(chat[0].scrollHeight);
+  };
+  chatSocket.onclose = function(e){
+    console.error('Chat socket closed unexpectedly');
+  };
+  var input = $('#chat-message-input');
+  var submit = $('#chat-message-submit');
+  submit.click(function(){
+    console.log(chatSocket)
+    var message=input.val();
+    if (message){
+      console.log(message);
+      chatSocket.send(JSON.stringify({'message':message}));
+      input.val('');
+      input.focus();
+      input.keyup(function(e){
+        if(e.which===13){
+          submit.click();
+        }
+      })
+    }
+  })
 {% endblock %}

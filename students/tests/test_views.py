@@ -45,7 +45,10 @@ class TestView(TestCase):
                                                     overview = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo est laborum.',
                                                     slug = 'math_101'
                                                     )
-        self.math_101.course_enrollements.students.add(self.student1)
+        student_1_enrollment = Enrollment.objects.create(
+            student = self.student1,
+            course = self.math_101
+        )
         #modules math_101
         self.math_101_module_1 = {
         'course':self.math_101,
@@ -107,7 +110,8 @@ class TestView(TestCase):
         login = self.client.login(username=self.student1.user.username, password='hsja180jj')
         response = self.client.get(url)
         self.assertEqual(response.status_code,200)
-        self.assertEqual(str(response.context['object_list']),str(self.student1.enrollments.all()))
+        print()
+        self.assertEqual(str(response.context['object_list']),str(self.student1.course_set.all()))
     def test_student_enroll_to_course_view(self):
         # kwargs={'course':str(self.english_225.pk)}
         url = reverse('students:student_enroll_course')
@@ -138,16 +142,4 @@ class TestView(TestCase):
         response = self.client.post(url)
         self.assertRedirects(response,success_url)
         self.assertEqual(len(self.student1.enrollments.all()),0)
-
-
-
-
-
-
-
-
-
-
-
-
-#
+# #

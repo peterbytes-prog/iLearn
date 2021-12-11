@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
     'account.apps.AccountConfig',
+    'assignments.apps.AssignmentsConfig',
     'embed_video',
     'memcache_status',
     'rest_framework',

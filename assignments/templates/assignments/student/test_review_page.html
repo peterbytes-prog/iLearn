@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load course %}
+
+{% block title %}
+  Assignment {{ object.title }}
+{% endblock %}
+{% block page_title %}
+  <h2 class="m-1">Course "{{ object.enrollment.course.title }}"</h2>
+{% endblock %}
+{% block content %}
+
+  {% with assignment=object.assignment %}
+    {% with detail=object.get_grade %}
+      <div class='bg-light student_test_form'>
+
+        <div class="container-fluid bg-theme-white p-0">
+          <div class="container-fluid bg-theme-light">
+            <h4>{{ assignment.title }}</h4>
+          </div>
+          <div class="container">
+            <div class="px-2">
+              <h6>Overview</h6>
+              <p class="px-2">
+                {{ assignment.overview }}
+              </p>
+            </div>
+            <div class="row">
+                <h6 class="col-sm-6 text-left">
+                  <p>Duration:&nbsp;&nbsp;{{assignment.time_limit}}s</p>
+                </h6>
+                <h6 class="col-sm-6 text-right">
+                  <p>Weight:&nbsp;&nbsp;{{assignment.weight}}%</p>
+                </h6>
+                <h6 class="col-sm-12 text-right">
+                  <p>Total:&nbsp;&nbsp;&nbsp;{{detail.total}}/{{assignment.get_total}}</p>
+                </h6>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+        <div class="container row my-2">
+          <div class="module col-xs-12 col-sm-12">
+            <div id="module-contents">
+              <ul class="list-group">
+                {% for question in object.assignment.assignment_questions.all %}
+                  {% for k in detail.info %}
+                    {% if k.id == question.id %}
+                      <li class="{% if k.act_score <= 0 %}border border-danger{% endif %} list-group-item bg-white my-1">
+                        <div class="row">
+                          <div class="question_numbers_container col-sm-1">
+                            <p>{{question.order}})</p>
+                          </div>
+                          <div class="col-sm-10">
+                            <p>
+                              {{question.question}}
+                            </p>
+                            <div data-id="{{ question.id }}" class="m-1">
+                              {% for choice in question.question_choices.all%}
+                                {% with item=choice %}
+                                  <p>{{ item|render_choice:object }}</p>
+                                {% endwith %}
+                              {% empty %}
+                                <p>No Choice Yet</p>
+                              {% endfor %}
+                            </div>
+                          </div>
+                          <div class="col-sm-1 p-0 m-0">
+                            <p class='question_pt'>{{question.total_point}}pt</p>
+                          </div>
+                        </div>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                {% empty %}
+                  <li class="list-group-item">
+                    <p>Instructor has not added any question to this test.</p>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <hr>
+
+            {% if attempted|length > 1 %}
+              <div class="container-fluid py-2 bg-white">
+                <div class="dropdown mx-1">
+                  <a class="btn bg-btn-theme-one dropdown-toggle" href="#" role="button" id="dropdownAttemptLink" data-toggle="dropdown" aria-expanded="false">
+                    Review Attempt
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownAttemptLink">
+                    {% for attempt in attempted %}
+                        <a class="dropdown-item" href="{% url 'courses:assignments:test_review_page' object.enrollment.course.id  object.assignment.id attempt.pk %}"><b>{{attempt}}</b> {{attempt.get_grade.total}}/{{assignment.get_total}}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="container-fluid bg-theme-white py-2">
+                <p class="h5 text">Ready to retake the test?</p>
+                <ul class="text-center list-inline content-types">
+                   <li class="list-inline-item">
+                     <a class="btn bg-btn-theme-two" href="{% url 'courses:assignments:test_page' object.enrollment.course.id object.assignment.id %}">Retake Test</a>
+                   </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endwith %}
+  {% endwith %}
+{% endblock %}

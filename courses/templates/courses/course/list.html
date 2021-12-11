@@ -8,15 +8,17 @@
   {% endif %}
 {% endblock %}
 
+{% block page_title %}
+<h2>
+  {% if subject %}
+    {{ subject.title }} courses
+  {% else %}
+    All courses
+  {% endif %}
+</h2>
+{% endblock %}
+
 {% block content %}
-  <h1>
-    {% if subject %}
-      {{ subject.title }} courses
-    {% else %}
-      All courses
-    {% endif %}
-  </h1>
-  <br>
   <br>
   <div class="row">
     <div class="col-xs-12 col-md-3 contents bg-light">
@@ -39,7 +41,7 @@
         {% with subject=course.subject %}
           <div class="container p-1">
             <div class="card">
-              <h3 class="card-header bg-secondary text-dark">
+              <h3 class="card-header bg-secondary-theme-one text-dark">
                 <a class="text-light" href="{% url "courses:course_detail"  course.slug %}">
                   {{ course.title }}
                 </a>
@@ -53,10 +55,11 @@
                   <dt class="col-4">Modules</dt>
                   <dd class="col-8">{{ course.total_modules }} modules.</dd>
                   <dt class="col-4">Instructor</dt>
-                  <dd class="col-8">{{ course.instructor.user.get_full_name }}</dd>
+                  <dd class="col-8">{{course.instructor.user|get_name}}
+                  </dd>
                 </dl>
                 <div class="text-right">
-                  <a class="card-link btn-light btn border border-dark mr-auto" href="{% url "courses:course_detail"  course.slug %}">Explore</a>
+                  <a class="card-link bg-btn-theme-one btn border border-dark mr-auto" href="{% url "courses:course_detail"  course.slug %}">Explore</a>
                 </div>
               </div>
             </div>

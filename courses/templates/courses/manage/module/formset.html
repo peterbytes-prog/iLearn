@@ -2,15 +2,21 @@
 {% block title %}
   Edit "{{ course.title }}"
 {% endblock %}
+
+{% block page_title %}
+  <h2>Edit "{{ course.title }}"</h2>
+{% endblock %}
+
+
 {% block content %}
   <div class="">
-    <h1>Edit "{{ course.title }}"</h1>
+
     <div class="">
       <form class="form-set" action="" method="post">
         {{ formset.as_p }}
         {{ formset.management_form }}
         {% csrf_token %}
-        <input type="submit" value="Save modules">
+        <input class="btn bg-btn-theme-one text-white"type="submit" value="Save modules">
       </form>
     </div>
   </div>

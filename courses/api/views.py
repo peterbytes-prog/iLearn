@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from ..models import Subject,Course
+from ..models import Subject,Course,Enrollment
 from django.shortcuts import get_object_or_404
 from .serializers import (SubjectSerializer,
                             CourseSerializer,
@@ -31,7 +31,7 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
             permission_classes=[IsAuthenticated])
     def enroll(self, request, *args, **kwargs):
         course = self.get_object()
-        course.course_enrollements.students.add(request.user.student)
+        self.course_enrollement = Enrollment.objects.get_or_create(student=request.user.student,course=course)
         return Response({"enrolled":True})
     @action(detail=True,
             methods=['get'],
@@ -48,7 +48,9 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
             permission_classes = [IsAuthenticated,IsEnrolled])
     def drop(self,request,*args,**kwargs):
         course = self.get_object()
-        course.course_enrollements.students.remove(request.user.student)
+        enroll = Enrollment.objects.filter(course=course,student = request.user.student)
+        if enroll:
+            enroll.delete()
         return Response({"enrolled":False})
 
 class UserMixin(object):

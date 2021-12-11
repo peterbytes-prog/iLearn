@@ -3,31 +3,38 @@
 {% block title %}
   My courses
 {% endblock %}
+{% block page_title %}
+    <h2>My Courses</h2>
+{% endblock %}
 {% block content %}
-  <h1>My Courses</h1>
+
   <br>
   <div class="container">
-    <div class="card">
+    <div class="">
       <ul class="list-group list-group-flush module">
         {% for course in object_list %}
-          <li class="card list-group-item my-1">
-            <div class="course-info card-body p-0">
-              <h3 class='card-title'>{{ course.title }}</h3>
+
+          <li class="card list-group-item  my-1 mx-0 p-0">
+            <div class="card-header bg-secondary-theme-one">
+              <h3 class='card-title text-light'>{{ course.title }}</h3>
+            </div>
+            <div class="course-info card-body">
               <div class="card-text">
                 <p>
-                  <b>Instructor</b>  {{ course.owner.get_full_name }}<br>
+                  <b>Instructor</b>  {{ course.instructors }}<br>
                   <span>{{ course.modules.all | length}} Modules.</span><br>
                   <span>
                     {{ course.overview|linebreaks}}
                   </span>
                 </p>
                 <p class="d-flex">
-                  <a class="btn btn-light border text-primary text-bold" href="{% url "students:student_course_detail" course.id %}">Acces Contents</a>
+                  <a class="btn bg-btn-theme-one border text-light text-bold" href="{% url "students:student_course_detail" course.id %}">Acces Contents</a>
                   <a href="{% url "students:drop_course" course.id %}" class="text-danger mx-2 drop">Drop Course</a>
                 </p>
               </div>
             </div>
           </li>
+          
         {% empty %}
           <li class="list-group-item">
             <p class="card-text">

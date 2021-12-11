@@ -2,8 +2,12 @@
 {% block title %}
   {{ object.user.username }}
 {% endblock %}
+
+{% block page_title %}
+  <h2>Welcome {% if not is_owner %}to{% else %}back{% endif %} {{ object.user.username }} {% if not is_owner %}Profile{% endif %}</h2>
+{% endblock %}
+
 {% block content %}
-  <h1>Welcome {% if not is_owner %}to{% else %}back{% endif %} {{ object.user.username }} {% if not is_owner %}Profile{% endif %}</h1>
   <div class="row pb-3">
     <div class="bg-light col-xs-12 col-md-3 contents">
       <div class="">

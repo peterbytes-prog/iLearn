@@ -4,10 +4,15 @@
 {% block title %}
   Module {{ module.order|add:1 }}: {{ module.title }}
 {% endblock %}
+
+{% block page_title %}
+  <h2 class="m-1">Course "{{ module.course.title }}"</h2>
+{% endblock %}
+
 {% block content %}
 
 {% with course=module.course %}
-  <h1 class="m-1">Course "{{ course.title }}"</h1>
+
   <br>
   <div class="container row my-2">
     <div class="contents col-md-3 col-xs-12 bg-light">

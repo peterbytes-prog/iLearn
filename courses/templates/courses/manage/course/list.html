@@ -3,9 +3,14 @@
 {% block title %}
   My Courses
 {% endblock %}
+
+{% block page_title %}
+  <h2 class="bg-secondary-theme-one p-2 text-light">My Courses</h2>
+{% endblock %}
+
 {% block content %}
   <div class="container my-2">
-    <h1 class="bg-secondary p-2 text-light">My Courses</h1>
+
     <div class="text-center bg-white">
       {% for course in object_list %}
         <div class="course-info m-1 bg-light p-2">
@@ -17,7 +22,14 @@
             <p style="" class="d-flex justify-content-center">
               <a class="d-block" href="{% url 'courses:course_module_update' course.id %}">Edit Modules </a>
               {% if course.modules.count > 0%}
-                &nbsp;|&nbsp; <a href="{% url 'courses:module_content_list' course.modules.first.id %}">Manage contents</a>
+                &nbsp;|&nbsp; <a href="{% url 'courses:module_content_list' course.modules.first.id %}">Manage Module Contents</a>
+              {% endif %}
+            </p>
+
+            <p style="" class="d-flex justify-content-center">
+              <a class="d-block" href="{% url 'courses:assignments:course_assignment_update' course.id %}">Edit Assignments </a>
+              {% if course.assignments.count > 0%}
+                &nbsp;|&nbsp; <a href="{% url 'courses:assignments:course_a_assignment_question_list' course.id course.assignments.first.id %}">Manage Assignments Contents</a>
               {% endif %}
             </p>
 

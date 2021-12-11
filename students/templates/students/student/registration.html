@@ -4,16 +4,20 @@
   Sign Up
 {% endblock %}
 
+{% block page_title %}
+    <h2 class="h1 bg-secondary-theme-one text-light my-2 p-2">Sign Up</h2>
+{% endblock %}
+
 {% block content %}
   <div class="container">
-    <h1 class="h1 bg-secondary my-2 p-2">Sign Up</h1>
+
     <div class="container m-2 module bg-light">
       <p class="h5 py-1">Enter your datil to create an account:</p>
       <form class="" action="" method="post">
         {{ form.as_p }}
         {% csrf_token %}
         <p>
-          <input class="btn btn-dark" type="submit" name="" value="Create my account">
+          <input class="btn bg-btn-theme-one text-white" type="submit" name="" value="Create my account">
         </p>
       </form>
     </div>

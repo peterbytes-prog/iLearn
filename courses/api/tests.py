@@ -44,7 +44,11 @@ class TestApi(APITestCase):
                                                     overview = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo est laborum.',
                                                     slug = 'math_101'
                                                     )
-        self.math_101.course_enrollements.students.add(self.student1.student)
+        student_1_enrollment = Enrollment.objects.create(
+            student = self.student1.student,
+            course = self.math_101
+        )
+
         #modules math_101
         self.math_101_module_1 = {
         'course':self.math_101,

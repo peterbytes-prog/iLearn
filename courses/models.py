@@ -5,36 +5,35 @@ from .fields import OrderField
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.template.loader import render_to_string
 from students.models import Student
+from ckeditor.fields import RichTextField
+from PIL import Image as pImage
 # Create your models here.
 
 class Subject(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
+    feature = models.BooleanField(default=False,null=True)
+    photo = models.ImageField(upload_to='subjects/%Y/%m/%d/',default='subjects/subjects_icon.png',
+                              blank=False)
     class Meta:
         ordering = ['title']
     def __str__(self):
         return self.title
+    def save(self,*args,**kwargs):
+        ins = super().save(*args,**kwargs)
+        img = pImage.open(self.photo.path)
+        img = img.resize((1000,1500))#pininterest ref
+        img.save(self.photo.path)
 
-class Assignment(models.Model):
-    instructor = models.ForeignKey('Instructor', related_name='assignments_created', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    overview = models.TextField(max_length=200)
-    slug = models.SlugField(max_length=200,unique=True)
-    created = models.DateTimeField(auto_now_add=True)
-    weight = models.DecimalField(max_digits=3, decimal_places=2)
-    content =models.TextField(max_length=200, blank=True)
-    enrollment = models.ForeignKey('Enrollment',related_name='assignments', on_delete=models.CASCADE)
-    def __str__(self):
-        return self.title
 class Enrollment(models.Model):
-    students = models.ManyToManyField(Student,related_name='enrollments',blank=True)# TODO:  change model sttructure later  student model in of itself
+    student = models.ForeignKey(Student,related_name='enrollments',on_delete=models.CASCADE)# TODO:  change model sttructure later  student model in of itself
     created  = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    course = models.OneToOneField('Course',on_delete=models.CASCADE, related_name='course_enrollements')
-    def get_grade(self):
-        pass
+    course = models.ForeignKey('Course',on_delete=models.CASCADE, related_name='course_enrollements')
     def __str__(self):
         return f"Enrollment For: {self.course}"
+    class Meta:
+        unique_together = ('student','course')
 class Course(models.Model):
     instructor = models.ForeignKey('Instructor', related_name='courses_created', on_delete=models.CASCADE)
     subject  = models.ForeignKey(Subject, related_name='courses', on_delete=models.CASCADE)
@@ -42,10 +41,20 @@ class Course(models.Model):
     overview = models.TextField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
     created = models.DateTimeField(auto_now_add=True)
+    enrollments = models.ManyToManyField(Student,through='Enrollment')
+    feature = models.BooleanField(default=False,null=True)
+    photo = models.ImageField(upload_to='courses/%Y/%m/%d/',default='courses/course_icon.png',
+                              blank=False)
+
     class Meta:
         ordering = ['-created']
     def __str__(self):
         return self.title
+    def save(self,*args,**kwargs):
+        ins = super().save(*args,**kwargs)
+        img = pImage.open(self.photo.path)
+        img = img.resize((1000,1500))#pininterest ref
+        img.save(self.photo.path)
 
 class Module(models.Model):
     course = models.ForeignKey(Course,related_name='modules',on_delete=models.CASCADE)
@@ -57,7 +66,6 @@ class Module(models.Model):
         return f'{self.order}. {self.title}'
     class Meta:
         ordering = ['order']
-
 
 class Content(models.Model):
     module = models.ForeignKey(Module,related_name='contents',on_delete=models.CASCADE)
@@ -89,6 +97,7 @@ class ItemBase(models.Model):
     pass
 
 class Text(ItemBase):
+    # content = RichTextField(blank=True,null=True)
     content = models.TextField()
     pass
 class File(ItemBase):
@@ -104,6 +113,7 @@ class Video(ItemBase):
 #
 class Instructor(models.Model):
     user = models.OneToOneField(User,related_name='instructor',on_delete=models.CASCADE)
+    feature = models.BooleanField(default=False,null=True)
     def save(self,*args,**kwargs):
 
         instructors, created = Group.objects.get_or_create(name = "instructors")

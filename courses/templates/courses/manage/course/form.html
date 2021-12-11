@@ -6,21 +6,25 @@
     Create a new course
   {% endif %}
 {% endblock %}
+{% block page_title %}
+  <h2 class="bg-secondary-theme-one">
+      {% if object %}
+        Edit course "{{ object.title }}"
+      {% else %}
+        Create a new course
+      {% endif %}
+  </h2>
+{% endblock %}
+
 {% block content %}
   <div class="container">
-    <h1 class="bg-secondary">
-        {% if object %}
-          Edit course "{{ object.title }}"
-        {% else %}
-          Create a new course
-        {% endif %}
-    </h1>
+
     <div class="module container">
       <h2>Course info</h2>
-      <form class="" method="post">
+      <form class="" method="post" enctype="multipart/form-data">
         {{ form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Save course"></p>
+        <p><input type="submit" class='bg-btn-theme-one text-white' value="Save course"></p>
       </form>
     </div>
   </div>

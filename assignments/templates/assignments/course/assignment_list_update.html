@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+  Edit "{{ course.title }}"
+{% endblock %}
+
+{% block page_title %}
+  <h2>Edit "{{ course.title }}" Assignments</h2>
+{% endblock %}
+
+{% block content %}
+  <div class="">
+
+    <div class="">
+      <form class="form-set" action="" method="post">
+        {{ formset.as_p }}
+        {{ formset.management_form }}
+        {% csrf_token %}
+        <input type="submit" value="Save Assignment">
+      </form>
+    </div>
+  </div>
+{% endblock %}

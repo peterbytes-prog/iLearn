@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block  title %}Log-In{% endblock %}
+
+{% block page_title %}
+    <h2>Log-In</h2>
+{% endblock %}
+
 {% block content %}
   <div class="container text-center">
-    <h1>Log-In</h1>
+
     <div class="container ">
       {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
@@ -14,7 +19,7 @@
           {{ form.as_p }}
           {% csrf_token %}
           <input type="hidden" name="next" value="{{ next }}" />
-          <p><input class="btn btn-dark px-5" type="submit" value="Log-in"></p>
+          <p><input class="btn bg-btn-theme-one text-white px-5" type="submit" value="Log-in"></p>
           <p>
             <a href="/students/register/">Don't have an account yet?</a>
           </p>

@@ -9,7 +9,10 @@ from students.models import Student
 @receiver(post_save, sender=Course)
 def create_course_enrollment(sender, instance, created, **kwargs):
     if created:
-        enrollment,created = Enrollment.objects.get_or_create(course=instance)
+        Enrollment.objects.create(
+            student = instance.instructor.user.student,
+            course = instance
+        )
 
 @receiver(post_save, sender=User)
 def create_course_enrollment(sender, instance, created, **kwargs):

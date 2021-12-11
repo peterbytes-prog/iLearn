@@ -2,6 +2,7 @@ from django.test import TestCase
 from students.models import Student
 from courses.models import *
 from django.contrib.auth.models import User,Permission
+from django.db.utils import IntegrityError
 
 
 class TestModels(TestCase):
@@ -74,11 +75,13 @@ class TestModels(TestCase):
         self.assertEqual(len(self.instructor2.courses_created.all()),2)
         self.assertEqual(len(self.instructor1.courses_created.all()),2)
     def test_students_and_enrollments(self):
-        enrollment_math_101 = Enrollment.objects.get(course=self.math_101)
-        math_101_students = enrollment_math_101.students.all()
-        enrollment_math_101.students.add(self.student2)
-        enrollment_math_101.students.add(self.student1)
-        self.assertEqual(len(enrollment_math_101.students.all()),2)
-        enrollment_math_105 = Enrollment.objects.get(course=self.math_105)
-        enrollment_math_105.students.add(self.student1)
-        self.assertEqual(len(self.student1.enrollments.all()),2)
+        self.assertEqual(len(self.math_101.course_enrollements.all()),1)
+        student_1_enrollment = Enrollment.objects.create(
+            student = self.student1,
+            course = self.math_101
+        )
+        student_2_enrollment = Enrollment.objects.create(
+            student = self.student2,
+            course = self.math_101
+        )
+        self.assertEqual(len(self.math_101.course_enrollements.all()),3)

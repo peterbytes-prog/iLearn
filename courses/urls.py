@@ -8,7 +8,7 @@ urlpatterns = [
     path('<pk>/edit/',CourseUpdateView.as_view(),name='course_edit'),
     path('<pk>/delete/',CourseDeleteView.as_view(),name='course_delete'),
     path('<pk>/module/',CourseModuleUpdateView.as_view(),name='course_module_update'),
-
+    path('<int:course_id>/assignments/', include('assignments.urls',namespace='assignments')),
     path('module/<int:module_id>/content/<model_name>/create/',
             ContentCreateUpdateView.as_view(),
             name ='module_content_create'
@@ -41,5 +41,5 @@ urlpatterns = [
             CourseDetailView.as_view(),
             name='course_detail'
         ),
-    
+
 ]
