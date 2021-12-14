@@ -1,0 +1,72 @@
+[
+{
+  "model": "courses.enrollment",
+  "pk": 1,
+  "fields": {
+    "student": 2,
+    "created": "2021-12-10T13:52:42.657Z",
+    "updated": "2021-12-10T13:52:42.657Z",
+    "course": 1
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 2,
+  "fields": {
+    "student": 2,
+    "created": "2021-12-10T13:54:23.265Z",
+    "updated": "2021-12-10T13:54:23.265Z",
+    "course": 2
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 3,
+  "fields": {
+    "student": 2,
+    "created": "2021-12-10T13:56:08.960Z",
+    "updated": "2021-12-10T13:56:08.960Z",
+    "course": 3
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 4,
+  "fields": {
+    "student": 7,
+    "created": "2021-12-11T04:51:39.585Z",
+    "updated": "2021-12-11T04:51:39.585Z",
+    "course": 3
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 5,
+  "fields": {
+    "student": 6,
+    "created": "2021-12-11T12:03:04.562Z",
+    "updated": "2021-12-11T12:03:04.562Z",
+    "course": 1
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 6,
+  "fields": {
+    "student": 6,
+    "created": "2021-12-11T12:03:04.568Z",
+    "updated": "2021-12-11T12:03:04.568Z",
+    "course": 2
+  }
+},
+{
+  "model": "courses.enrollment",
+  "pk": 7,
+  "fields": {
+    "student": 6,
+    "created": "2021-12-11T12:03:04.574Z",
+    "updated": "2021-12-11T12:03:04.574Z",
+    "course": 3
+  }
+}
+]

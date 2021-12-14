@@ -1,0 +1,217 @@
+body{
+  background-color:#fffef9;
+}
+main{
+  margin-top: 2em;
+  margin-bottom: 1em;
+  background-color:white;
+}
+.page_title{
+  background-color: #451e3e;
+  padding: 1em 0;
+  color: white;
+}
+form:not(.student_test_form){
+  display: flex;
+  flex-direction: column;
+}
+form:not(.student_test_form)  p{
+  display: flex;
+  flex-direction: column;
+}
+form:not(.student_test_form) label{
+  font-weight: bold;
+  text-align: left;
+}
+form:not(.student_test_form) input,form:not(.student_test_form) textarea,form:not(.student_test_form) select{
+  padding: 0.5em;
+}
+form:not(.student_test_form) p *:nth-child(2):not(input[type=checkbox]){
+  width:90%;
+  margin: auto;
+}
+form:not(.student_test_form) input[type=submit]{
+  width:auto;
+  margin: auto;
+  background: #651e3e;
+  background-color: #651e3e;
+}
+
+form:not(.student_test_form) p input[type=checkbox]{
+  margin-left:5%;
+}
+.no-contents-text{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.list-group-item:not(.selected){
+  background-color: rgb(250,250,250);
+}
+.drop{
+  font-size: 0.7em;
+  vertical-align: baseline;
+}
+.bg-dark-theme-one{
+  background: #051e3e;
+  background-color: #051e3e;
+}
+.bg-secondary-theme-one{
+  background: #251e3e;
+  background-color: #251e3e;
+}
+.bg-info-theme-one{
+  background: #451e3e;
+  background-color: #451e3e;
+}
+.bg-success-theme-one{
+  background: #651e3e;
+  background-color: #651e3e;
+}
+.bg-theme-white{
+  background: #f9f4f4;
+  background-color: #f9f4f4;
+
+}
+.bg-theme-light{
+  background: #e7d3d3;
+  background-color: #e7d3d3;
+}
+.bg-btn-theme-one{
+  /* background: #051e3e;
+  background-color: #051e3e; */
+  background: #0275d8;
+  background-color:#0275d8;
+
+  color:white;
+}
+.bg-btn-theme-two{
+  background: #051e3e;
+  background-color: #051e3e;
+  color:white;
+}
+.question_pt{
+  font-size:0.7em;
+  margin: 0 3px;
+  padding: 0;
+}
+.assignement_date_span{
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.user-img-coin{
+  width:4vw;
+  height:4vw;
+  border: 1px solid purple;
+  border-radius: 50%;
+  margin-right: 0.2em;
+}
+.user_li{
+  align-items: baseline;
+}
+#chat{
+  display:flex;
+  flex-direction:column;
+}
+.message{
+  display:flex;
+  width:90%;
+  border:1px solid purple;
+  border-radius:0.5em 0.5em;
+  margin: 0.2em 0;
+}
+#chat .message img{
+  width:3em;
+  height:3em;
+}
+.message-body>div:nth-child(1){
+  background-color:rgba(203, 195, 227,1);
+  padding: 0 0.6em;
+  font-weight:bolder
+}
+#chat .message.me{
+  background-color: rgba(203, 195, 227,0.5);
+  margin-left:auto;
+  flex-direction:row-reverse;
+}
+#chat .message.other{
+  background-color: rgba(203, 195, 227,0.2);
+  margin-right:auto;
+}
+.django-ckeditor-widget{
+  width:90%;
+  margin-left:5%;
+}
+.editored-content{
+}
+.choice-container{
+  display:flex;
+  flex-direction:row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.choice-inner-text-container{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+
+}
+
+.editored-content{
+ padding:0;
+}
+.editored-content *{
+  vertical-align:top;
+}
+p:empty{
+  display:none;
+}
+.choices-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.full-width-divisor{
+  width: 90%;
+}
+.btn-container{
+  text-align: center;
+  display: flex;
+}
+.btn-container{
+  text-align: center;
+  display: flex;
+}
+.btn{
+  font-weight: bolder;
+  color:white;
+}
+.btn-container>*{
+  width: 90%;
+  flex: 1;
+}
+.card{
+
+}
+.card-img{
+  max-height: 15em;
+}
+.card-img-container{
+  background-color: grey;
+  display: flex;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  background-color: black;
+}
+.card-img-container img{
+  display: block;
+  margin: auto;
+  align-self: center;
+  border-bottom: 1px solid black;
+}
+.jumbotron-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

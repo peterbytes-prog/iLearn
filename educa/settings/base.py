@@ -29,8 +29,6 @@ SECRET_KEY = 'django-insecure-0rx8zx+c6db7@v)dn!$g55yuq2zozy+mof*gzqwvn#1_%5vecu
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -102,7 +100,7 @@ CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
         'CONFIG':{
-            'hosts':[('127.0.0.1',6379)],
+            'hosts':[(os.environ.get('REDIS','127.0.0.1'), 6379)],
         }
     }
 }
@@ -113,12 +111,6 @@ ASGI_APPLICATION = 'educa.routing.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR/'db.sqlite3',
-    }
-}
 
 
 # Password validation
@@ -158,10 +150,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 LOGIN_REDIRECT_URL = reverse_lazy('students:student_course_list')
 LOGOUT_REDIRECT_URL = '/'

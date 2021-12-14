@@ -1,0 +1,59 @@
+version: "3"
+services:
+  educa:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    expose:
+      - 8000
+    container_name: educa
+    env_file:
+      - ./.env.prod
+    command: gunicorn educa.wsgi:application -b 0.0.0.0:8000 --workers=3
+    volumes:
+      - static_volume:/home/app/educa/staticfiles
+      - media_volume:/home/app/educa/mediafiles
+    depends_on:
+      - db
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.prod.db
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/educa/staticfiles
+      - media_volume:/home/app/educa/mediafiles
+    ports:
+      - 1337:80
+    depends_on:
+      - educa
+  dpchannel:
+    build:
+      context: .
+      dockerfile: Dockerfile.channel.prod
+    expose:
+      - 8000
+    container_name: dpchannel
+    env_file:
+      - ./.env.prod
+    command: daphne -b 0.0.0.0 -p 8000 educa.asgi:application
+    depends_on:
+      - educa
+  redis:
+    restart: always
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    depends_on:
+      - dpchannel
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  redisdata:

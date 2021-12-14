@@ -1,9 +1,10 @@
 from django.forms.models import inlineformset_factory
 from django import forms
-from courses.models import Course,Enrollment
+from courses.models import Course, Enrollment
 from django.forms.models import inlineformset_factory
 from django.contrib.admin import widgets
-from .models import *
+from .models import (Assignment, Course, Question, TextChoice)
+
 
 CourseAssignmentFormSet = inlineformset_factory(
     Course,
@@ -22,7 +23,7 @@ CourseAssignmentFormSet = inlineformset_factory(
 class QuestionForm(forms.ModelForm):
     class Meta:
         model=Question
-        fields=['order','question','multiple']
+        fields=['order', 'question', 'multiple']
     pass
 ChoiceFormSet = inlineformset_factory(
     Question,
@@ -34,6 +35,6 @@ ChoiceFormSet = inlineformset_factory(
     ],
     extra=4,
     can_delete=True,
-    max_num=5, validate_max=True,
-    min_num=1, validate_min=True
+    max_num=5,  validate_max=True,
+    min_num=1,  validate_min=True
 )

@@ -1,0 +1,54 @@
+#########
+# FINAL #
+#########
+
+# pull official base image
+FROM python:3.9.6-alpine
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+RUN mkdir -p /home/app
+
+RUN apk add --no-cache --virtual .build-deps \
+    ca-certificates gcc postgresql-dev linux-headers musl-dev \
+    libffi-dev jpeg-dev zlib-dev
+RUN pip install --upgrade pip
+
+
+# create the app user
+RUN addgroup -S app && adduser -S app -G app
+
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/educa
+RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/staticfiles
+RUN mkdir $APP_HOME/mediafiles
+COPY ./mediafiles $APP_HOME/mediafiles
+WORKDIR $APP_HOME
+
+
+COPY ./requirements.txt $APP_HOME
+RUN pip install -r requirements.txt
+
+COPY ./entrypoint.sh .
+RUN sed -i 's/\r$//g' $APP_HOME/entrypoint.sh
+RUN chmod +x $APP_HOME/entrypoint.sh
+
+COPY ./account $APP_HOME/account
+COPY ./assignments $APP_HOME/assignments
+COPY ./courses $APP_HOME/courses
+COPY ./chat $APP_HOME/chat
+COPY ./docs $APP_HOME/docs
+COPY ./educa $APP_HOME/educa
+COPY ./lecture $APP_HOME/lecture
+COPY ./logs $APP_HOME/logs
+COPY ./students $APP_HOME/students
+COPY ./manage.py $APP_HOME/manage.py
+
+RUN chown -R app:app $APP_HOME
+
+USER app
+
+# run entrypoint.sh
+ENTRYPOINT ["/home/app/educa/entrypoint.sh"]

@@ -10,7 +10,8 @@ __pycache__/
 local_settings.py
 # db.sqlite3
 # db.sqlite3-journal
-# media
+.env.prod
+.env.prod.db
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -178,5 +179,11 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.env.prod
+.env.prod.db
+prod_docker
+docker_dev
+
+
 
 # End of https://www.toptal.com/developers/gitignore/api/django,macos

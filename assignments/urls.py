@@ -1,11 +1,17 @@
-from django.urls import path,include
-from .views import *
+from django.urls import path, include
+from .views import (CourseAssignmentListDetailView,
+        CourseAssignmentListUpdateView,
+        CourseAssignmentListUpdateView,
+        QuestionCreateUpdateDetailView,
+        StudentTestPage,
+        StudentTestReviewPage, 
+    )
 
 app_name = 'assignments'
 urlpatterns = [
-    path('',CourseAssignmentListDetailView.as_view(),name='course_assignment_question_list'),
-    path('<int:assignment_id>',CourseAssignmentListDetailView.as_view(),name='course_a_assignment_question_list'),
-    path('update',CourseAssignmentListUpdateView.as_view(),name='course_assignment_update'),
+    path('', CourseAssignmentListDetailView.as_view(), name='course_assignment_question_list'),
+    path('<int:assignment_id>', CourseAssignmentListDetailView.as_view(), name='course_a_assignment_question_list'),
+    path('update', CourseAssignmentListUpdateView.as_view(), name='course_assignment_update'),
     path('<int:assignment_id>/question/create/',
             QuestionCreateUpdateDetailView.as_view(),
             name ='assignment_question_create'

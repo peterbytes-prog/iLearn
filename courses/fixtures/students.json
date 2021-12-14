@@ -1,1 +1,123 @@
-[{"model": "students.student", "pk": 1, "fields": {"user": 1, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 2, "fields": {"user": 2, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 3, "fields": {"user": 3, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 4, "fields": {"user": 4, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 5, "fields": {"user": 5, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 6, "fields": {"user": 6, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 7, "fields": {"user": 7, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 8, "fields": {"user": 8, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 9, "fields": {"user": 9, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 10, "fields": {"user": 10, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}, {"model": "students.student", "pk": 11, "fields": {"user": 11, "gender": "Other", "date_of_birth": null, "photo": "users/user_icon.png", "feature": false}}]
+[
+{
+  "model": "students.student",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 9,
+  "fields": {
+    "user": 9,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 10,
+  "fields": {
+    "user": 10,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+},
+{
+  "model": "students.student",
+  "pk": 11,
+  "fields": {
+    "user": 11,
+    "gender": "Other",
+    "date_of_birth": null,
+    "photo": "users/user_icon.png",
+    "feature": false
+  }
+}
+]

@@ -1,0 +1,62 @@
+[
+{
+  "model": "courses.subject",
+  "pk": 1,
+  "fields": {
+    "title": "Computer Science",
+    "slug": "computer-science",
+    "feature": true,
+    "photo": "subjects/2021/12/10/trace-g0c5da039a_640_NJaUtqC.jpg"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 2,
+  "fields": {
+    "title": "Mathematics",
+    "slug": "mathematics",
+    "feature": true,
+    "photo": "subjects/2021/12/10/geometry-gf610494f6_1920.jpg"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 3,
+  "fields": {
+    "title": "History",
+    "slug": "history",
+    "feature": false,
+    "photo": "subjects/2021/12/10/compass-g46665b6c3_1920.jpg"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 4,
+  "fields": {
+    "title": "Language & Communication",
+    "slug": "language-communication",
+    "feature": false,
+    "photo": "subjects/2021/12/10/teacher-g021d052fb_1280.png"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 5,
+  "fields": {
+    "title": "Health Sciences",
+    "slug": "health-sciences",
+    "feature": false,
+    "photo": "subjects/2021/12/10/anatomy-g9805f8f87_1280.jpg"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 6,
+  "fields": {
+    "title": "Politics",
+    "slug": "politics",
+    "feature": false,
+    "photo": "subjects/2021/12/13/500px-Tammany_Ring_Nast_crop.jpeg"
+  }
+}
+]
