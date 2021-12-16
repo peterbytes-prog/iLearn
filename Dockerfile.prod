@@ -42,7 +42,6 @@ COPY ./chat $APP_HOME/chat
 COPY ./docs $APP_HOME/docs
 COPY ./educa $APP_HOME/educa
 COPY ./lecture $APP_HOME/lecture
-COPY ./logs $APP_HOME/logs
 COPY ./students $APP_HOME/students
 COPY ./manage.py $APP_HOME/manage.py
 

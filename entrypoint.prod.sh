@@ -15,13 +15,13 @@ fi
 python manage.py flush --no-input
 python manage.py makemigrations
 python manage.py migrate
-python manage.py collectstatic --noinput
-python manage.py loaddata auth.json
-python manage.py loaddata instructors.json
-python manage.py loaddata students.json
-python manage.py loaddata subjects.json
-python manage.py loaddata courses.json
-python manage.py loaddata others.json
-python manage.py loaddata assignments.json
+# python manage.py collectstatic --noinput
+# python manage.py loaddata auth.json
+# python manage.py loaddata instructors.json
+# python manage.py loaddata students.json
+# python manage.py loaddata subjects.json
+# python manage.py loaddata courses.json
+# python manage.py loaddata others.json
+# python manage.py loaddata assignments.json
 
 exec "$@"
