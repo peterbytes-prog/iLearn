@@ -1,9 +1,54 @@
 # iLearn
-=
 
-# Live Demo at [Link](http://ec2-user@ec2-35-183-131-115.ca-central-1.compute.amazonaws.com "iLearn").
+#Description
 
+# Demo
+Live Demo At [Link](http://ec2-user@ec2-35-183-131-115.ca-central-1.compute.amazonaws.com "iLearn").
 
+<img src="./docs/home.png" />
+<img src="./docs/enroll.png" />
+<img src="./docs/course_content_view.png" />
+<img src="./docs/course_create.png" />
+<img src="./docs/create_assignment_content.png" />
+<img src="./docs/instructor_courses_page.png" />
+<img src="./docs/manage_course_module.png" />
+<img src="./docs/manage_questions.png" />
+<img src="./docs/student_courses__list.png" />
+<img src="./docs/student_test_page.png" />
+<img src="./docs/student_test_attempts_reveiw.png" />
+<img src="./docs/user_profile.png" />
+
+<section>
+  <h2>Technologies Used</h2>
+  <div>
+    <ul>
+      <li>
+        Bootstrap
+      </li>
+      <li>
+        HTML5
+      </li>
+      <li>
+        CSS
+      </li>
+      <li>
+        Python Django
+      </li>
+      <li>
+        DRF
+      </li>
+      <li>
+        MySQL
+      </li>
+      <li>
+        Javascript
+      </li>
+      <li>
+        jQuery
+      </li>
+    </ul>
+  </div>
+</section>
 # How to run
 
 ### Local
@@ -41,14 +86,28 @@ In the terminal run `python manage.py test`
 
 
 ## App Fixtures
-=
 
-- User login, authentication & profile management
-- Instructors can add subjects, courses and assignments
-- Rich Text Editor for adding detail subjects, courses and assignments
-- Students can manage their courses enrollments
-- Students can live chats with other students that are enrolled in the same course (websocket integrated using python daphnee, channels, redis )
-- Students take course test and review past tests
+
+<ul class="list-inline">
+  <li class="list-inline-item">
+    Login, Register and Authentication Capabilities
+  </li>
+  <li class="list-inline-item">
+    Content Management System (CMS)
+  </li>
+  <li class="list-inline-item">
+    Rich Text Editor for adding detail subjects, courses and assignments
+  </li>
+  <li class="list-inline-item">
+    Live chat
+  </li>
+  <li class="list-inline-item">
+    Student testing and grading
+  </li>
+  <li class="list-inline-item">
+    Admin Management
+  </li>
+</ul>
 
 * see doc file for necessary images
 
