@@ -1,6 +1,7 @@
 # iLearn
 
 #Description
+An e-learning platform application with content management system (CMS), live chat, student test and grading.
 
 # Demo
 Live Demo At [Link](http://ec2-user@ec2-35-183-131-115.ca-central-1.compute.amazonaws.com "iLearn").
